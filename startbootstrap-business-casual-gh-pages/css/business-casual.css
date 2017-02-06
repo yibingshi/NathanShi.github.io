@@ -53,6 +53,7 @@ hr {
     letter-spacing: 3px;
 }
 
+
 .img-full {
     min-width: 100%;
 }
@@ -102,6 +103,48 @@ hr {
     margin: 0 auto 0;
 }
 
+.date{
+    margin: 0 0 0.5em 1em;
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2.3em;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width:100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    text-transform: none;
+
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+
+}
+
+.dropdown:hover {
+    background-color: #f9f9f9;
+}
+
+
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
@@ -112,7 +155,7 @@ footer p {
     padding: 50px 0;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:868px) {
     .brand {
         display: inherit;
         margin: 0;
@@ -150,6 +193,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
+
     }
 
     .navbar-header {
@@ -158,29 +202,48 @@ footer p {
 
     .navbar {
         min-height: 0;
+
     }
 
     .navbar-default {
         border: none;
         background: #fff;
-        background: rgba(255,255,255,0.9);
+        /*background: rgba(255,255,255,0.9);*/
     }
 
     .nav>li>a {
         padding: 35px;
+        text-align: center;
     }
 
     .navbar-nav>li>a {
         line-height: normal;
+        
     }
 
     .navbar-nav {
         display: table;
         float: none;
-        margin: 0 auto;
+        margin: 0 10%;
         table-layout: fixed;
         font-size: 1.25em;
+        width: 80%;
     }
+    .navbar-nav li:first-child {
+    width:15%;
+    } 
+
+    .navbar-nav li:nth-child(2) {
+    width:35%;
+    } 
+
+    .navbar-nav li:nth-child(3) {
+    width:25%;
+    } 
+
+    .navbar-nav li:nth-child(4) {
+    width:25%;
+    } 
 }
 
 @media screen and (min-width:1200px) {
