@@ -34,7 +34,7 @@
 
     <div class="brand">Premier League Football Predictor</div>
     
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,17 +51,29 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li class="dropdown">
                         <a href="index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="about.html">Predictions</a>
+                    <li class="dropdown">
+                        <a href="about.html" class="navbar-dropdown">Predictions</a>
+                        <div class="dropdown-content">
+      						<a href="#">Upcoming Matches</a>
+      						<a href="hypo_page.html">Hypothetical Matches</a>
+    					</div>
                     </li>
-                    <li>
-                        <a href="blog.html">Statistics</a>
+                    <li class="dropdown">
+                        <a href="blog.html" class="navbar-dropdown">Statistics</a>
+                        <div class="dropdown-content">
+      						<a href="#">League Overview</a>
+      						<a href="#">Teams</a>
+    					</div>
                     </li>
-                    <li>
-                        <a href="contact.html">About us</a>
+                    <li class="dropdown">
+                        <a href="contact.html" class="navbar-dropdown">About us</a>
+                        <div class="dropdown-content">
+      						<a href="#">Our Algorithm</a>
+      						<a href="#">About Us</a>
+    					</div>
                     </li>
                 </ul>
             </div>
