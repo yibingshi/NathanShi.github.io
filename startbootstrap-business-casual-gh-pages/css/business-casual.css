@@ -179,13 +179,6 @@ input[type=submit]:hover {
     background-color: #f9f9f9;
 }
 
-
-.footer_content{
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 10px;
-}
-
 .pasta{
     overflow: scroll;
 }
@@ -196,18 +189,15 @@ footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
 
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:50px;
-    width:100%;
-    background:#fff;
+    clear: both;
+    position: relative;
+    z-index: 0;
+    height: 4em;
+    margin-top: 5em;
 }
 
 footer p {
     margin: 0;
-    /*background: #fff;*/
-    
 }
 
 @media screen and (min-width:868px) {
