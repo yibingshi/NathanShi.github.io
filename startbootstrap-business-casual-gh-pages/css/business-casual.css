@@ -190,7 +190,8 @@ footer {
     background: rgba(255,255,255,0.9);
 
     clear: both;
-    position: relative;
+    width: 100%;
+    position: absolute;
     z-index: 0;
     height: 4em;
     margin-top: 5em;
