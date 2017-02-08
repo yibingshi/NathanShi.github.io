@@ -198,7 +198,8 @@ footer {
 }
 
 footer p {
-    margin: 0;
+    margin: 0.5em;
+    padding: 10px;
 }
 
 @media screen and (min-width:868px) {
