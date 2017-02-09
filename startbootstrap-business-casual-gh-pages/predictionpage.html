@@ -10,7 +10,12 @@
     <meta name="author" content="">
 
     <title>Premier League Football Predictor</title>
+<<<<<<< HEAD
 
+=======
+    <link rel="shortcut icon" href="img/football.png" type="image/png">
+    
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -88,6 +93,7 @@
     <div class="container">
         <div class="row">
             <div class="box">
+<<<<<<< HEAD
                 <p class="bannerTitle">Probabilities of Winning:</p>
                 <span class="SwapVenues"><img src="img/swap_button.png"> Swap Venue </span>
                 <div class="col-lg-12 text-center">
@@ -110,21 +116,38 @@
                                 </div>
                             </div>
                         </div>
+=======
+            <p class="date">January 31, 2017</p>
+                <div class="col-lg-12 text-center">
+                    <div class="WAT_CHE prediction">
+                            <img class="img-responsive img-full" src="img/Carousel_Imgs/WAT_CHE.jpg" alt="">
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         
+=======
+
+
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
+<<<<<<< HEAD
                     <h2 class="intro-text text-center">Statistical Comparison</h2>
+=======
+                    <h2 class="intro-text text-center">Statistical Comparison
+                    </h2>
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
                     <hr>
                     <ul id="venueoroverall">
                     	<li id="overall"><a href="#overalltable">Overall</a></li>
                         <li id="venuespecific"><a href="#venuetable">Venue Specific</a></li>
                     </ul>
+<<<<<<< HEAD
                     <hr>
                     <p class="descriptions_OverallVenue text-center intro-text">
                         <em>Overall</em> displays each team's total statistics so far this season. It including both home and away games.
@@ -369,6 +392,67 @@
             </div>
         </div>
     </div>
+=======
+                    
+        <table class="tableContainer comparisontable"  id="overalltable">
+    <thead>
+        <tr>
+            <th><h1>WATFORD</h1></th>
+            <th><h1>Statistic</h1></th>
+            <th><h1>CHELSEA</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>WATFORD_GOALS</td>
+            <td>Goals</td>
+            <td>CHELSEA_GOALS</td>
+            </tr>
+        <tr>
+            <td>50</td>
+            <td>Wins</td>
+            <td>51</td>
+        </tr>
+        
+    </tbody>
+</table>
+        <table class="tableContainer comparisontable" id="venuetable">
+    <thead>
+        <tr>
+            <th><h1>WATFORD</h1></th>
+            <th><h1>Statistic</h1></th>
+            <th><h1>CHELSEA</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>WATFORD_GOALS</td>
+            <td>Goals</td>
+            <td>CHELSEA_GOALS</td>
+            </tr>
+        <tr>
+            <td>500</td>
+            <td>Wins</td>
+            <td>12</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+    </div>
+    
+    <!-- /.container -->
+
+
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
 
     <footer>
         <div class="container">
@@ -387,8 +471,40 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Script to Activate the Carousel -->
+<<<<<<< HEAD
     <script src = "js/predictionpage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+=======
+   <script>
+       
+       var displayoptions = document.getElementById("venueoroverall").getElementsByTagName("li");
+       var comparisontables = document.getElementsByClassName("comparisontable");
+       
+       function displayTable(tableToActivate) {
+           for(var i = 0; i<tableToActivate.length; i++)
+               {
+                   if(displayoptions[i] == tableToActivate)
+                       {
+                           displayoptions[i].classList.add("current");
+                           comparisontables[i].style.display="block";
+                       }
+                   else {
+                          displayoptions[i].classList.remove("current");
+                           comparisontables[i].style.display="none";
+                       }
+               }
+       }
+       
+       for (var i = 0; i < displayoptions.length(); i++) {
+           displayoptions[i].onclick = function() {
+               displayTable(this);
+               return false;
+           }
+       }
+       
+       
+    </script>
+>>>>>>> 83cea6f33bdb73035be53c7745b69334fee75860
 </body>
 
 </html>
