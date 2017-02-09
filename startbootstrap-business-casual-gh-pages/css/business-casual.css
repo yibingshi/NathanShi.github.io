@@ -54,6 +54,26 @@ hr {
 }
 
 
+input[type=submit] {
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 17px 20px;
+    /*margin: 8px 0;*/
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17.5px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+
 .img-full {
     min-width: 100%;
 }
@@ -347,14 +367,27 @@ hr {
 }
 
 
+.pasta{
+    overflow: scroll;
+}
+
+
 footer {
+
     background: #fff;
     background: rgba(255,255,255,0.9);
+
+    clear: both;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    height: 4em;
+    margin-top: 5em;
 }
 
 footer p {
-    margin: 0;
-    padding: 50px 0;
+    margin: 0.5em;
+    padding: 10px;
 }
 
 @media screen and (min-width:868px) {
