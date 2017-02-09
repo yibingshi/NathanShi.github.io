@@ -83,8 +83,7 @@
         <!-- /.container -->
     </nav>
 
-    
-    <div class="container">
+<div class="container">
 
         <div class="row" align="center">
             <div class="box">
@@ -103,12 +102,12 @@
                 </p>
                 <br>
                 <br>
-                <br>
-                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Home Team">
-
-                VS
-                
-                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Away Team">
+                <div id="warning" style="color:red;"></div>
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Home Team" id="home">
+                &emsp;&emsp;&emsp;
+                  VS
+                &emsp;&emsp;&emsp;
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Away Team" id="away">
 
 
                 <datalist id="pasta">
@@ -136,10 +135,10 @@
 
 
                 <div>
+                <br> 
                 <br>
-                <br>
-                    <a href="predictionpage.html">
-                    <input type="submit" value="Predict"></a>
+                    <!-- <a href="predictionpage.html"> -->
+                    <input type="submit" value="Predict" onClick="IsEmpty();">
                 </div>
                 <br>
                 <br>
