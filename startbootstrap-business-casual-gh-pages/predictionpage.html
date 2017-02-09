@@ -370,6 +370,40 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="box">   
+                 <hr>
+                    <h2 class="intro-text text-center">Who do you think will win?
+                    </h2>
+                    <hr>
+
+                    <div style=" display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;">
+                    <p style="text-align:center;">Click on the labels to vote.</p>
+                
+        <canvas id="chart-area" />
+    <!--<button id="randomizeData">Randomize Data</button>
+    <button id="addDataset">Add Dataset</button>
+    <button id="removeDataset">Remove Dataset</button>-->
+    
+            </div>
+
+                <div style="width:40%; display: inline-block; vertical-align: top;  text-align:center; padding-bottom: 3em;">
+                <br><br><br>
+                <p id="voted" class="descriptions_OverallVenue text-center intro-text"></p>
+                <p id="your_vote" class="descriptions_OverallVenue text-center intro-text"> </p><br><br>
+                <img id="vote_logo" src="" alt="" width="300">
+                <div id="see_more" style="display:none">
+                <button style="float:right;">See more upcoming games</button><br><br>
+                <a href="hypo_page.html">
+                <button style="float:right;">See more Hypothetical games</button></a>
+                </div>
+                </div>
+                
+                
+        </div>
+        </div>
+    
     </div>
 
     <footer>
@@ -391,6 +425,71 @@
     <!-- Script to Activate the Carousel -->
     <script src = "js/predictionpage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+        var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    vote[2],
+                    vote[1],
+                    vote[0],
+                    
+                    
+                ],
+                borderWidth:[
+                    1,
+                    1,
+                    1,
+                ],
+                borderColor: [
+                    window.chartColors.grey,
+                    window.chartColors.grey,
+                    window.chartColors.grey,
+                ],
+                backgroundColor: [
+                    window.chartColors.chelsea,
+                    window.chartColors.green,
+                    window.chartColors.watford,
+                    
+                    
+                ],
+                label: 'Dataset 1'
+            }],
+            labels: [
+                "Away Win",
+                "Draw",
+                "Home Win",
+                
+                
+                
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                reverse: true,
+                labels: {
+                    fontSize: 13,
+                    boxWidth: 50,
+                }
+            },
+            tooltips: {
+                intersect: true,
+                yPadding: 8,
+                bodyFontSize: 18,
+                displayColors: false,
+            }
+        }
+    };
+
+    window.onload = function() {
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        window.myPie = new Chart(ctx, config);
+    };
+    </script>
 </body>
 
 </html>
