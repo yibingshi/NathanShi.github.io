@@ -2,7 +2,47 @@ var displayoptions;
 var comparisontables;
 var descriptions;
 var statGroupings;
+var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [450,150,670],
+                //data: [vote[2], vote[1], vote[0]],
+                borderWidth:[1,1,1],
+                borderColor: ['rgb(231,233,237)','rgb(231,233,237)','rgb(231,233,237)'],
+                backgroundColor: ['rgb(17,57,142)','rgb(75, 192, 192)','rgb(232,179,23)'],
+                //borderColor: [window.chartColors.grey, window.chartColors.grey, window.chartColors.grey],
+                //backgroundColor: [window.chartColors.chelsea, window.chartColors.green,window.chartColors.watford],
+                label: 'Dataset 5'
+            }],
+            labels: [
+                "Away Win",
+                "Draw",
+                "Home Win"
+                
+                
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                reverse: true,
+                labels: {
+                    fontSize: 13,
+                    boxWidth: 50
+                }
+            },
+            tooltips: {
+                intersect: true,
+                yPadding: 8,
+                bodyFontSize: 18,
+                displayColors: false
+            }
+        }
+    };
 window.onload=function(){
+    var ctx = document.getElementById("chart-area").getContext("2d");
+       window.myPie = new Chart(ctx, config);
     //Initialize global variables;
     displayoptions = document.getElementById("venueoroverall").getElementsByTagName("li");  //Either OVERALL or VENUE
     comparisontables = document.getElementsByClassName("comparisontable");                  //keystats tables; either  OVERALL or VENUE
