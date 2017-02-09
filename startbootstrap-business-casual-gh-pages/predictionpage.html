@@ -381,11 +381,7 @@
                     <div style=" display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;">
                     <p style="text-align:center;">Click on the labels to vote.</p>
                 
-        <canvas id="chart-area" />
-   
-    <!--<button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>-->
+        <canvas id="chart-area"> </canvas>
     
             </div>
 
@@ -395,15 +391,62 @@
                 <p id="your_vote" class="descriptions_OverallVenue text-center intro-text"> </p><br><br>
                 <img id="vote_logo" src="" alt="" width="300">
                 <div id="see_more" style="display:none">
-                <button style="float:right;">See more upcoming games</button><br><br>
-                <a href="hypo_page.html">
-                <button style="float:right;">See more Hypothetical games</button></a>
+                <br>
+                <button style="float:center;" >See more upcoming games</button>
                 </div>
                 </div>
+
+
+                <div align="center">
+                <br>
+                <br>
+                <p style="float:center;">
+                Predict other Hypothetical Games
+                </p>
                 
-                
+                <div id="warning" style="color:red;"></div>
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Home Team" id="home">
+                &emsp;&emsp;&emsp;
+                  VS
+                &emsp;&emsp;&emsp;
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Away Team" id="away">
+
+
+                <datalist id="pasta">
+                <option>Arsenal</option>
+                <option>AFC Bournemouth</option>
+                <option>Burnley</option>
+                <option>Chelsea</option>
+                <option>Crystal Palace</option>
+                <option>Everton</option>
+                <option>Hull City</option>
+                <option>Leicester City</option>
+                <option>Liverpool</option>
+                <option>Manchester City</option>
+                <option>Manchester United</option>
+                <option>Middlesbrough</option>
+                <option>Southampton</option>
+                <option>Stoke City</option>
+                <option>Sunderland</option>
+                <option>Swansea City</option>
+                <option>Tottenham Hotspur</option>
+                <option>Watford</option>
+                <option>West Bromwich Albion</option>
+                <option>West Ham United</option>
+                </datalist>
+
+
+                <div>
+                <br> 
+                    <!-- <a href="predictionpage.html"> -->
+                    <input type="submit" value="Predict" onClick="IsEmpty();">
+                </div>
+                <br>
+                <br>
+                </div>
         </div>
         </div>
+        
         
     </div>
 
@@ -428,71 +471,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/utils.js"></script>
-<!--     <script>
-        var config = {
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [
-                    vote[2],
-                    vote[1],
-                    vote[0],
-                    
-                    
-                ],
-                borderWidth:[
-                    1,
-                    1,
-                    1,
-                ],
-                borderColor: [
-                    window.chartColors.grey,
-                    window.chartColors.grey,
-                    window.chartColors.grey,
-                ],
-                backgroundColor: [ -->
-<!--                     window.chartColors.chelsea,
-                    window.chartColors.green,
-                    window.chartColors.watford,
-                    
-                    
-                ],
-                label: 'Dataset 1'
-            }],
-            labels: [
-                "Away Win",
-                "Draw",
-                "Home Win",
-                
-                
-                
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                reverse: true,
-                labels: {
-                    fontSize: 13,
-                    boxWidth: 50,
-                }
-            },
-            tooltips: {
-                intersect: true,
-                yPadding: 8,
-                bodyFontSize: 18,
-                displayColors: false,
-            }
-        }
-    };
 
-    window.onload = function() {
-        var ctx = document.getElementById("chart-area").getContext("2d"); -->
-<!--         window.myPie = new Chart(ctx, config);
-    };
- -->
-        
-<!--     </script> -->
     
 </body>
 
