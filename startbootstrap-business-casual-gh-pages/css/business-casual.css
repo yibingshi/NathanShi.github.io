@@ -53,6 +53,16 @@ hr {
     letter-spacing: 3px;
 }
 
+input[type=userinput], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
 
 input[type=submit] {
     width: 10%;
@@ -382,7 +392,7 @@ footer {
     position: absolute;
     z-index: 0;
     height: 4em;
-    margin-top: 5em;
+    margin-top: 6em;
 }
 
 footer p {
