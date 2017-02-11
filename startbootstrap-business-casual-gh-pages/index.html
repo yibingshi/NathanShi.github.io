@@ -24,6 +24,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/78214d3405.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -151,9 +152,10 @@
     <thead>
         <tr>
             <th><h1>Date</h1></th>
-            <th><h1>Match</h1></th>
+            <th><h1>Match<br>(Home Team vs. Away Team)</h1></th>
             <th><h1>Result</h1></th>
             <th><h1>Prediction</h1></th>
+            <th><h1>Validity</h1></th>
         </tr>
     </thead>
     <tbody>
@@ -161,31 +163,38 @@
             <td>1/31/2017</td>
             <td>Arsenal vs. Watford          </td>
             <td>3-0</td>
-            <td> <div class="correct">Home Win</div></td>
+            <td> <div>Home Win</div></td>
+            <td class="correctcell"> <div><i class="fa fa-check fa-2x" aria-hidden="true"></i></div></td>
         </tr>
         <tr>
             <td>1/31/2017</td>
             <td>Swansea vs. Southampton       </td>
             <td>2-1</td>
-            <td><div class="wrong">Away Win</div></td>
+            <td><div>Away Win</div></td>
+            <td class="wrongcell"> <div><i class="fa fa-times fa-2x" aria-hidden="true"></i>
+</div></td>
         </tr>
         <tr>
             <td>1/31/2017</td>
             <td>Sunderland vs. Tottenham      </td>
             <td>2-2</td>
-            <td><div class="correct">Draw</div></td>
+            <td>Draw</td>
+            <td class="correctcell"><div><i class="fa fa-check fa-2x" aria-hidden="true"></i></div></td>
         </tr>
     <tr>
             <td>1/31/2017</td>
             <td>Liverpool vs. Chelsea         </td>
             <td>1-4</td>
-            <td><div class="correct">Away Win</div></td>
+            <td>Away Win</td>
+            <td class="correctcell"><div><i class="fa fa-check fa-2x" aria-hidden="true"></i></div></td>
         </tr>
     <tr>
             <td>1/31/2017</td>
             <td>Bournemouth vs. Crystal Palace </td>
             <td>2-3</td>
-            <td><div class="wrong">Draw</div></td>
+            <td>Draw</td>
+            <td class="wrongcell"><div><i class="fa fa-times fa-2x" aria-hidden="true"></i>
+</div></td>
         </tr>
    
     </tbody>
