@@ -220,10 +220,34 @@ input[type=submit]:hover {
 }
 
 /*Banner*/
+
+div.Prediction_Banner > div#Watford{
+    background-color:rgb(267,197,0);
+/*    color: black;*/
+}
+
+div.Prediction_Banner > div#Watford .TeamTitleText{
+/*    color:rgb(240,240,240);*/
+    border-bottom: 1px solid black;
+}
+
+
+div.Prediction_Banner > div#Chelsea{
+    background-color:rgb(15,29,123);;
+    color:rgb(240,240,240);
+}
+
+div.Prediction_Banner > div#Chelsea .TeamTitleText{
+    background-color:rgb(15,29,123);;
+    color:rgb(240,240,240);
+    border-bottom: 1px solid white;
+}
+
+
+
 .Home_team{
     float:left;
     width:50%;
-    background-color:rgb(267,197,0);
     height: 420px;
     border-right: 2px solid black;
 }
@@ -231,8 +255,6 @@ input[type=submit]:hover {
 .Away_team{
     float:right;
     width:50%;
-    background-color:rgb(15,29,123);
-    color:rgb(240,240,240);
     height: 420px;
     border-left: 2px solid black;
 }
@@ -240,15 +262,6 @@ input[type=submit]:hover {
 .Home_team h1, .Away_team h1{
     margin: 5% auto;
 }
-
-.TeamTitleTextHome{
-    border-bottom: 1px solid black;
-}
-
-.TeamTitleTextAway{
-    border-bottom: 1px solid white;
-}
-
 
 .Home_team img{
     float:left;
