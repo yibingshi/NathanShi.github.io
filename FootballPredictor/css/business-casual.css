@@ -521,7 +521,7 @@ footer p {
     }
 
     .nav>li>a {
-        padding: 35px;
+        padding: 0, 35px;
         text-align: center;
     }
 
