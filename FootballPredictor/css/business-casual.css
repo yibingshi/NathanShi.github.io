@@ -152,6 +152,7 @@ input[type=submit]:hover {
 
 .dropdown-content a {
     color: black;
+    font-size: 0.9em;
     padding: 12px 5px;
     text-decoration: none;
     display: block;
@@ -333,17 +334,13 @@ input[type=submit]:hover {
     display:block;
     text-align: center;
     color:#444;
-    
-/*    width: 800px;*/
 }
 
 .tableTitle>span{
-    display:block;
-    padding:5px;
+    display:inline;
+    padding:10px;
     background-color: rgb(234,234,234);
     border:1px solid #444;
-    width: 400px;
-    margin:auto;
 }
 
 .tableTitle>span:hover{
@@ -358,15 +355,13 @@ input[type=submit]:hover {
     vertical-align:middle; 
     margin-bottom: 8px; 
     margin-left: 20px;    
-    font-family: 'Martel', serif;
-    text-transform: capitalize;
 }
 
 .tableTitle>span>img{
     display:inline; 
     vertical-align:middle; 
     margin-bottom: 5px; 
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .graphContainer{
@@ -454,7 +449,7 @@ footer {
     width: 100%;
     position: absolute;
     z-index: 0;
-    height: 5em;
+    height: 4em;
     margin-top: 6em;
 }
 
@@ -515,13 +510,15 @@ footer p {
     }
 
     .navbar-default {
+        padding-top: 0;
         border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        /*width: 1170px;*/
+        margin-right:auto;
+        margin-left:auto;
     }
 
     .nav>li>a {
-        padding: 0, 35px;
+        padding: 0,35px;
         text-align: center;
     }
 
@@ -536,6 +533,7 @@ footer p {
         margin: 0 10%;
         table-layout: fixed;
         font-size: 1.25em;
+        font-family: 'Audiowide', cursive;
         width: 80%;
     }
     .navbar-nav li:first-child {
