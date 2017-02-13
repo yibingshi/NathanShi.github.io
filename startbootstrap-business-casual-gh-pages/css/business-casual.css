@@ -555,3 +555,39 @@ footer p {
         clear: both;
     }
 }
+
+.progress{
+    width:40%;
+    display: inline-block;
+}
+
+.game-result_content{
+     margin: 0 auto; 
+     text-align:center;
+}
+
+.table-text{
+     display: inline-block; 
+     vertical-align: middle;
+}
+
+.progress-bar-warning{
+
+    width:29.1%; 
+    height: 20px;
+    font-size: 20px; 
+    direction: rtl;
+    text-align: right; 
+    padding:0 15px 0 0; 
+    display: block; 
+    float: right;
+    margin-left: 20px; 
+}
+
+.progress-bar-danger{
+    height: 20px;
+    font-size: 20px; 
+    direction: rtl;
+    text-align: left; 
+    padding:0 0 0 15px;
+}
