@@ -152,6 +152,7 @@ input[type=submit]:hover {
 
 .dropdown-content a {
     color: black;
+    font-size: 0.9em;
     padding: 12px 5px;
     text-decoration: none;
     display: block;
@@ -220,34 +221,10 @@ input[type=submit]:hover {
 }
 
 /*Banner*/
-
-div.Prediction_Banner > div#Watford{
-    background-color:rgb(267,197,0);
-/*    color: black;*/
-}
-
-div.Prediction_Banner > div#Watford .TeamTitleText{
-/*    color:rgb(240,240,240);*/
-    border-bottom: 1px solid black;
-}
-
-
-div.Prediction_Banner > div#Chelsea{
-    background-color:rgb(15,29,123);;
-    color:rgb(240,240,240);
-}
-
-div.Prediction_Banner > div#Chelsea .TeamTitleText{
-    background-color:rgb(15,29,123);;
-    color:rgb(240,240,240);
-    border-bottom: 1px solid white;
-}
-
-
-
 .Home_team{
     float:left;
     width:50%;
+    background-color:rgb(267,197,0);
     height: 420px;
     border-right: 2px solid black;
 }
@@ -255,6 +232,8 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
 .Away_team{
     float:right;
     width:50%;
+    background-color:rgb(15,29,123);
+    color:rgb(240,240,240);
     height: 420px;
     border-left: 2px solid black;
 }
@@ -262,6 +241,15 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
 .Home_team h1, .Away_team h1{
     margin: 5% auto;
 }
+
+.TeamTitleTextHome{
+    border-bottom: 1px solid black;
+}
+
+.TeamTitleTextAway{
+    border-bottom: 1px solid white;
+}
+
 
 .Home_team img{
     float:left;
@@ -483,8 +471,9 @@ footer p {
         padding: 30px 0 10px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 5em;
+        font-family: 'Audiowide', cursive;
+        text-transform: uppercase;
+        font-size: 3.5em;
         font-weight: 700;
         line-height: normal;
         color: #fff;
@@ -527,13 +516,15 @@ footer p {
     }
 
     .navbar-default {
+        padding-top: 0;
         border: none;
-        background: #fff;
-        background: rgba(255,255,255,0.9);
+        /*width: 1170px;*/
+        margin-right:auto;
+        margin-left:auto;
     }
 
     .nav>li>a {
-        padding: 35px;
+        padding: 0,35px;
         text-align: center;
     }
 
@@ -548,6 +539,7 @@ footer p {
         margin: 0 10%;
         table-layout: fixed;
         font-size: 1.25em;
+        font-family: 'Audiowide', cursive;
         width: 80%;
     }
     .navbar-nav li:first-child {
