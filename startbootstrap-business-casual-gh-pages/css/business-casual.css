@@ -333,13 +333,17 @@ input[type=submit]:hover {
     display:block;
     text-align: center;
     color:#444;
+    
+/*    width: 800px;*/
 }
 
 .tableTitle>span{
-    display:inline;
-    padding:10px;
+    display:block;
+    padding:5px;
     background-color: rgb(234,234,234);
     border:1px solid #444;
+    width: 400px;
+    margin:auto;
 }
 
 .tableTitle>span:hover{
@@ -354,13 +358,15 @@ input[type=submit]:hover {
     vertical-align:middle; 
     margin-bottom: 8px; 
     margin-left: 20px;    
+    font-family: 'Martel', serif;
+    text-transform: capitalize;
 }
 
 .tableTitle>span>img{
     display:inline; 
     vertical-align:middle; 
     margin-bottom: 5px; 
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .graphContainer{
