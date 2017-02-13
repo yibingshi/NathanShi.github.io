@@ -582,6 +582,7 @@ footer p {
     display: block; 
     float: right;
     margin-left: 20px; 
+    background: #FFC500;
 }
 
 .progress-bar-danger{
@@ -590,4 +591,5 @@ footer p {
     direction: rtl;
     text-align: left; 
     padding:0 0 0 15px;
+    background: #0F1D7B;
 }
