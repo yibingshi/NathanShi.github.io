@@ -1,28 +1,22 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Business Casual](http://startbootstrap.com/template-overviews/business-casual/)
+# [England Premier League Football Predictor](https://nathanshi.github.io/startbootstrap-business-casual-gh-pages/index.html)
 
-[Business Casual](http://startbootstrap.com/template-overviews/business-casual/) is a multipurpose website theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a landing page, about page, blog page, and a contact page along with various custom styles and components.
+## Getting Started:
 
-## Getting Started
+Soccer - known universally as football - is a multibillion dollar industry of tremendous global passion, thorough intrigue, and sharp scrutiny. Despite the huge amount of interests and funds are invested, a football match remains a thoroughly unpredictable phenomena. Our project attempts to remedy this by tracking the performance of teams in the English Premier League, using large amounts of the data of team behaviors like Scores, Possession, Shots, Corners, Saves and other statistics collected from ESPN to create a prediction model. We will track the performances of each English Premier League team in a way compatible with the model, and then use the model to predict the outcome. In this way, we discern relationships between our variables by **tracking team behaviors** from recent and historical data, and form an interface to present predictions and explanations. We hope to provide the ability to predict hypothetical games between any two teams selected by users as well.
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/business-casual/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-business-casual.git`
-* Fork the repo
-* Your must enter your database information and your email in form-handler.php - if you don't have a database, that's fine.  Edit contact.html to direct the form to form-handler-nodb.php and emails will be sent with no database writes.
+This website is mainly about front-end design. The back-end statistics are not required by professors but we will add and make it real-time later.
 
-## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-business-casual/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/business-casual/).
+## Three Representative Tasks:
 
-## Creator
+- Get Prediction Result:  
+Users should be able to get a result prediction of any Premier League match - either hypothetical or upcoming - as well as comparison statistics of the two teams to support the prediction.
+- Vote on Winner:  
+Users should be able to vote on who they believe will win a given upcoming match and will be able to see the poll results from all users.
+- Centralized Data-Center:  
+Users should be able to view a centralized overall statistic presentation for each Premier League team as well as the entire league statistics.
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
 ## Copyright and License
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/gh-pages/LICENSE) license.
+Copyright Northwestern University. EECS 351 HCI course - 404 Not Found Team
