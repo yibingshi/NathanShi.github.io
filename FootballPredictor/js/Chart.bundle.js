@@ -10,7 +10,7 @@
 
  var vote = {0:350, 1:150, 2:650};
  var voted = true;
- var logo = {0:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",2:"img/Team_Logos/chelsea.png"};
+ var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
 (function(f){
 	if(typeof exports==="object"&&typeof module!=="undefined"){
 		module.exports=f()
@@ -6953,6 +6953,7 @@ module.exports = function(Chart) {
 						document.getElementById("your_vote").innerHTML = "You vote for " + data.labels[index] + "!";
 						document.getElementById("vote_logo").src = logo[index];
 						document.getElementById("see_more").style = "";
+						document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
 
 						chart.update();
 						//alert(chart.scale.options);
@@ -6988,7 +6989,7 @@ module.exports = function(Chart) {
 				label: function(tooltipItem, data) {
 					var dataLabel = data.labels[tooltipItem.index];
 					//var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-					var value = " " + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + " users vote for ";
+					var value = " " + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
 					if (helpers.isArray(dataLabel)) {
 						// show value on first line of multiline label
@@ -6997,14 +6998,15 @@ module.exports = function(Chart) {
 						//dataLabel[0] += value;
 						dataLabel[0] = value + dataLabel[0];
 					} else {
-						//dataLabel += value;
-						dataLabel = value + dataLabel;
+						dataLabel += value;
+						//dataLabel = value + dataLabel;
 					}
 					//alert(dataLabel);
 					return dataLabel;
 				}
 			}
-		}
+		},
+
 	};
 
 	defaults.pie = helpers.clone(defaults.doughnut);
@@ -8695,11 +8697,11 @@ module.exports = function(Chart) {
 		},
 
 		getElementsAtEvent: function(e) {
-			return Chart.Interaction.modes.label(this, e, {intersect: true});
+			return Chart.Interaction.modes.label(this, e, {intersect: false});
 		},
 
 		getElementsAtXAxis: function(e) {
-			return Chart.Interaction.modes['x-axis'](this, e, {intersect: true});
+			return Chart.Interaction.modes['x-axis'](this, e, {intersect: false});
 		},
 
 		getElementsAtEventForMode: function(e, mode, options) {
@@ -8712,7 +8714,7 @@ module.exports = function(Chart) {
 		},
 
 		getDatasetAtEvent: function(e) {
-			return Chart.Interaction.modes.dataset(this, e, {intersect: true});
+			return Chart.Interaction.modes.dataset(this, e, {intersect: false});
 		},
 
 		getDatasetMeta: function(datasetIndex) {
@@ -10669,7 +10671,7 @@ module.exports = function() {
 			hover: {
 				onHover: null,
 				mode: 'nearest',
-				intersect: true,
+				intersect: false,
 				animationDuration: 400
 			},
 			onClick: null,
@@ -11932,6 +11934,52 @@ module.exports = function(Chart) {
 	 * @private
 	 */
 	Chart.pluginService = Chart.plugins;
+
+Chart.pluginService.register({
+    beforeRender: function (chart) {
+        if (chart.config.options.showAllTooltips) {
+            // create an array of tooltips
+            // we can't use the chart tooltip because there is only one tooltip per chart
+            chart.pluginTooltips = [];
+            chart.config.data.datasets.forEach(function (dataset, i) {
+                chart.getDatasetMeta(i).data.forEach(function (sector, j) {
+                    chart.pluginTooltips.push(new Chart.Tooltip({
+                        _chart: chart.chart,
+                        _chartInstance: chart,
+                        _data: chart.data,
+                        _options : chart.options.tooltips,
+                        _active: [sector]
+                    }, chart));
+                });
+            });
+
+            // turn off normal tooltips
+            chart.options.tooltips.enabled = false;
+        }
+    },
+    afterDraw: function (chart, easing) {
+        if (chart.config.options.showAllTooltips) {
+            // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+            if (!chart.allTooltipsOnce) {
+                if (easing !== 1)
+                    return;
+                chart.allTooltipsOnce = true;
+            }
+
+            // turn on tooltips
+            chart.options.tooltips.enabled = true;
+            Chart.helpers.each(chart.pluginTooltips, function (tooltip) {
+                tooltip.initialize();
+                tooltip.update();
+                // we don't actually need this since we are not animating tooltips
+                tooltip.pivot();
+                tooltip.transition(easing).draw();
+            });
+            chart.options.tooltips.enabled = false;
+        }
+    }
+});
+	
 
 	/**
 	 * Provided for backward compatibility, inheriting from Chart.PlugingBase has no
@@ -13514,7 +13562,7 @@ module.exports = function(Chart) {
 			paddingAndSize = caretSize + caretPadding,
 			radiusAndPadding = cornerRadius + caretPadding;
 
-		if (xAlign === 'right') {
+		if (xAlign === 'left') {
 			x -= size.width;
 		} else if (xAlign === 'center') {
 			x -= (size.width / 2);
@@ -13529,14 +13577,14 @@ module.exports = function(Chart) {
 		}
 
 		if (yAlign === 'center') {
-			if (xAlign === 'left') {
+			if (xAlign === 'right') {
 				x += paddingAndSize;
-			} else if (xAlign === 'right') {
+			} else if (xAlign === 'left') {
 				x -= paddingAndSize;
 			}
-		} else if (xAlign === 'left') {
-			x -= radiusAndPadding;
 		} else if (xAlign === 'right') {
+			x -= radiusAndPadding;
+		} else if (xAlign === 'left') {
 			x += radiusAndPadding;
 		}
 
@@ -13746,7 +13794,7 @@ module.exports = function(Chart) {
 
 			if (yAlign === 'center') {
 				// Left or right side
-				if (xAlign === 'left') {
+				if (xAlign === 'right') {
 					x1 = ptX;
 					x2 = x1 - caretSize;
 					x3 = x1;
@@ -13760,11 +13808,11 @@ module.exports = function(Chart) {
 				y1 = y2 - caretSize;
 				y3 = y2 + caretSize;
 			} else {
-				if (xAlign === 'left') {
+				if (xAlign === 'right') {
 					x1 = ptX + cornerRadius;
 					x2 = x1 + caretSize;
 					x3 = x2 + caretSize;
-				} else if (xAlign === 'right') {
+				} else if (xAlign === 'left') {
 					x1 = ptX + width - cornerRadius;
 					x2 = x1 - caretSize;
 					x3 = x2 - caretSize;
@@ -14014,8 +14062,11 @@ module.exports = function(Chart) {
 				}
 			}
 
+			var canvas = document.getElementById('chart-area');
+			console.log(canvas.width);
 			return {
 				x: Math.round(x / count),
+				//console.log(context.width);
 				y: Math.round(y / count)
 			};
 		},
