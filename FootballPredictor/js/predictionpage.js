@@ -15,6 +15,7 @@ var awayData_O = [0.127897682, 0.10772164, 0.277378098, 0.28122021, 0.372727273,
 var awayData_VS = [0.125776398, 0.118705036, 0.267080745, 0.221223022, 0.421875, -0.945887446, 0.255319149, 0.055755396, 0.040372671, 0.416666667, 0, 0.00310559, 3.763975155, 5.083333333, 5.916666667, 2.870503597, 0.021582734, 0.037267081, 0.6];
 var config = {
         type: 'pie',
+        
         data: {
             datasets: [{
                 data: [450,150,670],
@@ -27,16 +28,19 @@ var config = {
                 label: 'Dataset 5'
             }],
             labels: [
-                "Away Win",
+                "Chelsea",
                 "Draw",
-                "Home Win"
+                "Watford"
                 
                 
             ]
         },
         options: {
+            showAllTooltips: true,
+            intersect: false,
             responsive: true,
             legend: {
+                hidden: Boolean,
                 reverse: true,
                 labels: {
                     fontSize: 13,
@@ -44,16 +48,65 @@ var config = {
                 }
             },
             tooltips: {
-                intersect: true,
                 yPadding: 8,
                 bodyFontSize: 18,
                 displayColors: false
             }
         }
     };
+
+    
+ var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
+
+
+
 window.onload=function(){
+    var voted = true;
     var ctx = document.getElementById("chart-area").getContext("2d");
-    window.myPie = new Chart(ctx, config);
+    var chart = new Chart(ctx, config);
+
+   document.getElementById("chart-area").onclick = function(evt)
+{   
+    var activePoints = chart.getElementsAtEvent(evt);
+
+    if(activePoints.length > 0)
+    {
+        //alert(688);
+      //get the internal index of slice in pie chart
+      var clickedElementindex = activePoints[0]["_index"];
+        //alert(clickedElementindex);
+      //get specific label by index 
+      var label = chart.data.labels[clickedElementindex];
+        //alert(label);
+      //get value by index      
+      var value = chart.data.datasets[0].data[clickedElementindex];
+      if (voted) {
+      chart.data.datasets[0].data[clickedElementindex] += 1;
+      console.log(config.data.datasets[0].data[0]);
+      chart.data.datasets[0].borderWidth[clickedElementindex] = 13;
+      chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
+      document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
+      document.getElementById("vote_logo").src = logo[clickedElementindex];
+      document.getElementById("see_more").style = "";
+      document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
+
+      //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
+                        
+      //var ctx1 = document.getElementById("chart-area").getContext("2d");
+      voted = false;
+    var chart1 = new Chart(ctx, config); 
+    }else{
+                        document.getElementById("voted").innerHTML = "You can only vote once.";
+                        
+                    }         
+      //clickPie(clickedElementindex);
+//      chart.onClick();
+
+      /* other stuff that requires slice's label and value */
+   }
+}
+
+   
     //Initialize global variables;
     displayoptions = document.getElementById("venueoroverall").getElementsByTagName("li");  //Either OVERALL or VENUE
     comparisontables = document.getElementsByClassName("comparisontable");                  //keystats tables; either  OVERALL or VENUE
