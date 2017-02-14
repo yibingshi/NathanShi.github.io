@@ -219,7 +219,8 @@ input[type=submit]:hover {
 }
 
 .SwapVenues a{
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Lato', sans-serif;
+    /*font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-weight: 500;
     color:#444 !important;
 }
@@ -236,11 +237,13 @@ input[type=submit]:hover {
 }
 
 .SwapVenues a:hover{
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Lato', sans-serif;
+    /*font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-weight: 500;
     color:#111 !important;
     text-decoration: none;
 }
+
 
 /*Banner*/
 
