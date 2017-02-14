@@ -203,10 +203,16 @@ input[type=submit]:hover {
     font-weight: 500;
     line-height: normal;
     display:inline;
-    color:#444;
+    color:#444 !important;
     background-color: rgb(234,234,234);
     border: 1px solid #444;
     padding: 2px 5px;
+}
+
+.SwapVenues a{
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    color:#444 !important;
 }
 
 .SwapVenues img{
@@ -215,16 +221,45 @@ input[type=submit]:hover {
 
 .SwapVenues:hover{
     background-color: rgb(213,213,213);
-    color:#111;
+/*    color:#111 !important;*/
     cursor:pointer;
     border: 1px solid #444
 }
 
+.SwapVenues a:hover{
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    color:#111 !important;
+    text-decoration: none;
+}
+
 /*Banner*/
+
+div.Prediction_Banner > div#Watford{
+    background-color:rgb(267,197,0);
+/*    color: black;*/
+}
+
+div.Prediction_Banner > div#Watford .TeamTitleText{
+/*    color:rgb(240,240,240);*/
+    border-bottom: 1px solid black;
+}
+
+
+div.Prediction_Banner > div#Chelsea{
+    background-color:rgb(15,29,123);;
+    color:rgb(240,240,240);
+}
+
+div.Prediction_Banner > div#Chelsea .TeamTitleText{
+    background-color:rgb(15,29,123);;
+    color:rgb(240,240,240);
+    border-bottom: 1px solid white;
+}
+
 .Home_team{
     float:left;
     width:50%;
-    background-color:rgb(267,197,0);
     height: 420px;
     border-right: 2px solid black;
 }
@@ -232,8 +267,6 @@ input[type=submit]:hover {
 .Away_team{
     float:right;
     width:50%;
-    background-color:rgb(15,29,123);
-    color:rgb(240,240,240);
     height: 420px;
     border-left: 2px solid black;
 }
@@ -573,17 +606,19 @@ footer p {
 }
 
 .game-result_content{
-     margin: 0 auto; 
+     margin: 35px auto 35px; 
      text-align:center;
+     width: 100%;
 }
 
 .table-text{
      display: inline-block; 
      vertical-align: middle;
+     width: 19% !important;
+     padding:0px 0px 10px 0px !important;
 }
 
 .progress-bar-warning{
-
     width:29.1%; 
     height: 20px;
     font-size: 20px; 
@@ -603,4 +638,57 @@ footer p {
     text-align: left; 
     padding:0 0 0 15px;
     background: #0F1D7B;
+}
+
+.home_stat{
+    width:29.1%; 
+    height: 20px;
+    font-size: 20px; 
+    direction: rtl;
+    text-align: right; 
+    padding:0 15px 0 0; 
+    display: block; 
+    float: right;
+    margin-left: 20px; 
+    background: gray;
+}
+
+.home_stat.superior.watford{
+    background: #FFC500;
+}
+
+.home_stat.superior.chelsea{
+    background: #0F1D7B;
+}
+
+.home_stat.neg_stat{
+    direction:ltr;
+    padding-left: 2px;
+    width:auto;
+    background-color:crimson;
+    text-decoration: underline;
+}
+
+.away_stat{
+    height: 20px;
+    font-size: 20px; 
+    direction: rtl;
+    text-align: left; 
+    padding:0 0 0 15px;
+    background: gray;
+}
+
+.away_stat.superior.chelsea{
+    background: #0F1D7B;
+}
+
+.away_stat.superior.watford{
+    background: #FFC500;
+}
+
+.away_stat.neg_stat{
+    direction:ltr;
+    padding-right: 2px;
+    width:auto;
+    background-color:crimson;
 }
