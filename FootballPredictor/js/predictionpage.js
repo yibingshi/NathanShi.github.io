@@ -17,19 +17,19 @@ var config = {
         type: 'pie',
         data: {
             datasets: [{
-                data: [450,150,670],
+                data: [670,100,470],
                 //data: [vote[2], vote[1], vote[0]],
                 borderWidth:[1,1,1],
                 borderColor: ['rgb(231,233,237)','rgb(231,233,237)','rgb(231,233,237)'],
-                backgroundColor: ['rgb(17,57,142)','rgb(75, 192, 192)','rgb(232,179,23)'],
+                backgroundColor: ['rgb(17,57,142)','rgb(112, 139, 117)','rgb(232,179,23)'],
                 //borderColor: [window.chartColors.grey, window.chartColors.grey, window.chartColors.grey],
                 //backgroundColor: [window.chartColors.chelsea, window.chartColors.green,window.chartColors.watford],
                 label: 'Dataset 5'
             }],
             labels: [
-                "Away Win",
+                "Chelsea Win",
                 "Draw",
-                "Home Win"
+                "Watford Win"
                 
                 
             ]
