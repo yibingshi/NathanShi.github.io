@@ -62,7 +62,6 @@ var config = {
 var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
 
 
-
 window.onload=function(){
     var voted = true;
     var ctx = document.getElementById("chart-area").getContext("2d");
