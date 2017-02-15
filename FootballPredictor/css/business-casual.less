@@ -39,16 +39,15 @@
 @sunderland_banner_color: #A68123;
 @sunderland_banner_title_text_color: @title_text_white;
 @swanseaCity_banner_color: #FBFBFB;
-@swanseaCity_banner_title_text_color: #041245;
+@swanseaCity_banner_title_text_color: #050505;
 @tottenhamHotspur_banner_color: #FBFBFB;
-@tottenhamHotspur_banner_title_text_color: #050505;
+@tottenhamHotspur_banner_title_text_color: #041255;
 @watford_banner_color: #FFC500;
 @watford_banner_title_text_color: @title_text_black;
 @westBromwichAlbion_banner_color: #091153;
 @westBromwichAlbion_banner_title_text_color: @title_text_white;
 @westHamUnited_banner_color: #5E213B;
-@westHamUnited_banner_title_title_text_color: #4387B9;
-
+@westHamUnited_banner_title_text_color: #4387B9;
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -311,6 +310,45 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
     border-bottom: 1px solid @chelsea_banner_title_text_color;
 }
 
+div.Prediction_Banner > div#Arsenal{
+    background-color:@arsenal_banner_color;
+    color: @arsenal_banner_title_text_color;
+}
+
+div.Prediction_Banner > div#Arsenal .TeamTitleText{
+    border-bottom: 1px solid @arsenal_banner_title_text_color;
+}
+
+
+div.Prediction_Banner > div#TottenhamHotspurs{
+    background-color:@tottenhamHotspur_banner_color;
+    color: @tottenhamHotspur_banner_title_text_color;
+}
+
+div.Prediction_Banner > div#TottenhamHotspurs .TeamTitleText{
+    border-bottom: 1px solid @tottenhamHotspur_banner_title_text_color;
+}
+
+div.Prediction_Banner > div#Everton{
+    background-color:@everton_banner_color;
+    color: @everton_banner_title_text_color;
+}
+
+div.Prediction_Banner > div#Everton .TeamTitleText{
+    border-bottom: 1px solid @everton_banner_title_text_color;
+}
+
+
+div.Prediction_Banner > div#WestHamUnited{
+    background-color:@westHamUnited_banner_color;
+    color: @westHamUnited_banner_title_text_color;
+}
+
+div.Prediction_Banner > div#WestHamUnited .TeamTitleText{
+    border-bottom: 1px solid @westHamUnited_banner_title_text_color;
+}
+
+
 .Home_team{
     float:left;
     width:50%;
@@ -337,16 +375,31 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
     border-bottom: 1px solid white;
 }
 
-.Home_team img{
+.Home_team .img_holder{
+    width:50% !important;
     float:left;
-    width: 50%;
+    display:inline-block;
+}
+.Home_team img{
+//    float:left;
+//    width: 50%;
+    max-height: 320px;
+    max-width:100%;
     padding-left: 5px;
 }
 
-.Away_team img{
+.Away_team .img_holder{
+    width:50% !important;
     float:right;
-    width:50%;
+    display:inline-block;
+}
+
+.Away_team img{
+//    float:right;
+//    width:50%;
     padding-right: 5px;
+    max-height: 320px;
+    max-width:100%;
 }
 
 .test{
@@ -657,11 +710,11 @@ footer p {
 }
 
 .home_stat.superior.watford{
-    background: #FFC500;
+    background: @watford_banner_color;
 }
 
 .home_stat.superior.chelsea{
-    background: #0F1D7B;
+    background: @chelsea_banner_color;
 }
 
 .home_stat.neg_stat{
@@ -682,11 +735,11 @@ footer p {
 }
 
 .away_stat.superior.chelsea{
-    background: #0F1D7B;
+    background: @chelsea_banner_color;
 }
 
 .away_stat.superior.watford{
-    background: #FFC500;
+    background: @watford_banner_color;
 }
 
 .away_stat.neg_stat{
