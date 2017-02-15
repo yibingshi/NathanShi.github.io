@@ -67,7 +67,7 @@ window.onload=function(){
 
    document.getElementById("chart-area").onclick = function(evt)
 {   
-    var activePoints = chart.getElementsAtEvent(evt);
+    var activePoints = chart.getElementAtEvent(evt);
 
     if(activePoints.length > 0)
     {
