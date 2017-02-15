@@ -6934,7 +6934,7 @@ module.exports = function(Chart) {
 
 			onClick: function(e, legendItem) {
 				
-				var index = legendItem.index;
+				/*var index = legendItem.index;
 				var chart = this.chart;
 				var i, ilen, meta;
 				var scale = chart.scale;
@@ -6963,7 +6963,7 @@ module.exports = function(Chart) {
 						document.getElementById("voted").innerHTML = "You can only vote once.";
 						
 					}
-				}
+				}*/
 
 				chart.update();
 			}
