@@ -6992,9 +6992,9 @@ module.exports = function(Chart) {
 				label: function(tooltipItem, data) {
 					//console.log(data);
 					//var dataLabel = data.labels[tooltipItem.index];
-					var dataLabel = " ";
+					var dataLabel = "";
 					//var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-					var value = " " + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+					var value = "" + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
 					if (helpers.isArray(dataLabel)) {
 						// show value on first line of multiline label
