@@ -6761,7 +6761,7 @@ module.exports = function(Chart) {
 
 		tooltips: {
 			callbacks: {
-				title: function() {
+				title: function(tooltipItem, data) {
 					// Title doesn't make sense for scatter since we format the data as a point
 					return '';
 				},
@@ -6940,7 +6940,6 @@ module.exports = function(Chart) {
 				var scale = chart.scale;
 
 				var data = chart.data;
-
 				for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
 					meta = chart.getDatasetMeta(i);
 					// toggle visibility of index if exists
@@ -6982,12 +6981,18 @@ module.exports = function(Chart) {
 		// Need to override these to give a nice default
 		tooltips: {
 			callbacks: {
-				title: function() {
-					return '';
+				title: function(tooltipItem,data) {
+					//var data = this.chart;
+					var dataLabel = data.labels[tooltipItem[0].index];
+					console.log(tooltipItem[0].index);
+					console.log(dataLabel);
+					return dataLabel;
 				},
 
 				label: function(tooltipItem, data) {
-					var dataLabel = data.labels[tooltipItem.index];
+					//console.log(data);
+					//var dataLabel = data.labels[tooltipItem.index];
+					var dataLabel = " ";
 					//var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 					var value = " " + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 
