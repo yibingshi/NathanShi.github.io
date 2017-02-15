@@ -59,7 +59,7 @@ var config = {
     };
 
     
- var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
+var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
 
 
 
@@ -68,50 +68,46 @@ window.onload=function(){
     var ctx = document.getElementById("chart-area").getContext("2d");
     var chart = new Chart(ctx, config);
 
-   document.getElementById("chart-area").onclick = function(evt)
-{   
-    var activePoints = chart.getElementAtEvent(evt);
+   document.getElementById("chart-area").onclick = function(evt) {   
+        var activePoints = chart.getElementAtEvent(evt);
 
-    if(activePoints.length > 0)
-    {
-        //alert(688);
-      //get the internal index of slice in pie chart
-      var clickedElementindex = activePoints[0]["_index"];
-        //alert(clickedElementindex);
-      //get specific label by index 
-      var label = chart.data.labels[clickedElementindex];
-        //alert(label);
-      //get value by index      
-      var value = chart.data.datasets[0].data[clickedElementindex];
-      if (voted) {
-      chart.data.datasets[0].data[clickedElementindex] += 1;
-      console.log(config.data.datasets[0].data[0]);
-      chart.data.datasets[0].borderWidth[clickedElementindex] = 13;
-      chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
-      document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
-      document.getElementById("vote_logo").src = logo[clickedElementindex];
-      document.getElementById("see_more").style = "";
-      document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
+        if(activePoints.length > 0)
+        {
+            //alert(688);
+            //get the internal index of slice in pie chart
+            var clickedElementindex = activePoints[0]["_index"];
+            //alert(clickedElementindex);
+            //get specific label by index 
+            var label = chart.data.labels[clickedElementindex];
+            //alert(label);
+            //get value by index      
+            var value = chart.data.datasets[0].data[clickedElementindex];
+            if (voted) {
+                chart.data.datasets[0].data[clickedElementindex] += 1;
+                console.log(config.data.datasets[0].data[0]);
+                chart.data.datasets[0].borderWidth[clickedElementindex] = 13;
+                chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
+                document.getElementById("VoteInfoContainer").style.display ="inline-block";
+                document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
+                document.getElementById("vote_logo").src = logo[clickedElementindex];
+                document.getElementById("see_more").style = "";
+                document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
+                //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
+                //var ctx1 = document.getElementById("chart-area").getContext("2d");
+                voted = false;
+                var click = chart.update();
+                var chart1 = new Chart(ctx, config); 
+            }else{
+                document.getElementById("voted").innerHTML = "You can only vote once.";
+            }         
+          //clickPie(clickedElementindex);
+    //      chart.onClick();
 
-      //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
-                        
-      //var ctx1 = document.getElementById("chart-area").getContext("2d");
-      voted = false;
-      var click = chart.update();
-    var chart1 = new Chart(ctx, config); 
-    }else{
-                        document.getElementById("voted").innerHTML = "You can only vote once.";
-                        
-                    }         
-      //clickPie(clickedElementindex);
-//      chart.onClick();
+          /* other stuff that requires slice's label and value */
+       }
+    }
 
-      /* other stuff that requires slice's label and value */
-   }
-}
-
-   
-    //Initialize global variables;
+   //Initialize global variables;
     displayoptions = document.getElementById("venueoroverall").getElementsByTagName("li");  //Either OVERALL or VENUE
     comparisontables = document.getElementsByClassName("comparisontable");                  //keystats tables; either  OVERALL or VENUE
     descriptions = document.getElementsByClassName("descriptions_OverallVenue");            //Descriptions; either OVERALL or VENUE

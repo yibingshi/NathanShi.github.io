@@ -191,7 +191,6 @@ input[type=submit]:hover {
     background-color: #de0000;
 }
 
-
 /*PredictionPageCSs*/
 .bannerTitle{
     margin: 0 0 0.5em 1em;
@@ -294,7 +293,6 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
 .TeamTitleTextAway{
     border-bottom: 1px solid white;
 }
-
 
 .Home_team img{
     float:left;
@@ -449,12 +447,6 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
     font-size:1.3em;
 }
 
-/*
-#Overall_Attributes>li a, #VS_Attributes>li a{
-    color: black;
-}
-*/
-
 #Overall_Attributes i.fa, #VS_Attributes i.fa{
     font-size: 1.5em;
     margin-right: 15px;
@@ -466,31 +458,9 @@ div.Prediction_Banner > div#Chelsea .TeamTitleText{
     background-color:rgb(223,223,223);
 }
 
-
-/*
-.Chart_key{
-    width: 100%;
-    text-align: center;
-    margin:auto;
-}
-
-.Chart_key em{
-    font-weight: 900;
-    color:black;
-    font-family:"Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:1.3em
-}
-.Chart_key li{
-    display: inline-block;
-    margin: 5px 4px;
-}
-*/
-
-
 .pasta{
     overflow: scroll;
 }
-
 
 footer {
 
@@ -628,28 +598,6 @@ footer p {
      vertical-align: middle;
      width: 19% !important;
      padding:0px 0px 10px 0px !important;
-}
-
-.progress-bar-warning{
-    width:29.1%; 
-    height: 20px;
-    font-size: 20px; 
-    direction: rtl;
-    text-align: right; 
-    padding:0 15px 0 0; 
-    display: block; 
-    float: right;
-    margin-left: 20px; 
-    background: #FFC500;
-}
-
-.progress-bar-danger{
-    height: 20px;
-    font-size: 20px; 
-    direction: rtl;
-    text-align: left; 
-    padding:0 0 0 15px;
-    background: #0F1D7B;
 }
 
 .home_stat{
