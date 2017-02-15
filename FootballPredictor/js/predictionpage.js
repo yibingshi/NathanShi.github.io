@@ -94,6 +94,7 @@ window.onload=function(){
                         
       //var ctx1 = document.getElementById("chart-area").getContext("2d");
       voted = false;
+      var click = chart.update();
     var chart1 = new Chart(ctx, config); 
     }else{
                         document.getElementById("voted").innerHTML = "You can only vote once.";
