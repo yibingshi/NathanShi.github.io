@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Premier League Football Predictor</title>
+    <link rel="shortcut icon" href="img/football.png" type="image/png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.less" rel="stylesheet/less" type="text/css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Premier League Football Predictor</div>
+    
+     
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">Predictions</a>
+                        <div class="dropdown-content">
+      						<a href="upcoming_game.html">Upcoming Matches</a>
+      						<a href="hypopage.html">Hypothetical Matches</a>
+    					</div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">Statistics</a>
+                        <div class="dropdown-content">
+      						<a href="#">League Overview</a>
+      						<a href="#">Teams</a>
+    					</div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">About us</a>
+                        <div class="dropdown-content">
+      						<a href="#">Our Algorithm</a>
+      						<a href="#">About Us</a>
+    					</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row" align="center">
+            <div class="box">
+            
+
+                <div class="col-lg-12">
+                    <h2 class="intro-text text-center">
+                        <strong style="font-size: 40px">Upcoming Matches</strong>
+                    </h2>
+                </div>
+
+                <br>
+                <br>
+
+                
+               <!--  <p>
+                Select two teams you want to predict
+                </p> -->
+                
+
+                <!-- <table border="0" cellpadding="0" cellspacing="0" style="background-color:#505050; border:1px solid #353535; border-radius:5px;">
+                <tr>
+                    <td align="center" valign="middle" style="color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">
+                    <a href="http://www.mailchimp.com/blog/" target="_blank" style="color:#FFFFFF; text-decoration:none;">Read More Stories On Our Blog</a>
+                    </td>
+                </tr>
+
+
+                </table> -->
+
+                <div id="upcoming">
+
+                <div class="date" style="text-align: left; font-size: 20px">January 31, 2017</div>
+
+                <div id="accordion" class="panel-group">
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-One" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea  
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-One" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <a href="predictionpage.html">
+                                                <img src="img/Carousel_Imgs/WAT_CHE.jpg" alt="filler image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-Two" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">&nbsp; &nbsp; Everton &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; West Ham
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-Two" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                            <a href="predictionpage.html">
+                                                <img src="img/Carousel_Imgs/EVE_WHU.jpg" alt="filler image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-Three" data-parent="#accordion" data-toggle="collapse">
+                                <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                    <h4 class="panel-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arsenal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tottenham
+                                    </h4>
+                                </div>
+                            </a>
+                                <div id="collapse-Three" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                            <a href="predictionpage.html">
+                                                <img src="img/Carousel_Imgs/ARS_TOT.jpg" alt="filler image"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-Four" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea  
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-Four" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                            <a class="accordion-toggle collapsed" href="#collapse-Five" data-parent="#accordion" data-toggle="collapse">
+                                <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                    <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea  
+                                    </h4>
+                                </div>
+                            </a>
+                                <div id="collapse-Five" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                <div class="date" style="text-align: left; font-size: 20px">February 2, 2017</div>
+
+                
+                <div id="accordion" class="panel-group">
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-6" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-6" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img src="assets/img/fillers/filler1.jpg" alt="filler image">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <h3 class="no-margin no-padding">Humanitatis Per Seacula</h3>
+                                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
+                                                    qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothicas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-7" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-7" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-8" data-parent="#accordion" data-toggle="collapse">
+                                <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                    <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                    </h4>
+                                </div>
+                            </a>
+                                <div id="collapse-8" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-9" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-9" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="date" style="text-align: left; font-size: 20px">February 5, 2017</div>
+
+                
+                        <div id="accordion" class="panel-group">
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-10" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-10" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img src="assets/img/fillers/filler1.jpg" alt="filler image">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <h3 class="no-margin no-padding">Humanitatis Per Seacula</h3>
+                                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
+                                                    qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothicas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-11" data-parent="#accordion" data-toggle="collapse">
+                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                        <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                        </h4>
+                                    </div>
+                                </a>
+                                <div id="collapse-11" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <a class="accordion-toggle collapsed" href="#collapse-12" data-parent="#accordion" data-toggle="collapse">
+                                <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                    <h4 class="panel-title">Watford &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chelsea
+                                    </h4>
+                                </div>
+                                </a>
+                                <div id="collapse-12" class="accordion-body collapse" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+                                            sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem
+                                            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                <!-- <div id="warning" style="color:red;"></div>
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Home Team" id="home">
+                &emsp;&emsp;&emsp;
+                  VS
+                &emsp;&emsp;&emsp;
+                <input type="userinput" list="pasta" onClick="this.select();" placeholder="Away Team" id="away">
+
+
+                <datalist id="pasta">
+                <option>Arsenal</option>
+                <option>AFC Bournemouth</option>
+                <option>Burnley</option>
+                <option>Chelsea</option>
+                <option>Crystal Palace</option>
+                <option>Everton</option>
+                <option>Hull City</option>
+                <option>Leicester City</option>
+                <option>Liverpool</option>
+                <option>Manchester City</option>
+                <option>Manchester United</option>
+                <option>Middlesbrough</option>
+                <option>Southampton</option>
+                <option>Stoke City</option>
+                <option>Sunderland</option>
+                <option>Swansea City</option>
+                <option>Tottenham Hotspur</option>
+                <option>Watford</option>
+                <option>West Bromwich Albion</option>
+                <option>West Ham United</option>
+                </datalist>
+
+
+                <div>
+                <br> 
+                <br>
+                    <! <a href="predictionpage.html"> -->
+                <!-- <input type="submit" value="Predict" onClick="IsEmpty();">
+                </div>
+                <br>
+                <br>
+            </div> -->
+
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- </div> -->
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; HCI team 404 Not Found</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/hypopage.js"></script>
+    
+    <!--    Less' CDN if the files in js dont work-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
