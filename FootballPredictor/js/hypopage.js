@@ -1,4 +1,4 @@
-function IsEmpty(){
+function HypoPredict(){
     var home = document.getElementById('home').value;
     var away = document.getElementById('away').value;
     console.log("Home is: ", home);
