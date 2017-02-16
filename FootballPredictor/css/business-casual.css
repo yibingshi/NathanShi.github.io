@@ -652,3 +652,111 @@ footer p {
     width:auto;
     background-color:crimson;
 }
+
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-body {
+  padding: 15px;
+}
+.panel-heading {
+  padding: 20px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+  /*color: inherit;*/
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.panel-title > a {
+  color: inherit;
+}
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #d8d8d8;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.panel > .list-group {
+  margin-bottom: 0;
+}
+.panel > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.panel > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.panel > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.panel > .table,
+.panel > .table-responsive > .table {
+  margin-bottom: 0;
+}
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+
+
+.panel-group {
+  margin-bottom: 20px;
+}
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px solid #d8d8d8;
+}
+.panel-group .panel-footer {
+  border-top: 0;
+}
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #d8d8d8;
+}
+.panel-default {
+  border-color: #d8d8d8;
+
+}
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #E5E7E6;
+  border-color: #d8d8d8;
+}
+.panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #d8d8d8;
+}
+.panel-default > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #d8d8d8;
+}
