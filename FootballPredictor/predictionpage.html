@@ -714,16 +714,16 @@
                     </p>
 
                     <div id="warning" style="color:red;"></div>
-                        <input type="userinput" list="pasta" onClick="this.select();" value="Watford" placeholder="Home Team" id="home">
-                        &emsp;&emsp;&emsp;
-                          VS
-                        &emsp;&emsp;&emsp;
-                        <input type="userinput" list="pasta" onClick="this.select();" value="Chelsea" placeholder="Away Team" id="away">
-                        <datalist id="pasta">
-                        <option>Arsenal</option>
+                    <input type="userinput" list="pasta" onClick="this.select();" value="Watford" placeholder="Home Team" id="home">
+                    &emsp;&emsp;&emsp;
+                      VS
+                    &emsp;&emsp;&emsp;
+                    <input type="userinput" list="pasta" onClick="this.select();" value="Chelsea FC" placeholder="Away Team" id="away">
+                    <datalist id="pasta">
                         <option>AFC Bournemouth</option>
+                        <option>Arsenal</option>
                         <option>Burnley</option>
-                        <option>Chelsea</option>
+                        <option>Chelsea FC</option>
                         <option>Crystal Palace</option>
                         <option>Everton</option>
                         <option>Hull City</option>
@@ -734,17 +734,17 @@
                         <option>Middlesbrough</option>
                         <option>Southampton</option>
                         <option>Stoke City</option>
-                        <option>Sunderland</option>
+                        <option>Sunderland AFC</option>
                         <option>Swansea City</option>
                         <option>Tottenham Hotspur</option>
                         <option>Watford</option>
                         <option>West Bromwich Albion</option>
                         <option>West Ham United</option>
-                        </datalist>
+                    </datalist>
 
                     <div>
                         <br> 
-                        <input type="submit" value="Predict" onClick="IsEmpty();">
+                        <input type="submit" value="Predict" onClick="HypoPredict();">
                     </div>
                     <br>
                     <br>
@@ -775,6 +775,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/hypopage.js"></script>
 
     
 </body>
