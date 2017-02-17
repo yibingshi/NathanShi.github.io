@@ -8,46 +8,46 @@
 @title_text_white: #F0F0F0;
 @title_text_black: #333333;
 
+@afcbournemouth_banner_color:#c73336;
+@afcbournemouth_banner_title_text_color:@title_text_black;
 @arsenal_banner_color: #9F0013;
 @arsenal_banner_title_text_color: @title_text_white;
-@afcBournemouth_banner_color:#c73336;
-@afcBournemouth_banner_title_text_color:@title_text_black;
 @burnley_banner_color: #c73369;
 @burnley_banner_title_text_color: @title_text_white;
-@chelsea_banner_color: #0F1D7B;
-@chelsea_banner_title_text_color: @title_text_white;
-@crystalPalace_banner_color: #4b7cd8;
-@crystalPalace_banner_title_text_color: @title_text_white;
+@chelseafc_banner_color: #0F1D7B;
+@chelseafc_banner_title_text_color: @title_text_white;
+@crystalpalace_banner_color: #4b7cd8;
+@crystalpalace_banner_title_text_color: @title_text_white;
 @everton_banner_color: #4a65b5;
 @everton_banner_title_text_color: @title_text_white;
-@hullCity_banner_color: #e48b2f;
-@hullCity_banner_title_text_color: @title_text_black;
-@leicesterCity_banner_color: #d0a639;
-@leicesterCity_banner_title_text_color: @title_text_white;
+@hullcity_banner_color: #e48b2f;
+@hullcity_banner_title_text_color: @title_text_black;
+@leicestercity_banner_color: #d0a639;
+@leicestercity_banner_title_text_color: @title_text_white;
 @liverpool_banner_color: #c71a47;
 @liverpool_banner_title_text_color:@title_text_white;
-@manchesterCity_banner_color: #b8dff5;
-@manchesterCity_banner_title_text_color: @title_text_black;
-@manchesterUnited_banner_color: #DA0000;
-@manchesterUnited_banner_title_text_color: @title_text_white;
+@manchestercity_banner_color: #b8dff5;
+@manchestercity_banner_title_text_color: @title_text_black;
+@manchesterunited_banner_color: #DA0000;
+@manchesterunited_banner_title_text_color: @title_text_white;
 @middlesbrough_banner_color: #BE231E;
 @middlesbrough_banner_title_text_color: @title_text_white;
 @southampton_banner_color: #8b1a18;
 @southampton_banner_title_text_color: @title_text_white;
-@stokeCity_banner_color: #d9212b;
-@stokeCity_banner_title_text_color:@title_text_white ;
-@sunderland_banner_color: #A68123;
-@sunderland_banner_title_text_color: @title_text_white;
-@swanseaCity_banner_color: #FBFBFB;
-@swanseaCity_banner_title_text_color: #050505;
-@tottenhamHotspur_banner_color: #FBFBFB;
-@tottenhamHotspur_banner_title_text_color: #041255;
+@stokecity_banner_color: #d9212b;
+@stokecity_banner_title_text_color:@title_text_white ;
+@sunderlandafc_banner_color: #A68123;
+@sunderlandafc_banner_title_text_color: @title_text_white;
+@swanseacity_banner_color: #FBFBFB;
+@swanseacity_banner_title_text_color: #050505;
+@tottenhamhotspur_banner_color: #FBFBFB;
+@tottenhamhotspur_banner_title_text_color: #041255;
 @watford_banner_color: #FFC500;
 @watford_banner_title_text_color: @title_text_black;
-@westBromwichAlbion_banner_color: #091153;
-@westBromwichAlbion_banner_title_text_color: @title_text_white;
-@westHamUnited_banner_color: #5E213B;
-@westHamUnited_banner_title_text_color: #4387B9;
+@westbromwichalbion_banner_color: #091153;
+@westbromwichalbion_banner_title_text_color: @title_text_white;
+@westhamunited_banner_color: #5E213B;
+@westhamunited_banner_title_text_color: #4387B9;
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -133,8 +133,6 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-
-
 .img-full {
     min-width: 100%;
 }
@@ -213,7 +211,6 @@ input[type=submit]:hover {
 
 }
 
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -235,6 +232,11 @@ input[type=submit]:hover {
 .wrongcell{
     background-color: #de0000;
 }
+
+.item:hover{
+    cursor:pointer;
+}
+
 
 /*PredictionPageCSs*/
 .bannerTitle{
@@ -291,63 +293,148 @@ input[type=submit]:hover {
 
 /*Banner*/
 
-div.Prediction_Banner > div#Watford{
-    background-color:@watford_banner_color;
-    color: @watford_banner_title_text_color;
+div.Prediction_Banner{
+    div#afcbournemouth{
+        background-color:@afcbournemouth_banner_color;
+        color: @afcbournemouth_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @afcbournemouth_banner_title_text_color;
+        }
+    }
+    div#arsenal{
+        background-color:@arsenal_banner_color;
+        color: @arsenal_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @arsenal_banner_title_text_color;
+        }
+    }
+    div#burnley{
+        background-color:@burnley_banner_color;
+        color: @burnley_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @burnley_banner_title_text_color;
+        }
+    }
+    div#chelseafc{
+        background-color:@chelseafc_banner_color;
+        color: @chelseafc_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @chelseafc_banner_title_text_color;
+        }
+    }
+    div#crystalpalace{
+        background-color:@crystalpalace_banner_color;
+        color: @crystalpalace_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @crystalpalace_banner_title_text_color;
+        }
+    }
+    div#everton{
+        background-color:@everton_banner_color;
+        color: @everton_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @everton_banner_title_text_color;
+        }
+    }
+    div#hullcity{
+        background-color:@hullcity_banner_color;
+        color: @hullcity_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @hullcity_banner_title_text_color;
+        }
+    }
+    div#leicestercity{
+        background-color:@leicestercity_banner_color;
+        color: @leicestercity_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @leicestercity_banner_title_text_color;
+        }
+    }
+    div#liverpool{
+        background-color:@liverpool_banner_color;
+        color: @liverpool_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @liverpool_banner_title_text_color;
+        }
+    }
+    div#manchestercity{
+        background-color:@manchestercity_banner_color;
+        color: @manchestercity_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @manchestercity_banner_title_text_color;
+        }
+    }
+    div#manchesterunited{
+        background-color:@manchesterunited_banner_color;
+        color: @manchesterunited_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @manchesterunited_banner_title_text_color;
+        }
+    }
+    div#middlesbrough{
+        background-color:@middlesbrough_banner_color;
+        color: @middlesbrough_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @middlesbrough_banner_title_text_color;
+        }
+    }
+    div#southampton{
+        background-color:@southampton_banner_color;
+        color: @southampton_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @southampton_banner_title_text_color;
+        }
+    }
+    div#stokecity{
+        background-color:@stokecity_banner_color;
+        color: @stokecity_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @stokecity_banner_title_text_color;
+        }
+    }
+    div#sunderlandafc{
+        background-color:@sunderlandafc_banner_color;
+        color: @sunderlandafc_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @sunderlandafc_banner_title_text_color;
+        }
+    }
+    div#swanseacity{
+        background-color:@swanseacity_banner_color;
+        color: @swanseacity_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @swanseacity_banner_title_text_color;
+        }
+    }
+    div#tottenhamhotspur{
+        background-color:@tottenhamhotspur_banner_color;
+        color: @tottenhamhotspur_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @tottenhamhotspur_banner_title_text_color;
+        }
 }
-
-div.Prediction_Banner > div#Watford .TeamTitleText{
-    border-bottom: 1px solid @watford_banner_title_text_color;
+    div#watford{
+        background-color:@watford_banner_color;
+        color: @watford_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @watford_banner_title_text_color;
+        }
+    }
+    div#westbromwichalbion{
+        background-color:@westbromwichalbion_banner_color;
+        color: @westbromwichalbion_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @westbromwichalbion_banner_title_text_color;
+        }
+    }
+    div#westhamunited{
+        background-color:@westhamunited_banner_color;
+        color: @westhamunited_banner_title_text_color;
+        .TeamTitleText{
+            border-bottom: 1px solid @westhamunited_banner_title_text_color;
+        }
+    }
 }
-
-
-div.Prediction_Banner > div#Chelsea{
-    background-color:@chelsea_banner_color;
-    color: @chelsea_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#Chelsea .TeamTitleText{
-    border-bottom: 1px solid @chelsea_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#Arsenal{
-    background-color:@arsenal_banner_color;
-    color: @arsenal_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#Arsenal .TeamTitleText{
-    border-bottom: 1px solid @arsenal_banner_title_text_color;
-}
-
-
-div.Prediction_Banner > div#TottenhamHotspurs{
-    background-color:@tottenhamHotspur_banner_color;
-    color: @tottenhamHotspur_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#TottenhamHotspurs .TeamTitleText{
-    border-bottom: 1px solid @tottenhamHotspur_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#Everton{
-    background-color:@everton_banner_color;
-    color: @everton_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#Everton .TeamTitleText{
-    border-bottom: 1px solid @everton_banner_title_text_color;
-}
-
-
-div.Prediction_Banner > div#WestHamUnited{
-    background-color:@westHamUnited_banner_color;
-    color: @westHamUnited_banner_title_text_color;
-}
-
-div.Prediction_Banner > div#WestHamUnited .TeamTitleText{
-    border-bottom: 1px solid @westHamUnited_banner_title_text_color;
-}
-
 
 .Home_team{
     float:left;
@@ -365,14 +452,6 @@ div.Prediction_Banner > div#WestHamUnited .TeamTitleText{
 
 .Home_team h1, .Away_team h1{
     margin: 5% auto;
-}
-
-.TeamTitleTextHome{
-    border-bottom: 1px solid black;
-}
-
-.TeamTitleTextAway{
-    border-bottom: 1px solid white;
 }
 
 .Home_team .img_holder{
@@ -400,10 +479,6 @@ div.Prediction_Banner > div#WestHamUnited .TeamTitleText{
     padding-right: 5px;
     max-height: 320px;
     max-width:100%;
-}
-
-.test{
-/*    border:1px solid yellow;/*/
 }
 
 .Prediction_Banner .percent_holder{
@@ -704,46 +779,202 @@ footer p {
     padding:0 15px 0 0; 
     display: block; 
     float: right;
-    margin-left: 20px; 
+//    margin-left: 20px; 
     background: gray;
-}
-
-.home_stat.superior.watford{
-    background: @watford_banner_color;
-}
-
-.home_stat.superior.chelsea{
-    background: @chelsea_banner_color;
-}
-
-.home_stat.neg_stat{
-    direction:ltr;
-    padding-left: 2px;
-    width:auto;
-    background-color:crimson;
-    text-decoration: underline;
+    &.superior{
+        &.neg_stat{
+            direction:ltr;
+            padding-left: 2px;
+            width:auto;
+            background-color:crimson;
+            text-decoration: underline;
+        }
+        &.afcbournemouth{
+            background: @afcbournemouth_banner_color;
+            color: @afcbournemouth_banner_title_text_color;
+        }
+        &.arsenal{
+            background: @arsenal_banner_color;
+            color: @arsenal_banner_title_text_color;
+        }
+        &.burnley{
+            background: @burnley_banner_color;
+            color: @burnley_banner_title_text_color;
+        }
+        &.chelseafc{
+            background: @chelseafc_banner_color;
+            color: @chelseafc_banner_title_text_color;
+        }
+        &.crystalpalace{
+            background: @crystalpalace_banner_color;
+            color: @crystalpalace_banner_title_text_color;
+        }
+        &.everton{
+            background: @everton_banner_color;
+            color: @everton_banner_title_text_color;
+        }
+        &.hullcity{
+            background: @hullcity_banner_color;
+            color: @hullcity_banner_title_text_color;
+        }
+        &.leicestercity{
+            background: @leicestercity_banner_color;
+            color: @leicestercity_banner_title_text_color;
+        }
+        &.liverpool{
+            background: @liverpool_banner_color;
+            color: @liverpool_banner_title_text_color;
+        }
+        &.manchestercity{
+            background: @manchestercity_banner_color;
+            color: @manchestercity_banner_title_text_color;
+        }
+        &.manchesterunited{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.middlesbrough{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.middlesbrough{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.southampton{
+            background: @southampton_banner_color;
+            color: @southampton_banner_title_text_color;
+        }
+        &.stokecity{
+            background: @stokecity_banner_color;
+            color: @stokecity_banner_title_text_color;
+        }
+        &.sunderlandafc{
+            background: @sunderlandafc_banner_color;
+            color: @sunderlandafc_banner_title_text_color;
+        }
+        &.swanseacity{
+            background: @swanseacity_banner_title_text_color;
+            color: @swanseacity_banner_color;
+        }
+        &.tottenhamhotspur{
+            background: @tottenhamhotspur_banner_title_text_color;
+            color: @tottenhamhotspur_banner_color;
+        }
+        &.watford{
+            background: @watford_banner_color;
+            color: @watford_banner_title_text_color;
+        }
+        &.westbromwichalbion{
+            background: @westbromwichalbion_banner_color;
+            color: @westbromwichalbion_banner_title_text_color;
+        }
+        &.westhamunited{
+            background: @westhamunited_banner_color;
+            color: @westhamunited_banner_title_text_color;
+        }
+    }
 }
 
 .away_stat{
+    width:29.1%; 
     height: 20px;
     font-size: 20px; 
     direction: rtl;
     text-align: left; 
     padding:0 0 0 15px;
     background: gray;
-}
-
-.away_stat.superior.chelsea{
-    background: @chelsea_banner_color;
-}
-
-.away_stat.superior.watford{
-    background: @watford_banner_color;
-}
-
-.away_stat.neg_stat{
-    direction:ltr;
-    padding-right: 2px;
-    width:auto;
-    background-color:crimson;
+    &.superior{
+        &.neg_stat{
+            direction:ltr;
+            padding-left: 2px;
+            width:auto;
+            background-color:crimson;
+            text-decoration: underline;
+        }
+        &.afcbournemouth{
+            background: @afcbournemouth_banner_color;
+            color: @afcbournemouth_banner_title_text_color;
+        }
+        &.arsenal{
+            background: @arsenal_banner_color;
+            color: @arsenal_banner_title_text_color;
+        }
+        &.burnley{
+            background: @burnley_banner_color;
+            color: @burnley_banner_title_text_color;
+        }
+        &.chelseafc{
+            background: @chelseafc_banner_color;
+            color: @chelseafc_banner_title_text_color;
+        }
+        &.crystalpalace{
+            background: @crystalpalace_banner_color;
+            color: @crystalpalace_banner_title_text_color;
+        }
+        &.everton{
+            background: @everton_banner_color;
+            color: @everton_banner_title_text_color;
+        }
+        &.hullcity{
+            background: @hullcity_banner_color;
+            color: @hullcity_banner_title_text_color;
+        }
+        &.leicestercity{
+            background: @leicestercity_banner_color;
+            color: @leicestercity_banner_title_text_color;
+        }
+        &.liverpool{
+            background: @liverpool_banner_color;
+            color: @liverpool_banner_title_text_color;
+        }
+        &.manchestercity{
+            background: @manchestercity_banner_color;
+            color: @manchestercity_banner_title_text_color;
+        }
+        &.manchesterunited{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.middlesbrough{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.middlesbrough{
+            background: @manchesterunited_banner_color;
+            color: @manchesterunited_banner_title_text_color;
+        }
+        &.southampton{
+            background: @southampton_banner_color;
+            color: @southampton_banner_title_text_color;
+        }
+        &.stokecity{
+            background: @stokecity_banner_color;
+            color: @stokecity_banner_title_text_color;
+        }
+        &.sunderlandafc{
+            background: @sunderlandafc_banner_color;
+            color: @sunderlandafc_banner_title_text_color;
+        }
+        &.swanseacity{
+            background: @swanseacity_banner_title_text_color;
+            color: @swanseacity_banner_color;
+        }
+        &.tottenhamhotspur{
+            background: @tottenhamhotspur_banner_title_text_color;
+            color: @tottenhamhotspur_banner_color;
+        }
+        &.watford{
+            background: @watford_banner_color;
+            color: @watford_banner_title_text_color;
+        }
+        &.westbromwichalbion{
+            background: @westbromwichalbion_banner_color;
+            color: @westbromwichalbion_banner_title_text_color;
+        }
+        &.westhamunited{
+            background: @westhamunited_banner_color;
+            color: @westhamunited_banner_title_text_color;
+        }
+    }
 }

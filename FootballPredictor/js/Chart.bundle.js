@@ -6984,8 +6984,8 @@ module.exports = function(Chart) {
 				title: function(tooltipItem,data) {
 					//var data = this.chart;
 					var dataLabel = data.labels[tooltipItem[0].index];
-					console.log(tooltipItem[0].index);
-					console.log(dataLabel);
+//					console.log(tooltipItem[0].index);
+//					console.log(dataLabel);
 					return dataLabel;
 				},
 
@@ -14068,7 +14068,7 @@ module.exports = function(Chart) {
 			}
 
 			var canvas = document.getElementById('chart-area');
-			console.log(canvas.width);
+//			console.log(canvas.width);
 			return {
 				x: Math.round(x / count),
 				//console.log(context.width);
