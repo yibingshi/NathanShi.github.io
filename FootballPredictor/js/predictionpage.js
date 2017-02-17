@@ -1,3 +1,8 @@
+var hometeam_name = localStorage.home_name;
+var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
+var awayteam_name = localStorage.away_name;
+var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
+
 var displayoptions;
 var comparisontables;
 var descriptions;
@@ -28,9 +33,9 @@ var config = {
                 label: 'Dataset 5'
             }],
             labels: [
-                "Chelsea",
+                awayteam_name,
                 "Draw",
-                "Watford"
+                hometeam_name
                 
                 
             ]
@@ -59,53 +64,17 @@ var config = {
     };
 
     
-var logo = {2:"img/Team_Logos/watford.png",1:"img/Team_Logos/watford_chelsea.png",0:"img/Team_Logos/chelsea.png"};
-
+var logo = {2:"img/Team_Logos/".concat(hometeam_name_formatted).concat(".png"),
+            1:"img/Team_Logos/watford_chelsea.png",
+            0:"img/Team_Logos/".concat(awayteam_name_formatted).concat(".png")};
 
 window.onload=function(){
     var voted = true;
     var ctx = document.getElementById("chart-area").getContext("2d");
     var chart = new Chart(ctx, config);
-
-   document.getElementById("chart-area").onclick = function(evt) {   
-        var activePoints = chart.getElementAtEvent(evt);
-
-        if(activePoints.length > 0)
-        {
-            //alert(688);
-            //get the internal index of slice in pie chart
-            var clickedElementindex = activePoints[0]["_index"];
-            //alert(clickedElementindex);
-            //get specific label by index 
-            var label = chart.data.labels[clickedElementindex];
-            //alert(label);
-            //get value by index      
-            var value = chart.data.datasets[0].data[clickedElementindex];
-            if (voted) {
-                chart.data.datasets[0].data[clickedElementindex] += 1;
-                console.log(config.data.datasets[0].data[0]);
-                chart.data.datasets[0].borderWidth[clickedElementindex] = 13;
-                chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
-                document.getElementById("VoteInfoContainer").style.display ="inline-block";
-                document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
-                document.getElementById("vote_logo").src = logo[clickedElementindex];
-                document.getElementById("see_more").style = "";
-                document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
-                //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
-                //var ctx1 = document.getElementById("chart-area").getContext("2d");
-                voted = false;
-                var click = chart.update();
-                var chart1 = new Chart(ctx, config); 
-            }else{
-                document.getElementById("voted").innerHTML = "You can only vote once.";
-            }         
-          //clickPie(clickedElementindex);
-    //      chart.onClick();
-
-          /* other stuff that requires slice's label and value */
-       }
-    }
-
+    
+    preparePage();
+    
    //Initialize global variables;
     displayoptions = document.getElementById("venueoroverall").getElementsByTagName("li");  //Either OVERALL or VENUE
     comparisontables = document.getElementsByClassName("comparisontable");                  //keystats tables; either  OVERALL or VENUE
@@ -118,7 +87,7 @@ window.onload=function(){
     //We want our active selectors to be: Overall AND Quick Stats;
     statGroupings[0].classList.add("optionActivated"); //Add OptionActivated to Span elt. of Quick Stats
     displayoptions[0].getElementsByTagName("a")[0].classList.add("optionActivated");
-    
+        
     //Chart:
     Chart.defaults.global.hover.mode = 'nearest';
     const CHARTT = $("#lineChart_Total");
@@ -129,7 +98,7 @@ window.onload=function(){
             labels:["ACWpP","AFCpOP","AOFpOP","APPG","ARCforOpP","AYCforOpP", "P5ME"],
             datasets: [
                 {
-                    label: "Watford",
+                    label: hometeam_name,
                     borderWidth: 1,
                     backgroundColor: "rgba(255, 206, 86, 0.2)",
                     borderColor: "rgba(255, 206, 86, 1)",
@@ -148,7 +117,7 @@ window.onload=function(){
                     data: [0.105670103, 0.290453074, 0.047734628, 0.625, 0.001718213, 0.030068729, 0.2],
                 },
                 {
-                    label: "Chelsea",
+                    label: awayteam_name,
                     borderWidth: 1,
                     backgroundColor: "rgba(36, 36, 206, 0.2)",
                     borderColor: "rgba(36, 36, 206, 1)",
@@ -187,7 +156,7 @@ window.onload=function(){
             labels:["ACWpP","AFCpOP","AOFpOP","APPG","ARCforOpP","AYCforOpP", "P5ME"],
             datasets: [
                 {
-                    label: "Watford",
+                    label: hometeam_name,
                     borderWidth: 1,
                     backgroundColor: "rgba(255, 206, 86, 0.2)",
                     borderColor: "rgba(255, 206, 86, 1)",
@@ -206,7 +175,7 @@ window.onload=function(){
                     data: [0.117977528, 0.279151943, 0.042402827, 0.909090909, 0.003745318, 0.035580524, 0.2]
                 },
                 {
-                    label: "Chelsea",
+                    label: awayteam_name,
                     borderWidth: 1,
                     backgroundColor: "rgba(36, 36, 206, 0.2)",
                     borderColor: "rgba(36, 36, 206, 1)",
@@ -241,8 +210,48 @@ window.onload=function(){
     });
         
     updatePage();
+ 
+    //Add our listeners:
     
-    for (var i = 0; i < displayoptions.length; i++) {
+    document.getElementById("chart-area").onclick = function(evt) {   
+        var activePoints = chart.getElementAtEvent(evt);
+
+        if(activePoints.length > 0)
+        {
+            //get the internal index of slice in pie chart
+            var clickedElementindex = activePoints[0]["_index"];
+            //alert(clickedElementindex);
+            //get specific label by index 
+            var label = chart.data.labels[clickedElementindex];
+            //alert(label);
+            //get value by index      
+            var value = chart.data.datasets[0].data[clickedElementindex];
+            if (voted) {
+                chart.data.datasets[0].data[clickedElementindex] += 1;
+//                console.log(config.data.datasets[0].data[0]);
+                chart.data.datasets[0].borderWidth[clickedElementindex] = 13;
+                chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
+                document.getElementById("VoteInfoContainer").style.display ="inline-block";
+                document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
+                document.getElementById("vote_logo").src = logo[clickedElementindex];
+                document.getElementById("see_more").style = "";
+                document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
+                //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
+                //var ctx1 = document.getElementById("chart-area").getContext("2d");
+                voted = false;
+                var click = chart.update();
+                var chart1 = new Chart(ctx, config); 
+            }else{
+                document.getElementById("voted").innerHTML = "You can only vote once.";
+            }         
+          //clickPie(clickedElementindex);
+    //      chart.onClick();
+
+          /* other stuff that requires slice's label and value */
+       }
+    }
+    
+    for(var i = 0; i < displayoptions.length; i++) {
         displayoptions[i].onclick = function() {
             $("#venueoroverall li a.optionActivated")[0].classList.remove("optionActivated");
             $('a',this)[0].classList.add("optionActivated");
@@ -443,7 +452,106 @@ window.onload=function(){
             return false;
         }
     }
+    
+    document.getElementsByClassName("SwapVenues_2")[0].onclick=function(evt){
+        localStorage.setItem("home_name", awayteam_name);
+        localStorage.setItem("away_name", hometeam_name);
+        window.location.href='predictionpage.html';
+    }
 }
+
+//~~~~~~~~~~~~~~~~ Preparation ~~~~~~~~~~~~~~~~
+function preparePage(){
+    prepareBanner();    
+    prepareQuickStats();
+    prepareTabularComparison();
+    prepareNextPredict();
+}
+
+function prepareBanner(){
+    var banner = document.getElementsByClassName("Prediction_Banner")[0];
+    var hometeam_banner = banner.getElementsByClassName("Home_team")[0];
+    hometeam_banner.setAttribute("id", hometeam_name_formatted);
+    hometeam_banner.getElementsByClassName("TeamTitleText")[0].innerHTML = hometeam_name;
+    hometeam_banner.getElementsByClassName("TeamLogo")[0].setAttribute("id", hometeam_name_formatted);
+    hometeam_banner.getElementsByClassName("TeamLogo")[0].setAttribute("src", "img/Team_Logos/".concat(hometeam_name_formatted).concat(".png"));
+    var awayteam_banner = banner.getElementsByClassName("Away_team")[0];
+    awayteam_banner.setAttribute("id", awayteam_name_formatted);
+    awayteam_banner.getElementsByClassName("TeamTitleText")[0].innerHTML = awayteam_name;
+    awayteam_banner.getElementsByClassName("TeamLogo")[0].setAttribute("id", awayteam_name_formatted);
+    awayteam_banner.getElementsByClassName("TeamLogo")[0].setAttribute("src", "img/Team_Logos/".concat(awayteam_name_formatted).concat(".png"));
+}
+
+function prepareQuickStats(){
+    OverallQuickStats = $("#overalltableQS .progress-bar")
+    VSQuickStats = $("#venuetableQS .progress-bar")
+    for (var i = 0; i<OverallQuickStats.length-1; i+=2)
+    {
+        OverallQuickStats[i].classList.add(hometeam_name_formatted);
+        OverallQuickStats[i+1].classList.add(awayteam_name_formatted);
+        VSQuickStats[i].classList.add(hometeam_name_formatted);
+        VSQuickStats[i+1].classList.add(awayteam_name_formatted);
+    }
+}
+
+function prepareTabularComparison(){
+    var OverallTC = $("#overalltableTC")[0];
+    var VenueTC = $("#venuetableTC")[0];
+    
+    $("th",OverallTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",OverallTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
+    $("th",VenueTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",VenueTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
+    
+    var OverallData = $("#overalltableTC tbody tr");
+    var VenueData = $("#venuetableTC tbody tr");
+    console.log("OverallData.length is: ",OverallData.length);
+    for (var i = 0; i<OverallData.length; i++)
+    {
+        var home_val_O = parseFloat(OverallData[i].getElementsByTagName("td")[0].innerHTML);
+        var away_val_O = parseFloat(OverallData[i].getElementsByTagName("td")[2].innerHTML);
+        var home_val_VS = parseFloat(VenueData[i].getElementsByTagName("td")[0].innerHTML);
+        var away_val_VS = parseFloat(VenueData[i].getElementsByTagName("td")[2].innerHTML);
+
+        if (home_val_O > away_val_O)
+        {
+            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted);
+        }
+        else if (home_val_O < away_val_O)
+        {
+            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted);
+            OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
+        }
+        else{
+            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
+        }
+        
+        if (home_val_VS > away_val_VS)
+        {
+            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted);
+        }
+        else if (home_val_VS < away_val_VS)
+        {
+            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted);
+            VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
+        }
+        else{
+            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
+        }
+        
+    }
+}
+
+function prepareNextPredict(){
+    $("#nextPredictBox")[0].getElementsByTagName("input")[0].value=hometeam_name;
+    $("#nextPredictBox")[0].getElementsByTagName("input")[1].value=awayteam_name;
+}
+
+//~~~~~~~~~~~~~~~~ Other Funcs ~~~~~~~~~~~~~~~~
 
 function getGroupings(tableTitles){
     ret = []
@@ -517,3 +625,4 @@ function VSGraphConfigFunc(){
         }
     }
 }
+

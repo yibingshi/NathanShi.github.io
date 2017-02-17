@@ -10,7 +10,7 @@ function HypoPredict(){
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (home != "" && away != ""){
-        window.location.href='predictionpage_2.html';
+        window.location.href='predictionpage.html';
     }else
     {
         if (home == "")
