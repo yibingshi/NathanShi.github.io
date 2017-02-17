@@ -93,7 +93,8 @@
         <div class="row">
             <div class="box">
                 <p class="bannerTitle">Probabilities of Winning:</p>
-                <span class="SwapVenues"><a href = "predictionpage_swap.html" style="text-decoration:none;"><img src="img/swap_button.png"> Swap Venue </a></span>
+                <span class="SwapVenues_2"><img src="img/swap_button.png"> <span>Swap Venue</span></span>
+<!--                <span class="SwapVenues"><a href = "predictionpage_swap.html" style="text-decoration:none;"><img src="img/swap_button.png"> Swap Venue </a></span>-->
                 <div class="col-lg-12 text-center">
                     <div class="Prediction_Banner">
                         <div class = "Home_team" id = ""> <!--Add the team name as an id-->
@@ -148,7 +149,7 @@
                         <span><h3>Quick Stats:</h3><img src="img/collapsible_div_arrow_down.png"></span>
                     </div>
                     
-                    <div class="game-result_content comparisontable" id = "overalltable">
+                    <div class="game-result_content comparisontable" id = "overalltableQS">
                         <div class="progress" style="margin-left:1px">    
                             <div class="progress-bar home_stat superior" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
                             <!--Add home_team's name as a class to the above div-->
@@ -273,7 +274,7 @@
                         </div>
                         <hr>
                     </div>
-                    <div class="game-result_content comparisontable" id = "venuetable">
+                    <div class="game-result_content comparisontable" id = "venuetableQS">
                         <div class="progress" style="margin-left:1px">
                             <div class="progress-bar home_stat superior" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%">
                             12
@@ -462,7 +463,7 @@
                         <span><h3>Tabular Comparison:</h3><img src="img/collapsible_div_arrow_left.png"></span>
                     </div>
 
-                    <table class="tableContainer comparisontable"  id="overalltable">
+                    <table class="tableContainer comparisontable"  id="overalltableTC">
                         <colgroup>
                         <col span="1" style="width: 20%;">
                         <col span="1" style="width: 60%;">
@@ -470,86 +471,86 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th><h1 style="color:#ffc500;">Watford</h1></th>
+                                <th><h1>Watford</h1></th>
                                 <th><h1>Statistic</h1></th>
-                                <th><h1 style="color:#00A8E8">CHELSEA</h1></th>
+                                <th><h1>CHELSEA</h1></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="color:#ffc500">0.141</td>
+                                <td>0.141</td>
                                 <td>Avg Corners Conceded per Opp Poss'n</td>
                                 <td>0.129</td>
-                                </tr>
+                            </tr>
                             <tr>
                                 <td>0.105</td>
                                 <td>Avg Corners Won per Poss'n</td>
-                                <td style="color:#00A8E8">0.108</td>
+                                <td>0.108</td>
                             </tr>
                             <tr>
                                 <td>0.290</td>
                                 <td>Avg Fouls Committed per Opp Poss'n</td>
-                                <td style="color:#00A8E8">0.277</td>
+                                <td>0.277</td>
                             </tr>
                             <tr>
-                                <td style="color:#ffc500">0.256</td>
+                                <td>0.256</td>
                                 <td>Avg Fouls Conceded per Poss'n</td>
                                 <td>0.281</td>
                             </tr>
                             <tr>
-                                <td style="color:#ffc500">0.376</td>
+                                <td>0.376</td>
                                 <td>Avg Goals Conceded per Opp Shot on Target</td>
                                 <td>0.373</td>
                             </tr>
                             <tr>
                                 <td>0.199</td>
                                 <td>Avg Goals Scored per Shot on Target</td>
-                                <td style="color:#00A8E8">0.344</td>
+                                <td>0.344</td>
                             </tr>
                             <tr>
                                 <td>0.054</td>
                                 <td>Avg Offsides Against per Poss'n</td>
-                                <td style="color:#00A8E8">0.051</td>
+                                <td>0.051</td>
                             </tr>
                             <tr>
                                 <td>0.625</td>
                                 <td>Avg Points Per Game</td>
-                                <td  style="color:#00A8E8">1.040</td>
+                                <td >1.040</td>
                             </tr>
                             <tr>
                                 <td>0.031</td>
                                 <td>Avg Shots Conceded per Opp Poss'n</td>
-                                <td  style="color:#00A8E8">0.048</td>
+                                <td >0.048</td>
                             </tr>
                             <tr>
                                 <td>3.375</td>
                                 <td>Avg Saves Forced per Match</td>
-                                <td style="color:#00A8E8">2.650</td>
+                                <td>2.650</td>
                             </tr>
                             <tr>
                                 <td>2.958</td>
                                 <td>Avg Saves Made per Match</td>
-                                <td style="color:#00A8E8">3.087</td>
+                                <td>3.087</td>
                             </tr>
                             <tr>
-                                <td style="color:#ffc500">7.278</td>
+                                <td>7.278</td>
                                 <td>Avg Shots on Target per Poss'n</td>
                                 <td>5.964</td>
                             </tr>
                             <tr>
                                 <td>0.477</td>
                                 <td>Avg Offsides For per Opp Poss'n</td>
-                                <td  style="color:#00A8E8">0.311</td>
+                                <td>0.311</td>
                             </tr>
                             <tr>
-                                <td style="color:#ffc500">0.030</td>
+                                <td>0.030</td>
                                 <td>Avg Yellow Cards for Opp per Poss'n</td>
                                 <td>0.034</td>
                             </tr>
                             <tr>
                                 <td>0.041</td>
                                 <td>Avg Yellow Cards per Opp Poss'n</td>
-                                <td style="color:#00A8E8">0.038</td>
+                                <td>0.038</td>
                             </tr>
                             <tr>
                                 <td>0.002</td>
@@ -557,14 +558,120 @@
                                 <td>0.002</td>
                             </tr>
                             <tr>
-                                <td style="color:#ffc500">0.001</td>
+                                <td>0.001</td>
                                 <td>Avg Red Cards per Opp Poss'n</td>
                                 <td>0.003</td>
                             </tr>
                             <tr>
                                 <td>0.2</td>
                                 <td>Prev 5 Matches Enumerated</td>
-                                <td style="color:#00A8E8">0.6</td>
+                                <td>0.6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tableContainer comparisontable"  id="venuetableTC">
+                        <colgroup>
+                        <col span="1" style="width: 20%;">
+                        <col span="1" style="width: 60%;">
+                        <col span="1" style="width: 20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><h1>Watford</h1></th>
+                                <th><h1>Statistic</h1></th>
+                                <th><h1>CHELSEA</h1></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0.123</td>
+                                <td>Avg Corners Conceded per Opp Poss'n</td>
+                                <td>0.412</td>
+                                </tr>
+                            <tr>
+                                <td>0.155</td>
+                                <td>Avg Corners Won per Poss'n</td>
+                                <td>0.041</td>
+                            </tr>
+                            <tr>
+                                <td>0.221</td>
+                                <td>Avg Fouls Committed per Opp Poss'n</td>
+                                <td>0.477</td>
+                            </tr>
+                            <tr>
+                                <td>0.156</td>
+                                <td>Avg Fouls Conceded per Poss'n</td>
+                                <td>0.801</td>
+                            </tr>
+                            <tr>
+                                <td >0.311</td>
+                                <td>Avg Goals Conceded per Opp Shot on Target</td>
+                                <td>0.172</td>
+                            </tr>
+                            <tr>
+                                <td>0.009</td>
+                                <td>Avg Goals Scored per Shot on Target</td>
+                                <td>0.304</td>
+                            </tr>
+                            <tr>
+                                <td>0.104</td>
+                                <td>Avg Offsides Against per Poss'n</td>
+                                <td>0.105</td>
+                            </tr>
+                            <tr>
+                                <td>0.615</td>
+                                <td>Avg Points Per Game</td>
+                                <td>1.010</td>
+                            </tr>
+                            <tr>
+                                <td>0.031</td>
+                                <td>Avg Shots Conceded per Opp Poss'n</td>
+                                <td  >0.048</td>
+                            </tr>
+                            <tr>
+                                <td>2.775</td>
+                                <td>Avg Saves Forced per Match</td>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <td>3.19</td>
+                                <td>Avg Saves Made per Match</td>
+                                <td>3.1</td>
+                            </tr>
+                            <tr>
+                                <td >12.278</td>
+                                <td>Avg Shots on Target per Poss'n</td>
+                                <td>1.964</td>
+                            </tr>
+                            <tr>
+                                <td>10.477</td>
+                                <td>Avg Offsides For per Opp Poss'n</td>
+                                <td>8.311</td>
+                            </tr>
+                            <tr>
+                                <td >0.130</td>
+                                <td>Avg Yellow Cards for Opp per Poss'n</td>
+                                <td>0.434</td>
+                            </tr>
+                            <tr>
+                                <td>0.121</td>
+                                <td>Avg Yellow Cards per Opp Poss'n</td>
+                                <td>0.138</td>
+                            </tr>
+                            <tr>
+                                <td>0.0202</td>
+                                <td>Avg Red Cards for Opp per Poss'n</td>
+                                <td>0.012</td>
+                            </tr>
+                            <tr>
+                                <td >0.401</td>
+                                <td>Avg Red Cards per Opp Poss'n</td>
+                                <td>0.013</td>
+                            </tr>
+                            <tr>
+                                <td>0.22</td>
+                                <td>Prev 5 Matches Enumerated</td>
+                                <td>0.46</td>
                             </tr>
                         </tbody>
                     </table>
@@ -599,7 +706,7 @@
         </div>
              
         <div class="row">
-            <div class="box">
+            <div class="box" id ="nextPredictBox">
                 <div align="center">
                     <br>
                     <br>
