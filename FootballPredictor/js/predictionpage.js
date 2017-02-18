@@ -240,7 +240,15 @@ window.onload=function(){
                 chart.data.datasets[0].borderColor[clickedElementindex] = chart.data.datasets[0].backgroundColor[clickedElementindex];
                 document.getElementById("VoteInfoContainer").style.display ="inline-block";
                 document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
-                document.getElementById("vote_logo").src = logo[clickedElementindex];
+                    console.log(label);
+                if(label == "Draw"){
+                    //document.getElementById("drawLogo").style = "";
+                    document.getElementById("draw_logo1").src = "img/Team_Logos/"+hometeam_name.toLowerCase().replace(/ /g, "")+".png";
+                    document.getElementById("draw_logo2").src = "img/Team_Logos/"+awayteam_name.toLowerCase().replace(/ /g, "")+".png";
+                    
+                }else {
+                    document.getElementById("vote_logo").src = "img/Team_Logos/"+label.toLowerCase().replace(/ /g, "")+".png";
+                }
                 document.getElementById("see_more").style = "";
                 document.getElementById("pieChart").style= "display: inline-block; vertical-align: top; width:40%; margin-left: 10%; margin-top: 2em;"
                 //chart.data.datasets[0].backgroundColor[clickedElementindex] = helpers.color(chart.data.datasets[0].backgroundColor[clickedElementindex]).saturate(1).darken(-0).rgbString();
@@ -250,7 +258,7 @@ window.onload=function(){
                 var chart1 = new Chart(ctx, config); 
             }else{
                 document.getElementById("voted").innerHTML = "You can only vote once.";
-            }         
+            }               
           //clickPie(clickedElementindex);
     //      chart.onClick();
 
