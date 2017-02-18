@@ -499,9 +499,14 @@ function prepareTabularComparison(){
     var VenueTC = $("#venuetableTC")[0];
     
     $("th",OverallTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",OverallTC)[0].classList.add(hometeam_name_formatted);
     $("th",OverallTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
+    $("th",OverallTC)[2].classList.add(awayteam_name_formatted);
+    
     $("th",VenueTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",VenueTC)[0].classList.add(hometeam_name_formatted);
     $("th",VenueTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
+    $("th",VenueTC)[2].classList.add(awayteam_name_formatted);
     
     var OverallData = $("#overalltableTC tbody tr");
     var VenueData = $("#venuetableTC tbody tr");
