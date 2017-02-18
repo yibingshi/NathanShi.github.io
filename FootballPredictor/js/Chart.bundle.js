@@ -14036,7 +14036,6 @@ module.exports = function(Chart) {
 			return changed;
 		}
 	});
-
 	/**
 	 * @namespace Chart.Tooltip.positioners
 	 */
@@ -14051,6 +14050,13 @@ module.exports = function(Chart) {
 			if (!elements.length) {
 				return false;
 			}
+			var vm = this._view;
+
+			console.log(elements[0]._chart.height);
+			console.log(elements[0]._chart.width);
+
+			var cw = elements[0]._chart.width;
+			var ch = elements[0]._chart.height;
 
 			var i, len;
 			var x = 0;
@@ -14069,10 +14075,17 @@ module.exports = function(Chart) {
 
 			var canvas = document.getElementById('chart-area');
 //			console.log(canvas.width);
+				x = Math.round(x / count);
+				y = Math.round(y / count);
+			if(x < cw/2){
+				x += (cw/2 - x)/2;
+			}	else{
+				x += (cw/2 - x)/1.2;
+			}
+			console.log(y);
+			console.log(x);
 			return {
-				x: Math.round(x / count),
-				//console.log(context.width);
-				y: Math.round(y / count)
+				x,y
 			};
 		},
 
