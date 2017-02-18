@@ -3,9 +3,14 @@ var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
 var awayteam_name = localStorage.away_name;
 var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
 
-console.log(hometeam_name == "AFC Bournemouth");
-var pieColor = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(251,251,251)',"Tottenham Hotspur":'rgb(251,251,251)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
-console.log(pieColor["AFC Bournemouth"]);
+var teamColors = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(37,37,37)',"Tottenham Hotspur":'rgb(4,18,85)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
+
+//TottenhamHotspur = rgb(251,251,251);
+//"Swansea City":'rgb(251,251,251)'
+//#252525
+var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.1)',"Arsenal":'rgba(159,0,19,.1)',"Burnley":'rgba(199,51,105,.1)',"Chelsea FC":'rgba(15,29,123,.2)',"Crystal Palace":'rgba(75,124,216,.2)',"Everton":'rgba(74,101,181,.2)',"Hull City":'rgba(228,139,47,.2)',"Leicester City":'rgba(208,166,57,.2)',"Liverpool":'rgba(255,109,109,.1)',"Manchester City":'rgba(184,223,245,.4)',"Manchester United":'rgba(218,0,0,.1)',"Middlesbrough":'rgba(190,35,30,.1)',"Southampton":'rgba(139,26,24,.2)',"Stoke City":'rgba(217,33,43,.2)',"Sunderland AFC":'rgba(166,129,35,.2)',"Swansea City":'rgba(37,37,37,.2)',"Tottenham Hotspur":'rgba(4,18,85,.2)',"Watford":'rgba(255,197,0,.2)',"West Bromwich Albion":'rgba(9,17,83,.2)',"West Ham United":'rgba(94,33,59,.2)'};
+
+//console.log(pieColor["AFC Bournemouth"]);
 var displayoptions;
 var comparisontables;
 var descriptions;
@@ -21,6 +26,7 @@ var homeData_O = [0.140776699, 0.105670103, 0.290453074, 0.256013746, 0.37614678
 var homeData_VS = [0.134275618, 0.117977528, 0.279151943, 0.269662921, 0.386363636, -0.272727273, 0.264150943, 0.054307116, 0.042402827, 0.909090909, 0.003745318, 0.001766784, 2.954063604, 7.363636364, 6.454545455, 4.099250936, 0.035580524, 0.044169611, 0.2];
 var awayData_O = [0.127897682, 0.10772164, 0.277378098, 0.28122021, 0.372727273, -0.434782609, 0.344444444, 0.054337464, 0.03117506, 1.043478261, 0.001906578, 0.003197442, 7.023181455, 2.652173913, 3.086956522, 5.963775024, 0.034318398, 0.038369305, 0.6];
 var awayData_VS = [0.125776398, 0.118705036, 0.267080745, 0.221223022, 0.421875, -0.945887446, 0.255319149, 0.055755396, 0.040372671, 0.416666667, 0, 0.00310559, 3.763975155, 5.083333333, 5.916666667, 2.870503597, 0.021582734, 0.037267081, 0.6];
+
 var config = {
         type: 'pie',
         
@@ -30,7 +36,7 @@ var config = {
                 //data: [vote[2], vote[1], vote[0]],
                 borderWidth:[1,1,1],
                 borderColor: ['rgb(231,233,237)','rgb(231,233,237)','rgb(231,233,237)'],
-                backgroundColor: [pieColor[awayteam_name],'rgb(75, 192, 192)',pieColor[hometeam_name]],
+                backgroundColor: [teamColors[awayteam_name],'rgb(75, 192, 192)',teamColors[hometeam_name]],
                 //backgroundColor: ['rgb(17,57,142)','rgb(75, 192, 192)','rgb(232,179,23)'],
                 //borderColor: [window.chartColors.grey, window.chartColors.grey, window.chartColors.grey],
                 //backgroundColor: [window.chartColors.chelsea, window.chartColors.green,window.chartColors.watford],
@@ -67,7 +73,6 @@ var config = {
         }
     };
 
-    
 var logo = {2:"img/Team_Logos/".concat(hometeam_name_formatted).concat(".png"),
             1:"img/Team_Logos/watford_chelsea.png",
             0:"img/Team_Logos/".concat(awayteam_name_formatted).concat(".png")};
@@ -76,8 +81,6 @@ window.onload=function(){
     var voted = true;
     var ctx = document.getElementById("chart-area").getContext("2d");
     var chart = new Chart(ctx, config);
-
-
     
     preparePage();
     
@@ -98,6 +101,7 @@ window.onload=function(){
     Chart.defaults.global.hover.mode = 'nearest';
     const CHARTT = $("#lineChart_Total");
     const CHARTVS = $("#lineChart_VS");
+    
     lineChartO = new Chart(CHARTT, {
         type:'line',
         data: {
@@ -106,54 +110,52 @@ window.onload=function(){
                 {
                     label: hometeam_name,
                     borderWidth: 1,
-                    backgroundColor: "rgba(255, 206, 86, 0.2)",
-                    borderColor: "rgba(255, 206, 86, 1)",
+                    backgroundColor: transparentTeamColors[hometeam_name],
+                    borderColor: teamColors[hometeam_name],
                     borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
+//                    borderDash: [],
+//                    borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(255, 206, 86, 1)",
+                    pointBorderColor: teamColors[hometeam_name],
                     pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(255, 206, 86, 1)",
+                    pointBackgroundColor: teamColors[hometeam_name],
+//                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: teamColors[hometeam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 5,
-                    pointRadius: 3,
-                    pointHitRadius: 10,
+//                    pointHoverBorderWidth: 5,
+//                    pointRadius: 3,
+//                    pointHitRadius: 10,
                     data: [0.105670103, 0.290453074, 0.047734628, 0.625, 0.001718213, 0.030068729, 0.2],
                 },
                 {
                     label: awayteam_name,
                     borderWidth: 1,
-                    backgroundColor: "rgba(36, 36, 206, 0.2)",
-                    borderColor: "rgba(36, 36, 206, 1)",
+                    backgroundColor: transparentTeamColors[awayteam_name],
+                    borderColor: teamColors[awayteam_name],
                     borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
+//                    borderDash: [],
+//                    borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(36, 36, 206, 1)",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(36, 36, 206, 1)",
+                    pointBorderColor: teamColors[awayteam_name],
+//                    pointBorderWidth: 1,
+                    pointBackgroundColor: teamColors[awayteam_name],
+//                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: teamColors[awayteam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 5,
-                    pointRadius: 3,
-                    pointHitRadius: 10,
+//                    pointHoverBorderWidth: 5,
+//                    pointRadius: 3,
+//                    pointHitRadius: 10,
                     data: [0.10772164, 0.27737809, 0.03117506, 1.043478261, 0.001906578, 0.0034318398, 0.6],
                 }
             ]
         },
-        options: {
-            hover: {
-                mode:'nearest'
+        options:{
+            responsive: true,
+            showTooltips: true,
+            tooltips:{
+                position:'average',
+                caretSize: 0  
             },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
         }
     });
     lineChartVS = new Chart(CHARTVS, {
@@ -164,16 +166,17 @@ window.onload=function(){
                 {
                     label: hometeam_name,
                     borderWidth: 1,
-                    backgroundColor: "rgba(255, 206, 86, 0.2)",
-                    borderColor: "rgba(255, 206, 86, 1)",
+                    backgroundColor: transparentTeamColors[hometeam_name],
+                    borderColor: teamColors[hometeam_name],
                     borderCapStyle: 'butt',
                     borderDash: [],
                     borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(255, 206, 86, 1)",
+                    pointBorderColor: teamColors[hometeam_name],
                     pointBorderWidth: 1,
+                    pointBackgroundColor: teamColors[hometeam_name],
                     pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(255, 206, 86, 1)",
+                    pointHoverBackgroundColor: teamColors[hometeam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
                     pointHoverBorderWidth: 5,
                     pointRadius: 3,
@@ -183,16 +186,17 @@ window.onload=function(){
                 {
                     label: awayteam_name,
                     borderWidth: 1,
-                    backgroundColor: "rgba(36, 36, 206, 0.2)",
-                    borderColor: "rgba(36, 36, 206, 1)",
+                    backgroundColor: transparentTeamColors[awayteam_name],
+                    borderColor: teamColors[awayteam_name],
                     borderCapStyle: 'butt',
                     borderDash: [],
                     borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(36, 36, 206, 1)",
+                    pointBorderColor: teamColors[awayteam_name],
                     pointBorderWidth: 1,
+                    pointBackgroundColor: teamColors[awayteam_name],
                     pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(36, 36, 206, 1)",
+                    pointHoverBackgroundColor: teamColors[awayteam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
                     pointHoverBorderWidth: 5,
                     pointRadius: 3,
@@ -201,21 +205,17 @@ window.onload=function(){
                 }
             ]
         },
-        options: {
-            hover: {
-                mode:'nearest'
+        options:{
+            responsive: true,
+            showTooltips: true,
+            tooltips:{
+                position:'nearest'
             },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
+            tooltipCaretSize: 0,
         }
     });
-        
-    updatePage();
+
+        updatePage();
  
     //Add our listeners:
     
