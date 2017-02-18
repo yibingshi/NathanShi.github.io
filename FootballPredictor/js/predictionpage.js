@@ -3,6 +3,9 @@ var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
 var awayteam_name = localStorage.away_name;
 var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
 
+console.log(hometeam_name == "AFC Bournemouth");
+var pieColor = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(251,251,251)',"Tottenham Hotspur":'rgb(251,251,251)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
+console.log(pieColor["AFC Bournemouth"]);
 var displayoptions;
 var comparisontables;
 var descriptions;
@@ -27,7 +30,8 @@ var config = {
                 //data: [vote[2], vote[1], vote[0]],
                 borderWidth:[1,1,1],
                 borderColor: ['rgb(231,233,237)','rgb(231,233,237)','rgb(231,233,237)'],
-                backgroundColor: ['rgb(17,57,142)','rgb(75, 192, 192)','rgb(232,179,23)'],
+                backgroundColor: [pieColor[awayteam_name],'rgb(75, 192, 192)',pieColor[hometeam_name]],
+                //backgroundColor: ['rgb(17,57,142)','rgb(75, 192, 192)','rgb(232,179,23)'],
                 //borderColor: [window.chartColors.grey, window.chartColors.grey, window.chartColors.grey],
                 //backgroundColor: [window.chartColors.chelsea, window.chartColors.green,window.chartColors.watford],
                 label: 'Dataset 5'
@@ -72,6 +76,8 @@ window.onload=function(){
     var voted = true;
     var ctx = document.getElementById("chart-area").getContext("2d");
     var chart = new Chart(ctx, config);
+
+
     
     preparePage();
     
@@ -226,6 +232,7 @@ window.onload=function(){
             //alert(label);
             //get value by index      
             var value = chart.data.datasets[0].data[clickedElementindex];
+            console.log("aaaa" + Chart.Tooltip);
             if (voted) {
                 chart.data.datasets[0].data[clickedElementindex] += 1;
 //                console.log(config.data.datasets[0].data[0]);
