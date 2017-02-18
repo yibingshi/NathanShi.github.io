@@ -53,7 +53,7 @@ var config = {
                 }
             },
             tooltips: {
-                caretSize: 15,
+                caretSize: 0,
                 yPadding: 8,
                 xPadding: 10,
                 titleFontSize: 18,
