@@ -14078,7 +14078,7 @@ module.exports = function(Chart) {
 				x = Math.round(x / count);
 				y = Math.round(y / count);
 			if(x < cw/2){
-				x += (cw/2 - x)/2;
+				x += (cw/2 - x)/1.3;
 			}	else{
 				x += (cw/2 - x)/1.2;
 			}
