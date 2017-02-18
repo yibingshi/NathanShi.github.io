@@ -242,7 +242,7 @@ window.onload=function(){
                 document.getElementById("your_vote").innerHTML = "You vote for " + label + "!";
                     console.log(label);
                 if(label == "Draw"){
-                    //document.getElementById("drawLogo").style = "";
+                    document.getElementById("drawLogo").style = "";
                     document.getElementById("draw_logo1").src = "img/Team_Logos/"+hometeam_name.toLowerCase().replace(/ /g, "")+".png";
                     document.getElementById("draw_logo2").src = "img/Team_Logos/"+awayteam_name.toLowerCase().replace(/ /g, "")+".png";
                     
