@@ -13251,7 +13251,8 @@ module.exports = function(Chart) {
 		enabled: true,
 		custom: null,
 		mode: 'nearest',
-		position: 'average',
+		position: '
+		',
 		intersect: false,
 		backgroundColor: 'rgba(0,0,0,0.8)',
 		titleFontStyle: 'bold',
@@ -14084,6 +14085,43 @@ module.exports = function(Chart) {
 			}*/
 			console.log(y);
 			console.log(x);
+			return {
+				x,y
+			};
+		},
+		pieTooltipPosition: function(elements) {
+			if (!elements.length) {
+				return false;
+			}
+			var vm = this._view;
+
+			var cw = elements[0]._chart.width;
+			var ch = elements[0]._chart.height;
+
+			var i, len;
+			var x = 0;
+			var y = 0;
+			var count = 0;
+
+			for (i = 0, len = elements.length; i < len; ++i) {
+				var el = elements[i];
+				if (el && el.hasValue()) {
+					var pos = el.tooltipPosition();
+					x += pos.x;
+					y += pos.y;
+					++count;
+				}
+			}
+
+			var canvas = document.getElementById('chart-area');
+//			console.log(canvas.width);
+				x = Math.round(x / count);
+				y = Math.round(y / count);
+			if(x < cw/2){
+				x += (cw/2 - x)/1.3;
+			}	else{
+				x += (cw/2 - x)/1.2;
+			}
 			return {
 				x,y
 			};
