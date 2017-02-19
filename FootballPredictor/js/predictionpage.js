@@ -63,6 +63,7 @@ var config = {
                 }
             },
             tooltips: {
+                position: "pieTooltipPosition",
                 caretSize: 0,
                 yPadding: 8,
                 xPadding: 10,
