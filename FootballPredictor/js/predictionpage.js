@@ -122,9 +122,9 @@ window.onload=function(){
 //                    pointHoverRadius: 5,
                     pointHoverBackgroundColor: teamColors[hometeam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
-//                    pointHoverBorderWidth: 5,
-//                    pointRadius: 3,
-//                    pointHitRadius: 10,
+                    pointHoverBorderWidth: 5,
+                    pointRadius: 3,
+                    pointHitRadius: 10,
                     data: [0.105670103, 0.290453074, 0.047734628, 0.625, 0.001718213, 0.030068729, 0.2],
                 },
                 {
@@ -142,9 +142,9 @@ window.onload=function(){
 //                    pointHoverRadius: 5,
                     pointHoverBackgroundColor: teamColors[awayteam_name],
                     pointHoverBorderColor: "rgba(220,220,220,1)",
-//                    pointHoverBorderWidth: 5,
-//                    pointRadius: 3,
-//                    pointHitRadius: 10,
+                    pointHoverBorderWidth: 5,
+                    pointRadius: 3,
+                    pointHitRadius: 10,
                     data: [0.10772164, 0.27737809, 0.03117506, 1.043478261, 0.001906578, 0.0034318398, 0.6],
                 }
             ]
@@ -153,8 +153,7 @@ window.onload=function(){
             responsive: true,
             showTooltips: true,
             tooltips:{
-                position:'average',
-                caretSize: 0  
+                position:'nearest'
             },
         }
     });
