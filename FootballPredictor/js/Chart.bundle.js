@@ -13251,8 +13251,7 @@ module.exports = function(Chart) {
 		enabled: true,
 		custom: null,
 		mode: 'nearest',
-		position: '
-		',
+		position: 'average',
 		intersect: false,
 		backgroundColor: 'rgba(0,0,0,0.8)',
 		titleFontStyle: 'bold',
