@@ -13567,7 +13567,7 @@ module.exports = function(Chart) {
 			paddingAndSize = caretSize + caretPadding,
 			radiusAndPadding = cornerRadius + caretPadding;
 
-		if (xAlign === 'left') {
+		if (xAlign === 'right') {
 			x -= size.width;
 		} else if (xAlign === 'center') {
 			x -= (size.width / 2);
@@ -13582,14 +13582,14 @@ module.exports = function(Chart) {
 		}
 
 		if (yAlign === 'center') {
-			if (xAlign === 'right') {
+			if (xAlign === 'left') {
 				x += paddingAndSize;
-			} else if (xAlign === 'left') {
+			} else if (xAlign === 'right') {
 				x -= paddingAndSize;
 			}
-		} else if (xAlign === 'right') {
-			x -= radiusAndPadding;
 		} else if (xAlign === 'left') {
+			x -= radiusAndPadding;
+		} else if (xAlign === 'right') {
 			x += radiusAndPadding;
 		}
 
@@ -13799,7 +13799,7 @@ module.exports = function(Chart) {
 
 			if (yAlign === 'center') {
 				// Left or right side
-				if (xAlign === 'right') {
+				if (xAlign === 'left') {
 					x1 = ptX;
 					x2 = x1 - caretSize;
 					x3 = x1;
@@ -13813,11 +13813,11 @@ module.exports = function(Chart) {
 				y1 = y2 - caretSize;
 				y3 = y2 + caretSize;
 			} else {
-				if (xAlign === 'right') {
+				if (xAlign === 'left') {
 					x1 = ptX + cornerRadius;
 					x2 = x1 + caretSize;
 					x3 = x2 + caretSize;
-				} else if (xAlign === 'left') {
+				} else if (xAlign === 'right') {
 					x1 = ptX + width - cornerRadius;
 					x2 = x1 - caretSize;
 					x3 = x2 - caretSize;
@@ -14052,9 +14052,6 @@ module.exports = function(Chart) {
 			}
 			var vm = this._view;
 
-			console.log(elements[0]._chart.height);
-			console.log(elements[0]._chart.width);
-
 			var cw = elements[0]._chart.width;
 			var ch = elements[0]._chart.height;
 
@@ -14078,12 +14075,47 @@ module.exports = function(Chart) {
 				x = Math.round(x / count);
 				y = Math.round(y / count);
 			/*if(x < cw/2){
-				x += (cw/2 - x)/1.3;
+				x += (cw/2 - x)/2;
 			}	else{
 				x += (cw/2 - x)/1.2;
 			}*/
-			console.log(y);
-			console.log(x);
+			return {
+				x,y
+			};
+		},
+		pieTooltipPosition: function(elements) {
+			if (!elements.length) {
+				return false;
+			}
+			var vm = this._view;
+
+			var cw = elements[0]._chart.width;
+			var ch = elements[0]._chart.height;
+
+			var i, len;
+			var x = 0;
+			var y = 0;
+			var count = 0;
+
+			for (i = 0, len = elements.length; i < len; ++i) {
+				var el = elements[i];
+				if (el && el.hasValue()) {
+					var pos = el.tooltipPosition();
+					x += pos.x;
+					y += pos.y;
+					++count;
+				}
+			}
+
+			var canvas = document.getElementById('chart-area');
+//			console.log(canvas.width);
+				x = Math.round(x / count);
+				y = Math.round(y / count);
+			if(x < cw/2){
+				x -= (cw/2 - x)/1.1;
+			}	else{
+				x -= (cw/2 - x)/1.1;
+			}
 			return {
 				x,y
 			};
