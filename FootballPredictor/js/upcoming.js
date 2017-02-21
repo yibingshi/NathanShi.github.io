@@ -4,6 +4,8 @@ function upcomingPredict(upcomingHome,upcomingAway){
     localStorage.setItem("home_name", upcomingHome);
     //var away = document.getElementById('away').value;
     localStorage.setItem("away_name", upcomingAway);
+    
+    localStorage.setItem("state", "upcoming");
     /*var c = 100;
     if (home == away && home != ""){
         document.getElementById('home').style.borderColor = "red";
