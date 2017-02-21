@@ -1,4 +1,4 @@
-# [England Premier League Football Predictor](https://nathanshi.github.io/startbootstrap-business-casual-gh-pages/index.html)
+# [England Premier League Football Predictor](https://nathanshi.github.io/FootballPredictor/index.html)
 
 ## Getting Started:
 
