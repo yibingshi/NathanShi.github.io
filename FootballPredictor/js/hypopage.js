@@ -3,6 +3,8 @@ function HypoPredict(){
     localStorage.setItem("home_name", home);
     var away = document.getElementById('away').value;
     localStorage.setItem("away_name", away);
+    
+    localStorage.setItem("state", "hypothetical");
     var c = 100;
     if (home == away && home != ""){
         document.getElementById('home').style.borderColor = "red";
