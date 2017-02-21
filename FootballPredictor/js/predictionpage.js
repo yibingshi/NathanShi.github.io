@@ -215,7 +215,7 @@ window.onload=function(){
         }
     });
 
-        updatePage();
+    updatePage();
  
     //Add our listeners:
     
@@ -513,13 +513,13 @@ function prepareTabularComparison(){
     var OverallTC = $("#overalltableTC")[0];
     var VenueTC = $("#venuetableTC")[0];
     
-    $("th",OverallTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
-    $("th",OverallTC)[0].classList.add(hometeam_name_formatted);
+    $("th",OverallTC)[1].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",OverallTC)[1].classList.add(hometeam_name_formatted);
     $("th",OverallTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
     $("th",OverallTC)[2].classList.add(awayteam_name_formatted);
     
-    $("th",VenueTC)[0].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
-    $("th",VenueTC)[0].classList.add(hometeam_name_formatted);
+    $("th",VenueTC)[1].getElementsByTagName("h1")[0].innerHTML = hometeam_name;
+    $("th",VenueTC)[1].classList.add(hometeam_name_formatted);
     $("th",VenueTC)[2].getElementsByTagName("h1")[0].innerHTML = awayteam_name;
     $("th",VenueTC)[2].classList.add(awayteam_name_formatted);
     
@@ -528,38 +528,38 @@ function prepareTabularComparison(){
     console.log("OverallData.length is: ",OverallData.length);
     for (var i = 0; i<OverallData.length; i++)
     {
-        var home_val_O = parseFloat(OverallData[i].getElementsByTagName("td")[0].innerHTML);
+        var home_val_O = parseFloat(OverallData[i].getElementsByTagName("td")[1].innerHTML);
         var away_val_O = parseFloat(OverallData[i].getElementsByTagName("td")[2].innerHTML);
-        var home_val_VS = parseFloat(VenueData[i].getElementsByTagName("td")[0].innerHTML);
+        var home_val_VS = parseFloat(VenueData[i].getElementsByTagName("td")[1].innerHTML);
         var away_val_VS = parseFloat(VenueData[i].getElementsByTagName("td")[2].innerHTML);
 
         if (home_val_O > away_val_O)
         {
-            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            OverallData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted, "superior");
             OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted);
         }
         else if (home_val_O < away_val_O)
         {
-            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted);
+            OverallData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted);
             OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
         }
         else{
-            OverallData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            OverallData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted, "superior");
             OverallData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
         }
         
         if (home_val_VS > away_val_VS)
         {
-            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            VenueData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted, "superior");
             VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted);
         }
         else if (home_val_VS < away_val_VS)
         {
-            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted);
+            VenueData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted);
             VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
         }
         else{
-            VenueData[i].getElementsByTagName("td")[0].classList.add(hometeam_name_formatted, "superior");
+            VenueData[i].getElementsByTagName("td")[1].classList.add(hometeam_name_formatted, "superior");
             VenueData[i].getElementsByTagName("td")[2].classList.add(awayteam_name_formatted, "superior");
         }
         
