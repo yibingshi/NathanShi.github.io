@@ -3,6 +3,15 @@ var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
 var awayteam_name = localStorage.away_name;
 var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
 
+var page_state = localStorage.state;
+if (page_state == "upcoming")
+    document.getElementById("swap_venue").style.visibility = "hidden";
+else
+    document.getElementById("swap_venue").style.visibility = "visible";
+
+
+
+
 var teamColors = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(37,37,37)',"Tottenham Hotspur":'rgb(4,18,85)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
 
 //TottenhamHotspur = rgb(251,251,251);
