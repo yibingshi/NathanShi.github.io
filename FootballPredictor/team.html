@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Premier League Football Predictor</title>
+    <link rel="shortcut icon" href="img/football.png" type="image/png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.less" rel="stylesheet/less" type="text/css">
+    <!-- table CSS -->
+    <link href="css/table.less" rel="stylesheet/less" type="text/css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="brand">Premier League Football Predictor</div>
+    
+     
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Premier League Football Predictor</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">Predictions</a>
+                        <div class="dropdown-content">
+      						<a href="upcoming_game.html">Upcoming Matches</a>
+      						<a href="hypopage.html">Hypothetical Matches</a>
+    					</div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="team.html" class="navbar-dropdown">Teams</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">About us</a>
+                        <div class="dropdown-content">
+      						<a href="ouralgorithm.html">Our Algorithm</a>
+      						<a href="aboutus.html">About Us</a>
+    					</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row" align="center">
+            <div class="box">
+            
+
+                <div class="col-lg-12">
+                <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Teams</strong>
+                    </h2>
+                    <hr>
+
+
+                    <table class="tableContainer team">
+                        <thead>
+                            <tr>
+                                <th><h1>Rank</h1></th>
+                                <th><h1>Team</h1></th>
+                                <th><h1>Game Played</h1></th>
+                                <th><h1>Points</h1></th>
+                                <th><h1>Win</h1></th>
+                                <th><h1>Draw</h1></th>
+                                <th><h1>Lose</h1></th>
+                                <th><h1>Goal For</h1></th>
+                                <th><h1>Goal Against</h1></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Chelsea</td>
+                                <td>26</td>
+                                <td>63</td>
+                                <td>20</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>55</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Tottenham Hotspur</td>
+                                <td>26</td>
+                                <td>53</td>
+                                <td>15</td>
+                                <td>8</td>
+                                <td>3</td>
+                                <td>50</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Manchester City</td>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>16</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>51</td>
+                                <td>29</td>    
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Arsenal</td>
+                                <td>25</td>
+                                <td>50</td>
+                                <td>15</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>54</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Liverpool</td>
+                                <td>25</td>
+                                <td>49</td>
+                                <td>14</td>
+                                <td>7</td>
+                                <td>4</td>
+                                <td>54</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Manchester United</td>
+                                <td>25</td>
+                                <td>48</td>
+                                <td>13</td>
+                                <td>9</td>
+                                <td>4</td>
+                                <td>38</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Everton</td>
+                                <td>26</td>
+                                <td>44</td>
+                                <td>12</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>42</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>West Bromwich Albion</td>
+                                <td>26</td>
+                                <td>40</td>
+                                <td>11</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>36</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>West Ham United</td>
+                                <td>26</td>
+                                <td>33</td>
+                                <td>9</td>
+                                <td>6</td>
+                                <td>11</td>
+                                <td>35</td>
+                                <td>44</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Stoke City</td>
+                                <td>26</td>
+                                <td>32</td>
+                                <td>8</td>
+                                <td>8</td>
+                                <td>10</td>
+                                <td>30</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Burnley</td>
+                                <td>26</td>
+                                <td>31</td>
+                                <td>9</td>
+                                <td>4</td>
+                                <td>13</td>
+                                <td>28</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Watford</td>
+                                <td>26</td>
+                                <td>31</td>
+                                <td>8</td>
+                                <td>7</td>
+                                <td>11</td>
+                                <td>30</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Southampton</td>
+                                <td>25</td>
+                                <td>30</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>11</td>
+                                <td>28</td>
+                                <td>31</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>AFC Bournemouth</td>
+                                <td>26</td>
+                                <td>26</td>
+                                <td>7</td>
+                                <td>5</td>
+                                <td>14</td>
+                                <td>36</td>
+                                <td>51</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>Swansea City</td>
+                                <td>26</td>
+                                <td>24</td>
+                                <td>7</td>
+                                <td>3</td>
+                                <td>16</td>
+                                <td>32</td>
+                                <td>57</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>Middlesbrough</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>4</td>
+                                <td>10</td>
+                                <td>12</td>
+                                <td>19</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>Crystal Palace</td>
+                                <td>26</td>
+                                <td>22</td>
+                                <td>6</td>
+                                <td>4</td>
+                                <td>16</td>
+                                <td>33</td>
+                                <td>46</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>Leicester City</td>
+                                <td>25</td>
+                                <td>21</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>14</td>
+                                <td>24</td>
+                                <td>43</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>Hull City</td>
+                                <td>26</td>
+                                <td>21</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>15</td>
+                                <td>23</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>Sunderland</td>
+                                <td>26</td>
+                                <td>19</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>17</td>
+                                <td>24</td>
+                                <td>48</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+               <!--  <div id="upcoming">
+
+                <thead>
+                            <tr>
+                                <th><h1>Rank</h1></th>
+                                <th><h1>Team</h1></th>
+                                <th><h1>Win</h1></th>
+                                <th><h1>Draw</h1></th>
+                                <th><h1>Lose</h1></th>
+                                <th><h1>Points</h1></th>
+                            </tr>
+                </thead>
+                            
+                                            <table  class="tableContainer upcomingGame">
+
+                                                    <tbody>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Crystal Palace','Middlesbrough');">
+                                                            <td>9:00 AM <br> February 25</td>
+                                                            <td><img src="img/Team_Logos/crystalpalace.png" alt="filler image" width="40px"></td>
+                                                            <td>Crystal Palace</td>
+                                                            <td>45%</td>
+                                                            <td>vs</td>
+                                                            <td>55%</td>
+                                                            <td>Middlesbrough</td>
+                                                            <td><img src="img/Team_Logos/middlesbrough.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                   
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','Sunderland AFC');">
+                                                            <td>9:00 AM <br> February 25</td>
+                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                            <td>Everton</td>
+                                                            <td>51%</td>
+                                                            <td>vs</td>
+                                                            <td>49%</td>
+                                                            <td>Sunderland</td>
+                                                            <td><img src="img/Team_Logos/sunderlandafc.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('AFC Bournemouth','West Ham United');">
+                                                            <td>9:00 AM <br> February 25</td>
+                                                            <td><img src="img/Team_Logos/afcbournemouth.png" alt="filler image" width="40px"></td>
+                                                            <td>Bournemouth</td>
+                                                            <td>37%</td>
+                                                            <td>vs</td>
+                                                            <td>63%</td>
+                                                            <td>West Ham</td>
+                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Watford','Chelsea FC');">
+                                                            <td>11:00 AM <br> February 25</td>
+                                                            <td><img src="img/Team_Logos/watford.png" alt="filler image" width="40px"></td>
+                                                            <td>Watford</td>
+                                                            <td>44%</td>
+                                                            <td>vs</td>
+                                                            <td>56%</td>
+                                                            <td>Chelsea</td>
+                                                            <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
+                                                            <td>9:00 AM <br> February 26</td>
+                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                            <td>Everton</td>
+                                                            <td>65%</td>
+                                                            <td>vs</td>
+                                                            <td>35%</td>
+                                                            <td>West Ham</td>
+                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Tottenham Hotspur','Stoke City');">
+                                                            <td>2:00 PM <br> February 26</td>
+                                                            <td><img src="img/Team_Logos/tottenhamhotspur.png" alt="filler image" width="40px"></td>
+                                                            <td>Tottenham</td>
+                                                            <td>61%</td>
+                                                            <td>vs</td>
+                                                            <td>39%</td>
+                                                            <td>Stoke City</td>
+                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
+                                                            <td>2:00 PM <br> February 26</td>
+                                                                <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                            <td>Everton</td>
+                                                            <td>65%</td>
+                                                            <td>vs</td>
+                                                            <td>35%</td>
+                                                            <td>West Ham</td>
+                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Swansea City','Liverpool');">
+                                                            <td>2:00 PM <br> February 27</td>
+                                                            <td><img src="img/Team_Logos/swanseacity.png" alt="filler image" width="40px"></td>
+                                                            <td>Swansea City</td>
+                                                            <td>55%</td>
+                                                            <td>vs</td>
+                                                            <td>45%</td>
+                                                            <td>Liverpool</td>
+                                                            <td><img src="img/Team_Logos/liverpool.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+                                                    
+                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Arsenal','Hull City');">
+                                                            <td>2:00 PM <br> February 27</td>
+                                                            <td><img src="img/Team_Logos/arsenal.png" alt="filler image" width="40px"></td>
+                                                            <td>Arsenal</td>
+                                                            <td>70%</td>
+                                                            <td>vs</td>
+                                                            <td>30%</td>
+                                                            <td>Hull City</td>
+                                                            <td><img src="img/Team_Logos/hullcity.png" alt="filler image" width="40px"></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table> -->
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- </div> -->
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; HCI team 404 Not Found</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/upcoming.js"></script>
+    
+    <!--    Less' CDN if the files in js dont work-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
