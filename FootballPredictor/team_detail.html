@@ -379,13 +379,15 @@
                     <p style="float:center;">
                     Predict other Hypothetical Games
                     </p>
-
+                    
+                    <button id="addDom">Add one more prediction</button><br><br>
+                    
                     <div id="warning" style="color:red;"></div>
-                    <input type="userinput" list="pasta" onClick="this.select();" value="Chelsea FC" placeholder="Home Team" id="home">
+                    <input type="userinput" list="pasta" onClick="this.select();" value="Chelsea FC" placeholder="Home Team" id="home1">
                     &emsp;&emsp;&emsp;
                       VS
                     &emsp;&emsp;&emsp;
-                    <input type="userinput" list="pasta" onClick="this.select();" value="" placeholder="Away Team" id="away">
+                    <input type="userinput" list="pasta" onClick="this.select();" value="" placeholder="Away Team" id="away1">
                     <datalist id="pasta">
                         <option>AFC Bournemouth</option>
                         <option>Arsenal</option>
@@ -411,7 +413,7 @@
 
                     <div>
                         <br> 
-                        <input type="submit" value="Predict" onClick="HypoPredict();">
+                        <input type="submit" value="Predict" onClick="MultiHypoPredict();">
                     </div>
                     <br>
                     <br>
