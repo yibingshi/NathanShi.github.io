@@ -185,7 +185,7 @@ function MultiHypoPredict(){
         localStorage.setItem("away_name", new_away);
         // alert("Multi-Hypo Predict i==" + i + "is calling open prediciton page");
         window.open('predictionpage.html', '_blank');
-        wait(1000);
+//         wait(1000);
         // alert("Multi-Hypo Predict i==" + i + "is done calling open prediciton page");
     }
     else
