@@ -135,3 +135,79 @@ function sortTable(n) {
   }
 }
 
+var predictNumber = 1;
+var home_predict_id = new Array ("home1");
+var away_predict_id = new Array ("away1");
+
+$('#addDom').click(function() {
+
+        predictNumber += 1;
+
+        var structure = $('<div id="warning" style="color:red;"></div><input type="userinput" list="pasta" onClick="this.select();" value="Chelsea FC" placeholder="Home Team" id="home" style="margin-right:0.4em;">&emsp;&emsp;&emsp;VS&emsp;&emsp;&emsp;<input type="userinput" list="pasta" onClick="this.select();" value="" placeholder="Away Team" id="away" style="margin-left:0.4em;"></div>');
+        $('#away1').after(structure);
+
+        var away_abcElements = document.getElementById('away');
+        var home_abcElements = document.getElementById('home');
+        away_abcElements.id = 'away'+ predictNumber.toString();
+        home_abcElements.id = 'home'+ predictNumber.toString();
+
+        away_predict_id.push(away_abcElements.id);
+        home_predict_id.push(home_abcElements.id);
+
+         
+    });
+
+
+function MultiHypoPredict(){
+
+
+  for (var i = 0; i<away_predict_id.length;i++){
+
+  var home = home_predict_id[i];
+  var away = away_predict_id[i];
+
+  // console.log("home: ", home);
+  // console.log("away: ", away);
+
+  var new_home = document.getElementById(home).value;
+  var new_away = document.getElementById(away).value;
+
+  // console.log("new_home: ", new_home);
+  // console.log("new_away: ", new_away);
+
+  if (new_home == new_away && new_home != ""){
+        document.getElementById(home).style.borderColor = "red";
+        document.getElementById(away).style.borderColor = "red";
+        document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
+    }
+    else if (new_home != "" && new_away != ""){
+        localStorage.setItem("home_name", new_home);
+        localStorage.setItem("away_name", new_away);
+        // alert("Multi-Hypo Predict i==" + i + "is calling open prediciton page");
+        window.open('predictionpage.html', '_blank');
+        wait(1000);
+        // alert("Multi-Hypo Predict i==" + i + "is done calling open prediciton page");
+    }
+    else
+    {
+        if (new_home == "")
+        {
+            document.getElementById(home).style.borderColor = "red";
+        }
+        if (new_away == "")
+        {
+            document.getElementById(away).style.borderColor = "red";
+        }
+        document.getElementById('warning').innerHTML = "Please input a team name";
+    }
+  }
+
+}
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
