@@ -48,7 +48,7 @@ function SearchTeam(){
     } 
   }
 }
-var old_n = 0;
+var old_n = 5;
 
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
