@@ -90,11 +90,11 @@
             <div class="box ">
                
                                 <div class = "team_img">
-                                    <img id="" src="img/Team_Logos/chelseafc.png">
+                                    <img id="team_logo" src="">
                                     <!--Add the team name inside the id above, and change the src to be relevant.-->
                                 </div>
-                                <div class = "team_name">
-                                    <h2>Chelsea</h2>
+                                <div  class = "team_name">
+                                    <h2 id="team_title">Chelsea</h2>
                                 </div>
                             
 
@@ -111,34 +111,46 @@
                     <table  class="tableContainer teamGame">
 
                                                     <tbody>
+
+                                                        <thead>
+                                                            <tr>
+                                                                <th><h1>Date</h1></th>
+                                                                <th></th>
+                                                                <th><h1>Home Team</h1></th>
+                                                                <th><h1>vs</h1></th>
+                                                                <th><h1>Away Team</h1></th>
+                                                                <th></th>
+                                                                <th><h1>Prediction</h1></th>
+                                                            </tr>
+                                                        </thead>
                                                     
                                                         <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Crystal Palace','Middlesbrough');">
                                                             <td>9:00 AM <br> February 25</td>
-                                                            <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
-                                                            <td>Chelsea</td>
+                                                            <td><img id="team_upcoming1_img" src="" alt="filler image" width="40px" height="40px"></td>
+                                                            <td id="team_upcoming1"></td>
                                                             <td>vs</td>
                                                             <td>Middlesbrough</td>
-                                                            <td><img src="img/Team_Logos/middlesbrough.png" alt="filler image" width="40px"></td>
+                                                            <td><img src="img/Team_Logos/middlesbrough.png" alt="filler image" width="40px" height="40px"></td>
                                                             <td>Home Win</td>
                                                         </tr>
                                                    
                                                         <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','Sunderland AFC');">
                                                             <td>9:00 AM <br> February 26</td>
-                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px" height="40px"></td>
                                                             <td>Everton</td>
                                                             <td>vs</td>
-                                                            <td>Chelsea</td>
-                                                            <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
+                                                            <td id="team_upcoming2"></td>
+                                                            <td><img id="team_upcoming2_img" src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px" height="40px"></td>
                                                             <td>Home Win</td>
                                                         </tr>
                                                     
                                                         <tr onclick="document.location = 'predictionpage.html';upcomingPredict('AFC Bournemouth','West Ham United');">
                                                             <td>9:00 AM <br> February 27</td>
-                                                            <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
-                                                            <td>Chelsea</td>
+                                                            <td><img id="team_upcoming3_img" src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px" height="40px"></td>
+                                                            <td id="team_upcoming3"></td>
                                                             <td>vs</td>
                                                             <td>West Ham</td>
-                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px" height="40px"></td>
                                                             <td>Home Win</td>
                                                         </tr>
                                                     
@@ -333,21 +345,21 @@
                         <tbody>
                             <tr>
                                 <td>1/31/2017</td>
-                                <td>Chelsea vs. Watford</td>
+                                <td id="previousGame1"></td>
                                 <td>3-0</td>
                                 <td> <div>Home Win</div></td>
                                  <td class="correctcell"> <div><i class="fa fa-check fa-2x" aria-hidden="true"></i></div></td>
                             </tr>
                             <tr>
                                 <td>1/31/2017</td>
-                                <td>Swansea City vs. Chelsea</td>
+                                <td id="previousGame2"></td>
                                 <td>2-1</td>
                                 <td><div>Away Win</div></td>
                                 <td class="wrongcell"> <div><i class="fa fa-times fa-2x" aria-hidden="true"></i></div></td>
                             </tr>
                             <tr>
                                 <td>1/31/2017</td>
-                                <td>Chelsea vs. Tottenham Hotspur</td>
+                                <td id="previousGame3"></td>
                                 <td>2-2</td>
                                 <td>Draw</td>
                                 <td class="correctcell"><div><i class="fa fa-check fa-2x" aria-hidden="true"></i></div></td>
@@ -445,6 +457,7 @@
     <script src="js/Chart.bundle.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/hypopage.js"></script>
+    <script src="js/teamDetail.js"></script>
 
     
 </body>
