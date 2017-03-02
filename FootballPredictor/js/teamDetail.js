@@ -12,7 +12,7 @@ var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.1)',"Arsenal":'r
 
 
 window.onload=function(){
-    var teamName = window.location.hash.substr(1).replace(/%20/g, " ");;
+    var teamName = window.location.hash.substr(1).replace(/%20/g, " ");
     var team_name_formatted = teamName.toLowerCase().replace(/ /g, "");
 
     document.getElementById("team_logo").src = "img/Team_Logos/"+team_name_formatted+".png";
