@@ -167,7 +167,10 @@ $('#addDom').click(function() {
 
         predictNumber += 1;
 
-        var structure = $('<div id="warning" style="color:red;"></div><input type="userinput" list="pasta" onClick="this.select();" value="Chelsea FC" placeholder="Home Team" id="home" style="margin-right:0.4em;">&emsp;&emsp;&emsp;VS&emsp;&emsp;&emsp;<input type="userinput" list="pasta" onClick="this.select();" value="" placeholder="Away Team" id="away" style="margin-left:0.4em;"></div>');
+        var select_home_team = document.getElementById('home1').value;
+       // console.log("select_home_team", select_home_team);
+
+        var structure = $('<div id="warning" style="color:red;"></div><input type="userinput" list="pasta" onClick="this.select();" value=\"' + select_home_team + '\" placeholder="Home Team" id="home" style="margin-right:0.4em;">&emsp;&emsp;&emsp;VS&emsp;&emsp;&emsp;<input type="userinput" list="pasta" onClick="this.select();" value="" placeholder="Away Team" id="away" style="margin-left:0.4em;"></div>');
         $('#away1').after(structure);
 
         var away_abcElements = document.getElementById('away');
