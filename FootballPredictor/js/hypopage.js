@@ -54,14 +54,16 @@ function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("myTable");
     
-   for (var i=0; i<21; i++){
+   for (var i=1; i<21; i++){
     var btn = table.rows[i].cells[old_n];
     btn.style.fontWeight = 'normal';
+    btn.style.textDecoration = "none";
   }
 
-  for (var i=0; i<21; i++){
+  for (var i=1; i<21; i++){
     var btn = table.rows[i].cells[n];
     btn.style.fontWeight = 'bold';
+    btn.style.textDecoration = "underline";
   }
   switching = true;
   //Set the sorting direction to ascending:
