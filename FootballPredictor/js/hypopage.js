@@ -12,7 +12,7 @@ function HypoPredict(){
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (home != "" && away != ""){
-        window.location.href='predictionpage.html';
+        window.location.href='predictionpage.html#' + away;
     }else
     {
         if (home == "")
@@ -196,7 +196,7 @@ function MultiHypoPredict(){
         localStorage.setItem("home_name", new_home);
         localStorage.setItem("away_name", new_away);
         // alert("Multi-Hypo Predict i==" + i + "is calling open prediciton page");
-        window.open('predictionpage.html', '_blank');
+        window.open('predictionpage.html#' + new_away, '_blank');
 //         wait(1000);
         // alert("Multi-Hypo Predict i==" + i + "is done calling open prediciton page");
     }
