@@ -1,6 +1,7 @@
 var hometeam_name = localStorage.home_name;
 var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
-var awayteam_name = localStorage.away_name;
+//var awayteam_name = localStorage.away_name;
+var awayteam_name = window.location.hash.substr(1).replace(/%20/g, " ");;
 var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
 
 var page_state = localStorage.state;

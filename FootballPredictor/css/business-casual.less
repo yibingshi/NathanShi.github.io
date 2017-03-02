@@ -174,6 +174,13 @@ input[type=submit]:hover {
     letter-spacing: 1px;
 }
 
+.statsTitle-text {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
 .img-border {
     float: none;
     margin: 0 auto 0;
@@ -481,6 +488,30 @@ div.Prediction_Banner{
     width:50%;
     height: 420px;
     border-left: 2px solid black;
+}
+
+.team_img{
+    margin-left:10%;
+   float:left;
+    width:30%; 
+    //height:3em; 
+}
+
+.team_img img{
+   width: 250px;  
+   height: 250px;
+}
+
+.team_name{
+    float:right;
+    width:60%; 
+}
+
+.team_name h2{
+    padding: 0.2em 0 0.2em 0;
+   font-size: 7em;
+   text-transform: uppercase;
+    
 }
 
 .Home_team h1, .Away_team h1{
@@ -1213,4 +1244,37 @@ footer p {
             color: @westhamunited_banner_title_text_color;
         }
     }
+}
+
+input#myInput {
+    background-image: url('../img/search.png'); 
+    background-size: 20px 20px;
+    background-position: 10px 12px; 
+    background-repeat: no-repeat;
+    border-radius: 5px; 
+    width: 100%; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+}
+
+#addDom{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.noselect {
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

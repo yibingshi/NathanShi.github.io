@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Premier League Football Predictor</title>
+    <link rel="shortcut icon" href="img/football.png" type="image/png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.less" rel="stylesheet/less" type="text/css">
+
+    <!-- table CSS -->
+    <link href="css/table.less" rel="stylesheet/less" type="text/css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kameron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Martel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/78214d3405.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Premier League Football Predictor</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Premier League Football Predictor</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">Predictions</a>
+                        <div class="dropdown-content">
+                            <a href="upcoming_game.html">Upcoming Matches</a>
+                            <a href="hypopage.html">Hypothetical Matches</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="team.html" class="navbar-dropdown">Teams</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="navbar-dropdown">About us</a>
+                        <div class="dropdown-content">
+                            <a href="ouralgorithm.html">Our Algorithm</a>
+                            <a href="aboutus.html">About Us</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <h2 class="intro-text text-center">Our Algorithm</h2>
+                    
+                    <div class="container">
+                        <p style="text-align:left">
+                        <h2 class="section-heading">White Space in The Global Game</h2>
+                        <p style="width:96%">"Some people believe football is a matter of life and death...I can assure you it is much, much more important than that" - Bill Shankly<br><br>
+                        Across all corners of the globe, starry-eyed individuals gather together to chase after a ball hoping to replicate the moves they'd seen on TV or to bring to life whatever they'd imagined. We are all equal on the football pitch.Your technique does not depend on the color of your skin nor does your imagination depend on your socio-economic status; all else is irrelevant. It is for these reasons that football has become the Global Game and expanded to a multi-billion dollar industry. Despite this, there are very few solutions for predicting matches - even fewer which rely on data analysis. This intrigued us so we sought to find a way to merge data-analysis and match prediction.
+                        </p>
+                        <h2 class="section-heading">Training &amp; Testing</h2>
+                        <p>
+                        <p style="width:96%">
+                        The first step was gathering our data. Many insightful statistics are not published or recorded, so our data-collection was limited to only the following statistics for each match:<br>
+                        <b><br>
+                        {Score, Shots, Shots on Goal, Fouls, Corner kicks, Offsides, Time of Possession, Yellow Cards, Red Cards, Saves}
+                        </b>
+                        <br><br>
+                        Our task was now a matter of manipulating this data to optimize how much it can help us predict scores of matches. To help us, we created a 'Team' class which was instantiated for every team in the league and held long-term statistics (such as the following attributes) as well as a function to update the attributes after a match:<br><br>
+                        <b>
+                        {TotalGamesPlayed, TotalNumPoints, LeagueStanding, AveragePosession, TotalGoalsScored, TotalGoalsConceded, GoalDifference, TotalShots, TotalShotsOnTarget, TotalShotsConceded, TotalShotsOnTargetConceded, TotalSaves, TotalSavesAgainst, TotalFoulsCommitted, TotalFoulsConceded, TotalCornersWon, TotalCornersConceded, TotalOffsidesFor, TotalOffsidesAgainst, TotalYellowCardsForOpponents, TotalRedCardsForOpponents, TotalYellowCards, TotalRedCards, HomeRecord, AwayRecord, Prev5Match, Prev5MatchEnumerated}
+                        </b><br><br>
+
+                        Manipulating our data involved storing ratios in our dataset as opposed to just the raw-data i.e. <i>Yellow Cards/AveragePossession</i> instead of solely <i>Yellow Cards</i>. This proved to be a good move as our machine was more accurate with these metrics than without. <br><br>
+
+                        As only the team's total statistics prior to the match day could have been relevant to match outcome, we stored the team's prior-to-the-match-attributes and the outcome of the match (Home Win, Draw, Away Win) in a dataset, before updating the Team object.<br><br>
+
+                        We did the aforementioned data-collection for 8 Premier League seasons (~3,040 matches).<br><br>
+                    </p>
+                        <h2 class="section-heading">Key Results</h2>
+                        <p style="width:96%">
+                        Analysis on our data with 10-Fold Cross Validation revealed an average accuracy of 50% with the major ML algorithms such as Decision Trees, Random Forest, Bayes Nets, Multilayer Perceptrons, RBF Networks, and many more. Though the accuracy of these algorithms fluctuated within 5% either side of 50% (45-55%), some algorithms worked better than others. Unfortunately this improvement was not as great as we would have hoped. Using the Simple Logistic function built in to Weka, we were able to achieve 52.607% accuracy - though only slightly better than a 50% guess, it is a 19.277% improvement on the 1/3rd accuracy of random selection. This means that the ML algorithms learned from the features we passed, and that there is promise in the field of statistical analysis for match prediction. Moving forward we need to incorporate other statistics if we truly wish to model teams' playing styles and match-ups.<br><br>
+                        That said however, this exploration has revealed some vital elements including evidence to support the strength of the 'home field advantage', and that recent form can be just as important as quality in determining the outcomes of a match. Furthermore, it showed that teams that that like to keep possession have a lot better chances of winning away games than those that do not.
+                        <br><br>
+                    </p>
+                        </div>
+                    <div class="container">
+                        <p style="text-align:center">
+                        <img src="img/algorithms/awaydrawhomeresults.png" style="width: 80%;height: 0%"> </p>
+                        <p style="text-align:center"> The breakdown of the results
+                        <br>
+                        {Away Win, Draw, Home Win}</p>
+                    </div>
+                    <div class="container">
+                        <p style="text-align:center">
+                        <img src="img/algorithms/hometeamrecord.png" style="width: 80%;height: 0%"> </p>
+                        <p style="text-align:center"> Results based on Home Team Record at Home</p>
+                    </div>
+                    <div class="container">
+                        <p style="text-align:center">
+                        <img src="img/algorithms/awayteamavgpossession.png" style="width: 80%;height: 0%"> </p>
+                        <p style="text-align:center"> Results based on Away Team Possession Percentage</p>
+                    </div>
+
+    </div>
+        </div>
+                </div></div>
+            
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; HCI team 404 Not Found</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+
+        window.onload=function(){
+            console.log("function called");
+            var carousel_slides = document.getElementsByClassName("carousel-inner")[0].getElementsByClassName("item");
+            for (var i = 0; i<carousel_slides.length; i++){
+                carousel_slides[i].onclick = function(evt) {
+                    sl = $(this);
+                    console.log("sl is:", sl);
+                    var home = $(sl).find(".Prediction_Banner .Home_team h1 span")[0].innerHTML;
+                    console.log("home is:", home);
+                    localStorage.setItem("home_name", home);
+                    var away = $(sl).find(".Prediction_Banner .Away_team h1 span")[0].innerHTML;
+                    console.log("away is:", away);
+                    localStorage.setItem("away_name", away);   
+                    window.location.href='predictionpage.html';
+                }
+            }
+        }
+            
+    </script>
+
+</body>
+</html>
