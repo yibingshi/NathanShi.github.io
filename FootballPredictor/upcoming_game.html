@@ -92,157 +92,132 @@
     <div class="container">
         <div class="row" align="center">
             <div class="box">
-            
-
                 <div class="col-lg-12">
                 <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>Upcoming Matches</strong>
-                    </h2>
-                    <hr>
-                
-
-                
-
-                
-               <!--  <p>
-                Select two teams you want to predict
-                </p> -->
-                
-
-                <!-- <table border="0" cellpadding="0" cellspacing="0" style="background-color:#505050; border:1px solid #353535; border-radius:5px;">
-                <tr>
-                    <td align="center" valign="middle" style="color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">
-                    <a href="http://www.mailchimp.com/blog/" target="_blank" style="color:#FFFFFF; text-decoration:none;">Read More Stories On Our Blog</a>
-                    </td>
-                </tr>
-
-
-                </table> -->
+                <h2 class="intro-text text-center">
+                    <strong>Upcoming Matches</strong>
+                </h2>
+                <hr>
 
                 <div id="upcoming">
+                    <div class="panel panel-default">
+                        <a class="accordion-toggle collapsed" href="#collapse-Two" data-parent="#accordion" data-toggle="collapse">
+                            <div class="panel-heading" style="height: 4em; padding-top: 20px;">
+                                <h4 class="panel-title">February 2017
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapse-Two" class="accordion-body collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-5"  style="width: 100%;">
+                                    <table class="tableContainer upcomingGame">
+                                            <tbody>
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Crystal Palace','Middlesbrough');">
+                                                    <td>9:00 AM <br> February 25</td>
+                                                    <td><img src="img/Team_Logos/crystalpalace.png" alt="filler image" width="40px"></td>
+                                                    <td>Crystal Palace</td>
+                                                    <td>45%</td>
+                                                    <td>vs</td>
+                                                    <td>55%</td>
+                                                    <td>Middlesbrough</td>
+                                                    <td><img src="img/Team_Logos/middlesbrough.png" alt="filler image" width="40px"></td>
+                                                </tr>
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','Sunderland AFC');">
+                                                    <td>9:00 AM <br> February 25</td>
+                                                    <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                    <td>Everton</td>
+                                                    <td>51%</td>
+                                                    <td>vs</td>
+                                                    <td>49%</td>
+                                                    <td>Sunderland</td>
+                                                    <td><img src="img/Team_Logos/sunderlandafc.png" alt="filler image" width="40px"></td>
+                                                </tr>
 
-                            <div class="panel panel-default">
-                                <a class="accordion-toggle collapsed" href="#collapse-Two" data-parent="#accordion" data-toggle="collapse">
-                                    <div class="panel-heading" style="height: 4em; padding-top: 20px;">
-                                        <h4 class="panel-title">February 2017
-                                        </h4>
-                                    </div>
-                                </a>
-                                <div id="collapse-Two" class="accordion-body collapse" style="height: 0px;">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-5"  style="width: 100%;">
-                                            <table  class="tableContainer upcomingGame">
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('AFC Bournemouth','West Ham United');">
+                                                    <td>9:00 AM <br> February 25</td>
+                                                    <td><img src="img/Team_Logos/afcbournemouth.png" alt="filler image" width="40px"></td>
+                                                    <td>Bournemouth</td>
+                                                    <td>37%</td>
+                                                    <td>vs</td>
+                                                    <td>63%</td>
+                                                    <td>West Ham</td>
+                                                    <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                </tr>
 
-                                                    <tbody>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Crystal Palace','Middlesbrough');">
-                                                            <td>9:00 AM <br> February 25</td>
-                                                            <td><img src="img/Team_Logos/crystalpalace.png" alt="filler image" width="40px"></td>
-                                                            <td>Crystal Palace</td>
-                                                            <td>45%</td>
-                                                            <td>vs</td>
-                                                            <td>55%</td>
-                                                            <td>Middlesbrough</td>
-                                                            <td><img src="img/Team_Logos/middlesbrough.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                   
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','Sunderland AFC');">
-                                                            <td>9:00 AM <br> February 25</td>
-                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
-                                                            <td>Everton</td>
-                                                            <td>51%</td>
-                                                            <td>vs</td>
-                                                            <td>49%</td>
-                                                            <td>Sunderland</td>
-                                                            <td><img src="img/Team_Logos/sunderlandafc.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('AFC Bournemouth','West Ham United');">
-                                                            <td>9:00 AM <br> February 25</td>
-                                                            <td><img src="img/Team_Logos/afcbournemouth.png" alt="filler image" width="40px"></td>
-                                                            <td>Bournemouth</td>
-                                                            <td>37%</td>
-                                                            <td>vs</td>
-                                                            <td>63%</td>
-                                                            <td>West Ham</td>
-                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Watford','Chelsea FC');">
-                                                            <td>11:00 AM <br> February 25</td>
-                                                            <td><img src="img/Team_Logos/watford.png" alt="filler image" width="40px"></td>
-                                                            <td>Watford</td>
-                                                            <td>44%</td>
-                                                            <td>vs</td>
-                                                            <td>56%</td>
-                                                            <td>Chelsea</td>
-                                                            <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
-                                                            <td>9:00 AM <br> February 26</td>
-                                                            <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
-                                                            <td>Everton</td>
-                                                            <td>65%</td>
-                                                            <td>vs</td>
-                                                            <td>35%</td>
-                                                            <td>West Ham</td>
-                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Tottenham Hotspur','Stoke City');">
-                                                            <td>2:00 PM <br> February 26</td>
-                                                            <td><img src="img/Team_Logos/tottenhamhotspur.png" alt="filler image" width="40px"></td>
-                                                            <td>Tottenham</td>
-                                                            <td>61%</td>
-                                                            <td>vs</td>
-                                                            <td>39%</td>
-                                                            <td>Stoke City</td>
-                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
-                                                            <td>2:00 PM <br> February 26</td>
-                                                                <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
-                                                            <td>Everton</td>
-                                                            <td>65%</td>
-                                                            <td>vs</td>
-                                                            <td>35%</td>
-                                                            <td>West Ham</td>
-                                                            <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Swansea City','Liverpool');">
-                                                            <td>2:00 PM <br> February 27</td>
-                                                            <td><img src="img/Team_Logos/swanseacity.png" alt="filler image" width="40px"></td>
-                                                            <td>Swansea City</td>
-                                                            <td>55%</td>
-                                                            <td>vs</td>
-                                                            <td>45%</td>
-                                                            <td>Liverpool</td>
-                                                            <td><img src="img/Team_Logos/liverpool.png" alt="filler image" width="40px"></td>
-                                                        </tr>
-                                                    
-                                                        <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Arsenal','Hull City');">
-                                                            <td>2:00 PM <br> February 27</td>
-                                                            <td><img src="img/Team_Logos/arsenal.png" alt="filler image" width="40px"></td>
-                                                            <td>Arsenal</td>
-                                                            <td>70%</td>
-                                                            <td>vs</td>
-                                                            <td>30%</td>
-                                                            <td>Hull City</td>
-                                                            <td><img src="img/Team_Logos/hullcity.png" alt="filler image" width="40px"></td>
-                                                        </tr>
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Watford','Chelsea FC');">
+                                                    <td>11:00 AM <br> February 25</td>
+                                                    <td><img src="img/Team_Logos/watford.png" alt="filler image" width="40px"></td>
+                                                    <td>Watford</td>
+                                                    <td>44%</td>
+                                                    <td>vs</td>
+                                                    <td>56%</td>
+                                                    <td>Chelsea</td>
+                                                    <td><img src="img/Team_Logos/chelseafc.png" alt="filler image" width="40px"></td>
+                                                </tr>
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
+                                                    <td>9:00 AM <br> February 26</td>
+                                                    <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                    <td>Everton</td>
+                                                    <td>65%</td>
+                                                    <td>vs</td>
+                                                    <td>35%</td>
+                                                    <td>West Ham</td>
+                                                    <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                </tr>
+
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Tottenham Hotspur','Stoke City');">
+                                                    <td>2:00 PM <br> February 26</td>
+                                                    <td><img src="img/Team_Logos/tottenhamhotspur.png" alt="filler image" width="40px"></td>
+                                                    <td>Tottenham</td>
+                                                    <td>61%</td>
+                                                    <td>vs</td>
+                                                    <td>39%</td>
+                                                    <td>Stoke City</td>
+                                                    <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                </tr>
+
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Everton','West Ham United');">
+                                                    <td>2:00 PM <br> February 26</td>
+                                                        <td><img src="img/Team_Logos/everton.png" alt="filler image" width="40px"></td>
+                                                    <td>Everton</td>
+                                                    <td>65%</td>
+                                                    <td>vs</td>
+                                                    <td>35%</td>
+                                                    <td>West Ham</td>
+                                                    <td><img src="img/Team_Logos/westhamunited.png" alt="filler image" width="40px"></td>
+                                                </tr>
+
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Swansea City','Liverpool');">
+                                                    <td>2:00 PM <br> February 27</td>
+                                                    <td><img src="img/Team_Logos/swanseacity.png" alt="filler image" width="40px"></td>
+                                                    <td>Swansea City</td>
+                                                    <td>55%</td>
+                                                    <td>vs</td>
+                                                    <td>45%</td>
+                                                    <td>Liverpool</td>
+                                                    <td><img src="img/Team_Logos/liverpool.png" alt="filler image" width="40px"></td>
+                                                </tr>
+
+                                                <tr onclick="document.location = 'predictionpage.html';upcomingPredict('Arsenal','Hull City');">
+                                                    <td>2:00 PM <br> February 27</td>
+                                                    <td><img src="img/Team_Logos/arsenal.png" alt="filler image" width="40px"></td>
+                                                    <td>Arsenal</td>
+                                                    <td>70%</td>
+                                                    <td>vs</td>
+                                                    <td>30%</td>
+                                                    <td>Hull City</td>
+                                                    <td><img src="img/Team_Logos/hullcity.png" alt="filler image" width="40px"></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
                             <div class="panel panel-default">
                                 <a class="accordion-toggle collapsed" href="#collapse-Three" data-parent="#accordion" data-toggle="collapse">
