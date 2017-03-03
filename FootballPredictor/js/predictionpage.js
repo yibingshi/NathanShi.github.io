@@ -37,7 +37,11 @@ var teamColors = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"
 //TottenhamHotspur = rgb(251,251,251);
 //"Swansea City":'rgb(251,251,251)'
 //#252525
-var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.1)',"Arsenal":'rgba(159,0,19,.1)',"Burnley":'rgba(199,51,105,.1)',"Chelsea FC":'rgba(15,29,123,.2)',"Crystal Palace":'rgba(75,124,216,.2)',"Everton":'rgba(74,101,181,.2)',"Hull City":'rgba(228,139,47,.2)',"Leicester City":'rgba(208,166,57,.2)',"Liverpool":'rgba(255,109,109,.1)',"Manchester City":'rgba(184,223,245,.4)',"Manchester United":'rgba(218,0,0,.1)',"Middlesbrough":'rgba(190,35,30,.1)',"Southampton":'rgba(139,26,24,.2)',"Stoke City":'rgba(217,33,43,.2)',"Sunderland AFC":'rgba(166,129,35,.2)',"Swansea City":'rgba(37,37,37,.2)',"Tottenham Hotspur":'rgba(4,18,85,.2)',"Watford":'rgba(255,197,0,.2)',"West Bromwich Albion":'rgba(9,17,83,.2)',"West Ham United":'rgba(94,33,59,.2)'};
+//var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.1)',"Arsenal":'rgba(159,0,19,.1)',"Burnley":'rgba(199,51,105,.1)',"Chelsea FC":'rgba(15,29,123,.2)',"Crystal Palace":'rgba(75,124,216,.2)',"Everton":'rgba(74,101,181,.2)',"Hull City":'rgba(228,139,47,.2)',"Leicester City":'rgba(208,166,57,.2)',"Liverpool":'rgba(255,109,109,.1)',"Manchester City":'rgba(184,223,245,.4)',"Manchester United":'rgba(218,0,0,.1)',"Middlesbrough":'rgba(190,35,30,.1)',"Southampton":'rgba(139,26,24,.2)',"Stoke City":'rgba(217,33,43,.2)',"Sunderland AFC":'rgba(166,129,35,.2)',"Swansea City":'rgba(37,37,37,.2)',"Tottenham Hotspur":'rgba(4,18,85,.2)',"Watford":'rgba(255,197,0,.2)',"West Bromwich Albion":'rgba(9,17,83,.2)',"West Ham United":'rgba(94,33,59,.2)'};
+
+
+var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.25)',"Arsenal":'rgba(159,0,19,.25)',"Burnley":'rgba(199,51,105,.25)',"Chelsea FC":'rgba(15,29,123,.5)',"Crystal Palace":'rgba(75,124,216,.5)',"Everton":'rgba(74,101,181,.5)',"Hull City":'rgba(228,139,47,.5)',"Leicester City":'rgba(208,166,57,.5)',"Liverpool":'rgba(255,109,109,.25)',"Manchester City":'rgba(184,223,245,.8)',"Manchester United":'rgba(218,0,0,.25)',"Middlesbrough":'rgba(190,35,30,.25)',"Southampton":'rgba(139,26,24,.5)',"Stoke City":'rgba(217,33,43,.5)',"Sunderland AFC":'rgba(166,129,35,.5)',"Swansea City":'rgba(37,37,37,.5)',"Tottenham Hotspur":'rgba(4,18,85,.5)',"Watford":'rgba(255,197,0,.5)',"West Bromwich Albion":'rgba(9,17,83,.5)',"West Ham United":'rgba(94,33,59,.5)'};
+
 
 //console.log(pieColor["AFC Bournemouth"]);
 var displayoptions;
@@ -46,8 +50,8 @@ var descriptions;
 var statGroupings;
 var OverallGraphConfig;
 var VSGraphConfig;
-var lineChartO;
-var lineChartVS;
+var barChartO;
+var barChartVS;
 
 var key = ["ACCpOP","ACWpP","AFCpOP","AFCpP","AGCpOSOT","AGM","AGSpSOT","AOApP","AOFpOP","APPG","ARCforOpP","ARCpOP","ASCpOP","ASFpM","ASMpM","ASTpP",
         "AYCforOpP","AYCpOP","P5ME"];
@@ -129,11 +133,11 @@ window.onload=function(){
         
     //Chart:
     Chart.defaults.global.hover.mode = 'nearest';
-    const CHARTT = $("#lineChart_Total");
-    const CHARTVS = $("#lineChart_VS");
+    const CHARTT = $("#barChart_Total");
+    const CHARTVS = $("#barChart_VS");
     
-    lineChartO = new Chart(CHARTT, {
-        type:'line',
+    barChartO = new Chart(CHARTT, {
+        type:'bar',
         data: {
             labels:["ACWpP","AFCpOP","AOFpOP","APPG","ARCforOpP","AYCforOpP", "P5ME"],
             datasets: [
@@ -143,16 +147,16 @@ window.onload=function(){
                     backgroundColor: transparentTeamColors[hometeam_name],
                     borderColor: teamColors[hometeam_name],
                     borderCapStyle: 'butt',
-//                    borderDash: [],
-//                    borderDashOffset: 0.0,
+                    borderDash: [],
+                    borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
                     pointBorderColor: teamColors[hometeam_name],
                     pointBorderWidth: 1,
                     pointBackgroundColor: teamColors[hometeam_name],
 //                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: teamColors[hometeam_name],
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 5,
+//                    pointHoverBackgroundColor: teamColors[hometeam_name],
+//                    pointHoverBorderColor: "rgba(220,220,220,1)",
+//                    pointHoverBorderWidth: 5,
                     pointRadius: 3,
                     pointHitRadius: 10,
                     data: [0.105670103, 0.290453074, 0.047734628, 0.625, 0.001718213, 0.030068729, 0.2],
@@ -163,18 +167,18 @@ window.onload=function(){
                     backgroundColor: transparentTeamColors[awayteam_name],
                     borderColor: teamColors[awayteam_name],
                     borderCapStyle: 'butt',
-//                    borderDash: [],
-//                    borderDashOffset: 0.0,
+                    borderDash: [],
+                    borderDashOffset: 0.0,
                     borderJoinStyle: 'miter',
                     pointBorderColor: teamColors[awayteam_name],
-//                    pointBorderWidth: 1,
+                    pointBorderWidth: 1,
                     pointBackgroundColor: teamColors[awayteam_name],
 //                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: teamColors[awayteam_name],
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 5,
+//                    pointHoverBackgroundColor: teamColors[awayteam_name],
+//                    pointHoverBorderColor: "rgba(220,220,220,1)",
+//                    pointHoverBorderWidth: 5,
                     pointRadius: 3,
-                    pointHitRadius: 10,
+                    pointHitRadius: 1,
                     data: [0.10772164, 0.27737809, 0.03117506, 1.043478261, 0.001906578, 0.0034318398, 0.6],
                 }
             ]
@@ -187,8 +191,8 @@ window.onload=function(){
             },
         }
     });
-    lineChartVS = new Chart(CHARTVS, {
-        type:'line',
+    barChartVS = new Chart(CHARTVS, {
+        type:'bar',
         data: {
             labels:["ACWpP","AFCpOP","AOFpOP","APPG","ARCforOpP","AYCforOpP", "P5ME"],
             datasets: [
@@ -327,23 +331,23 @@ window.onload=function(){
         OverallGraphConfig[i].onclick=function() {
             if ($("i", this)[0].classList.contains("fa-check-square-o")) //This means it is currently showing on the graph.
             {
-                var labels = lineChartO.data.labels;
-                var Odataset1 = lineChartO.data.datasets[0].data;
-                var Odataset2 = lineChartO.data.datasets[1].data;
-                var VSdataset1 = lineChartVS.data.datasets[0].data;
-                var VSdataset2 = lineChartVS.data.datasets[1].data;
+                var labels = barChartO.data.labels;
+                var Odataset1 = barChartO.data.datasets[0].data;
+                var Odataset2 = barChartO.data.datasets[1].data;
+                var VSdataset1 = barChartVS.data.datasets[0].data;
+                var VSdataset2 = barChartVS.data.datasets[1].data;
                 var itr = NaN;
                 
                 var clicked_label = $("em", this)[0].innerText;
                 var index = labels.indexOf(clicked_label);
                 
-                lineChartO.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
-                lineChartVS.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
+                barChartO.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
+                barChartVS.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
                 
-                lineChartO.data.datasets[0].data = Odataset1.slice(0,index).concat(Odataset1.slice(index+1, Odataset1.length));
-                lineChartO.data.datasets[1].data = Odataset2.slice(0,index).concat(Odataset2.slice(index+1, Odataset1.length));
-                lineChartVS.data.datasets[0].data = VSdataset1.slice(0,index).concat(VSdataset1.slice(index+1, Odataset1.length));
-                lineChartVS.data.datasets[1].data = VSdataset2.slice(0,index).concat(VSdataset2.slice(index+1, Odataset1.length));
+                barChartO.data.datasets[0].data = Odataset1.slice(0,index).concat(Odataset1.slice(index+1, Odataset1.length));
+                barChartO.data.datasets[1].data = Odataset2.slice(0,index).concat(Odataset2.slice(index+1, Odataset1.length));
+                barChartVS.data.datasets[0].data = VSdataset1.slice(0,index).concat(VSdataset1.slice(index+1, Odataset1.length));
+                barChartVS.data.datasets[1].data = VSdataset2.slice(0,index).concat(VSdataset2.slice(index+1, Odataset1.length));
                 
                 for(var itr=0; itr<VSGraphConfig.length; itr++)
                 {
@@ -360,35 +364,35 @@ window.onload=function(){
                 VSGraphConfig[elt_index].getElementsByTagName("i")[0].classList.remove("fa-check-square-o");
                 VSGraphConfig[elt_index].getElementsByTagName("i")[0].classList.add("fa-square-o");
                 
-                lineChartO.update();
-                lineChartVS.update();
+                barChartO.update();
+                barChartVS.update();
             }
             else if ($("i", this)[0].classList.contains("fa-square-o")) //This means it is currently NOT showing on the graph.
             {
-                var labels = lineChartO.data.labels;
+                var labels = barChartO.data.labels;
                 
-                var OdatasetH = lineChartO.data.datasets[0].data;
-                var OdatasetA = lineChartO.data.datasets[1].data;
-                var VSdatasetH = lineChartVS.data.datasets[0].data;
-                var VSdatasetA = lineChartVS.data.datasets[1].data;
+                var OdatasetH = barChartO.data.datasets[0].data;
+                var OdatasetA = barChartO.data.datasets[1].data;
+                var VSdatasetH = barChartVS.data.datasets[0].data;
+                var VSdatasetA = barChartVS.data.datasets[1].data;
                 var itr = NaN;
                 
                 var clicked_label = $("em", this)[0].innerText;
                 
                 label_index = key.indexOf(clicked_label);
-                lineChartO.data.labels.push(clicked_label)
-                lineChartVS.data.labels.push(clicked_label);
+                barChartO.data.labels.push(clicked_label)
+                barChartVS.data.labels.push(clicked_label);
 
                 OdatasetH.push(homeData_O[label_index]);
                 OdatasetA.push(awayData_O[label_index]);
                 
-                lineChartO.data.datasets[0].data = OdatasetH;
-                lineChartO.data.datasets[1].data = OdatasetA;
+                barChartO.data.datasets[0].data = OdatasetH;
+                barChartO.data.datasets[1].data = OdatasetA;
                 
                 VSdatasetH.push(homeData_VS[label_index]);
                 VSdatasetA.push(awayData_VS[label_index]);
-                lineChartVS.data.datasets[0].data = VSdatasetH;
-                lineChartVS.data.datasets[1].data = VSdatasetA;
+                barChartVS.data.datasets[0].data = VSdatasetH;
+                barChartVS.data.datasets[1].data = VSdatasetA;
                 
                 for(var itr=0; itr<VSGraphConfig.length; itr++)
                 {
@@ -405,31 +409,31 @@ window.onload=function(){
                 VSGraphConfig[elt_index].getElementsByTagName("i")[0].classList.remove("fa-square-o");
                 VSGraphConfig[elt_index].getElementsByTagName("i")[0].classList.add("fa-check-square-o");
                 
-                lineChartO.update();
-                lineChartVS.update();
+                barChartO.update();
+                barChartVS.update();
             }
             return false;
         }
         VSGraphConfig[i].onclick=function() {
             if ($("i", this)[0].classList.contains("fa-check-square-o")) //This means it is currently showing on the graph.
             {
-                var labels = lineChartO.data.labels;
-                var Odataset1 = lineChartO.data.datasets[0].data;
-                var Odataset2 = lineChartO.data.datasets[1].data;
-                var VSdataset1 = lineChartVS.data.datasets[0].data;
-                var VSdataset2 = lineChartVS.data.datasets[1].data;
+                var labels = barChartO.data.labels;
+                var Odataset1 = barChartO.data.datasets[0].data;
+                var Odataset2 = barChartO.data.datasets[1].data;
+                var VSdataset1 = barChartVS.data.datasets[0].data;
+                var VSdataset2 = barChartVS.data.datasets[1].data;
                 var itr = NaN;
                 
                 var clicked_label = $("em", this)[0].innerText;
                 var index = labels.indexOf(clicked_label);
                 
-                lineChartO.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
-                lineChartVS.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
+                barChartO.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
+                barChartVS.data.labels = labels.slice(0, index).concat(labels.slice(index+1));
                 
-                lineChartO.data.datasets[0].data = Odataset1.slice(0,index).concat(Odataset1.slice(index+1, Odataset1.length));
-                lineChartO.data.datasets[1].data = Odataset2.slice(0,index).concat(Odataset2.slice(index+1, Odataset1.length));
-                lineChartVS.data.datasets[0].data = VSdataset1.slice(0,index).concat(VSdataset1.slice(index+1, Odataset1.length));
-                lineChartVS.data.datasets[1].data = VSdataset2.slice(0,index).concat(VSdataset2.slice(index+1, Odataset1.length));
+                barChartO.data.datasets[0].data = Odataset1.slice(0,index).concat(Odataset1.slice(index+1, Odataset1.length));
+                barChartO.data.datasets[1].data = Odataset2.slice(0,index).concat(Odataset2.slice(index+1, Odataset1.length));
+                barChartVS.data.datasets[0].data = VSdataset1.slice(0,index).concat(VSdataset1.slice(index+1, Odataset1.length));
+                barChartVS.data.datasets[1].data = VSdataset2.slice(0,index).concat(VSdataset2.slice(index+1, Odataset1.length));
                 
                 for(var itr=0; itr<OverallGraphConfig.length; itr++)
                 {
@@ -446,34 +450,34 @@ window.onload=function(){
                 OverallGraphConfig[elt_index].getElementsByTagName("i")[0].classList.remove("fa-check-square-o");
                 OverallGraphConfig[elt_index].getElementsByTagName("i")[0].classList.add("fa-square-o");
                 
-                lineChartO.update();
-                lineChartVS.update();
+                barChartO.update();
+                barChartVS.update();
             }
             else if ($("i", this)[0].classList.contains("fa-square-o")) //This means it is currently NOT showing on the graph.
             {
-                var labels = lineChartO.data.labels;
+                var labels = barChartO.data.labels;
                 
-                var OdatasetH = lineChartO.data.datasets[0].data;
-                var OdatasetA = lineChartO.data.datasets[1].data;
-                var VSdatasetH = lineChartVS.data.datasets[0].data;
-                var VSdatasetA = lineChartVS.data.datasets[1].data;
+                var OdatasetH = barChartO.data.datasets[0].data;
+                var OdatasetA = barChartO.data.datasets[1].data;
+                var VSdatasetH = barChartVS.data.datasets[0].data;
+                var VSdatasetA = barChartVS.data.datasets[1].data;
                 var itr = NaN;
                 
                 var clicked_label = $("em", this)[0].innerText;
                 
                 label_index = key.indexOf(clicked_label);
-                lineChartO.data.labels.push(clicked_label)
-                lineChartVS.data.labels.push(clicked_label);
+                barChartO.data.labels.push(clicked_label)
+                barChartVS.data.labels.push(clicked_label);
 
                 OdatasetH.push(homeData_O[label_index]);
                 OdatasetA.push(awayData_O[label_index]);
-                lineChartO.data.datasets[0].data = OdatasetH;
-                lineChartO.data.datasets[1].data = OdatasetA;
+                barChartO.data.datasets[0].data = OdatasetH;
+                barChartO.data.datasets[1].data = OdatasetA;
                 
                 VSdatasetH.push(homeData_VS[label_index]);
                 VSdatasetA.push(awayData_VS[label_index]);
-                lineChartVS.data.datasets[0].data = VSdatasetH;
-                lineChartVS.data.datasets[1].data = VSdatasetA;
+                barChartVS.data.datasets[0].data = VSdatasetH;
+                barChartVS.data.datasets[1].data = VSdatasetA;
                 
                 for(var itr=0; itr<OverallGraphConfig.length; itr++)
                 {
@@ -490,8 +494,8 @@ window.onload=function(){
                 OverallGraphConfig[elt_index].getElementsByTagName("i")[0].classList.remove("fa-square-o");
                 OverallGraphConfig[elt_index].getElementsByTagName("i")[0].classList.add("fa-check-square-o");
                 
-                lineChartO.update();
-                lineChartVS.update();
+                barChartO.update();
+                barChartVS.update();
             }
             return false;
         }
