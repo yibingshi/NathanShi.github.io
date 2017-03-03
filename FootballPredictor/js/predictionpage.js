@@ -33,17 +33,8 @@ var abbrevKey = {"AFC Bournemouth":"AFCB", "Arsenal":"ARS", "Burnley":"BUR", "Ch
 
 var teamColors = {"AFC Bournemouth":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(37,37,37)',"Tottenham Hotspur":'rgb(4,18,85)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
 
-
-//TottenhamHotspur = rgb(251,251,251);
-//"Swansea City":'rgb(251,251,251)'
-//#252525
-//var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.1)',"Arsenal":'rgba(159,0,19,.1)',"Burnley":'rgba(199,51,105,.1)',"Chelsea FC":'rgba(15,29,123,.2)',"Crystal Palace":'rgba(75,124,216,.2)',"Everton":'rgba(74,101,181,.2)',"Hull City":'rgba(228,139,47,.2)',"Leicester City":'rgba(208,166,57,.2)',"Liverpool":'rgba(255,109,109,.1)',"Manchester City":'rgba(184,223,245,.4)',"Manchester United":'rgba(218,0,0,.1)',"Middlesbrough":'rgba(190,35,30,.1)',"Southampton":'rgba(139,26,24,.2)',"Stoke City":'rgba(217,33,43,.2)',"Sunderland AFC":'rgba(166,129,35,.2)',"Swansea City":'rgba(37,37,37,.2)',"Tottenham Hotspur":'rgba(4,18,85,.2)',"Watford":'rgba(255,197,0,.2)',"West Bromwich Albion":'rgba(9,17,83,.2)',"West Ham United":'rgba(94,33,59,.2)'};
-
-
 var transparentTeamColors = {"AFC Bournemouth":'rgba(199,51,54,.25)',"Arsenal":'rgba(159,0,19,.25)',"Burnley":'rgba(199,51,105,.25)',"Chelsea FC":'rgba(15,29,123,.5)',"Crystal Palace":'rgba(75,124,216,.5)',"Everton":'rgba(74,101,181,.5)',"Hull City":'rgba(228,139,47,.5)',"Leicester City":'rgba(208,166,57,.5)',"Liverpool":'rgba(255,109,109,.25)',"Manchester City":'rgba(184,223,245,.8)',"Manchester United":'rgba(218,0,0,.25)',"Middlesbrough":'rgba(190,35,30,.25)',"Southampton":'rgba(139,26,24,.5)',"Stoke City":'rgba(217,33,43,.5)',"Sunderland AFC":'rgba(166,129,35,.5)',"Swansea City":'rgba(37,37,37,.5)',"Tottenham Hotspur":'rgba(4,18,85,.5)',"Watford":'rgba(255,197,0,.5)',"West Bromwich Albion":'rgba(9,17,83,.5)',"West Ham United":'rgba(94,33,59,.5)'};
 
-
-//console.log(pieColor["AFC Bournemouth"]);
 var displayoptions;
 var comparisontables;
 var descriptions;
@@ -508,6 +499,53 @@ window.onload=function(){
         window.location.href='predictionpage.html';
 //        window.location.href='predictionpage.html#'+abbrevKey[awayteam_name]+"#"+abbrevKey[hometeam_name];
     }
+
+    var selectButtons = document.getElementsByClassName("selectButton");
+    for (var i = 0; i<selectButtons.length; i++){
+        selectButtons[i].onclick = function(){
+            if ($(this)[0].id=="deselect"){
+                barChartO.data.labels = []
+                barChartO.data.datasets[0].data = []
+                barChartO.data.datasets[1].data = []
+                
+                barChartVS.data.labels = [] 
+                barChartVS.data.datasets[0].data = []
+                barChartVS.data.datasets[1].data = []
+                
+                for (var i = 0; i<OverallGraphConfig.length; i++){
+                    if (OverallGraphConfig[i].getElementsByTagName('i')[0].classList.contains("fa-check-square-o")){
+                        OverallGraphConfig[i].getElementsByTagName('i')[0].classList.remove("fa-check-square-o");
+                        VSGraphConfig[i].getElementsByTagName('i')[0].classList.remove("fa-check-square-o");
+                        OverallGraphConfig[i].getElementsByTagName('i')[0].classList.add("fa-square-o");
+                        VSGraphConfig[i].getElementsByTagName('i')[0].classList.add("fa-square-o");
+                    }
+                }
+                barChartO.update();
+                barChartVS.update();
+            }
+            else{
+                barChartO.data.labels = key;
+                barChartO.data.datasets[0].data = homeData_O;
+                barChartO.data.datasets[1].data = awayData_O;
+                
+                barChartVS.data.labels = key; 
+                barChartVS.data.datasets[0].data = homeData_VS;
+                barChartVS.data.datasets[1].data = awayData_VS;
+                
+                for (var i = 0; i<OverallGraphConfig.length; i++){
+                    if (OverallGraphConfig[i].getElementsByTagName('i')[0].classList.contains("fa-square-o")){
+                        OverallGraphConfig[i].getElementsByTagName('i')[0].classList.remove("fa-square-o");
+                        VSGraphConfig[i].getElementsByTagName('i')[0].classList.remove("fa-square-o");
+                        OverallGraphConfig[i].getElementsByTagName('i')[0].classList.add("fa-check-square-o");
+                        VSGraphConfig[i].getElementsByTagName('i')[0].classList.add("fa-check-square-o");
+                    }
+                }
+                barChartO.update();
+                barChartVS.update();
+            }
+        }
+    }
+
 }
 
 //~~~~~~~~~~~~~~~~ Preparation ~~~~~~~~~~~~~~~~
