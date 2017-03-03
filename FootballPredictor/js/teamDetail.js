@@ -1,5 +1,6 @@
 var teamKey = {"AFCB":"AFC Bournemouth", "ARS":"Arsenal", "BUR":"Burnley", "CHE":"Chelsea FC", "CRY":"Crystal Palace", "EVE":"Everton", "HUL":"Hull City",
 "LEI":"Leicester City", "LIV":"Liverpool","MANC":"Manchester City", "MANU":"Manchester United", "MID":"Middlesbrough", "SOU":"Southampton", "STO": "Stoke City", "SUN":"Sunderland AFC", "SWA": "Swansea City", "TOT":"Tottenham Hotspur", "WAT":"Watford", "WBA":"West Bromwich Albion", "WHU": "West Ham United"};
+var abbrevKey = {"AFC Bournemouth":"AFCB", "Arsenal":"ARS", "Burnley":"BUR", "Chelsea FC":"CHE", "Crystal Palace":"CRY", "Everton":"EVE", "Hull City":"HUL", "Leicester City":"LEI", "Liverpool":"LIV","Manchester City":"MANC", "Manchester United":"MANU", "Middlesbrough":"MID", "Southampton":"SOU", "Stoke City": "STO", "Sunderland AFC":"SUN", "Swansea City": "SWA", "Tottenham Hotspur":"TOT", "Watford":"WAT", "West Bromwich Albion":"WBA", "West Ham United": "WHU"}
 
 var teamColors = {"":'rgb(199,51,54)',"Arsenal":'rgb(159,0,19)',"Burnley":'rgb(199,51,105)',"Chelsea FC":'rgb(15,29,123)',"Crystal Palace":'rgb(75,124,216)',"Everton":'rgb(74,101,181)',"Hull City":'rgb(228,139,47)',"Leicester City":'rgb(208,166,57)',"Liverpool":'rgb(255,109,109)',"Manchester City":'rgb(184,223,245)',"Manchester United":'rgb(218,0,0)',"Middlesbrough":'rgb(190,35,30)',"Southampton":'rgb(139,26,24)',"Stoke City":'rgb(217,33,43)',"Sunderland AFC":'rgb(166,129,35)',"Swansea City":'rgb(37,37,37)',"Tottenham Hotspur":'rgb(4,18,85)',"Watford":'rgb(255,197,0)',"West Bromwich Albion":'rgb(9,17,83)',"West Ham United":'rgb(94,33,59)'};
 
@@ -26,6 +27,15 @@ window.onload=function(){
     document.getElementById("previousGame3").innerHTML = teamName + " vs. AFC Bournemouth";
     document.getElementById("home1").value = teamName;
 
+    for (var i = 0; i< $(".teamGame tbody").find('tr').length; i++){
+        console.log("Listener #",i," added!");
+        $(".teamGame tbody").find('tr')[i].onclick=function(){
+            var hometeam = $(this).find('td')[2].innerText
+            var awayteam = $(this).find('td')[4].innerText
+            upcomingPredict(hometeam, awayteam);
+        }
+    }
+    
     if (teamName == "Middlesbrough"){
         document.getElementById("team_title").style = "font-size: 6em; padding-top:0.6em; margin-left: -0.5em;";
 
