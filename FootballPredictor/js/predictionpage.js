@@ -2,13 +2,13 @@ var teamKey = {"AFCB":"AFC Bournemouth", "ARS":"Arsenal", "BUR":"Burnley", "CHE"
 "LEI":"Leicester City", "LIV":"Liverpool","MANC":"Manchester City", "MANU":"Manchester United", "MID":"Middlesbrough", "SOU":"Southampton", "STO": "Stoke City", "SUN":"Sunderland AFC", "SWA": "Swansea City", "TOT":"Tottenham Hotspur", "WAT":"Watford", "WBA":"West Bromwich Albion", "WHU": "West Ham United"};
 
 
-if(localStorage.swap_call=="true")
+if(localStorage.internal_redirection=="true")
 {
     var hometeam_name = localStorage.home_name;
     var hometeam_name_formatted = hometeam_name.toLowerCase().replace(/ /g, "");
     var awayteam_name = localStorage.away_name;
     var awayteam_name_formatted = awayteam_name.toLowerCase().replace(/ /g, "");
-    localStorage.setItem("swap_call", "false");
+    localStorage.setItem("internal_redirection", "false");
 }
 else{
     var hometeam_abb = window.location.hash.substr(1).replace(/%20/g, " ").substr(0,window.location.hash.substr(1).indexOf("#"));
@@ -498,7 +498,7 @@ window.onload=function(){
     }
     
     document.getElementsByClassName("SwapVenues_2")[0].onclick=function(evt){
-        localStorage.setItem("swap_call", true);
+        localStorage.setItem("internal_redirection", true);
         localStorage.setItem("home_name", awayteam_name);
         localStorage.setItem("away_name", hometeam_name);
         window.location.href='predictionpage.html';

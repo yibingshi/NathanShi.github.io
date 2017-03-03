@@ -3,11 +3,8 @@ var abbrevKey = {"AFC Bournemouth":"AFCB", "Arsenal":"ARS", "Burnley":"BUR", "Ch
 
 function HypoPredict(){
     var home = document.getElementById('home').value;
-//    localStorage.setItem("home_name", home);
     var away = document.getElementById('away').value;
-//    localStorage.setItem("away_name", away);
     
-//    localStorage.setItem("state", "hypothetical");
     var c = 100;
     if (home == away && home != ""){
         document.getElementById('home').style.borderColor = "red";
@@ -15,8 +12,14 @@ function HypoPredict(){
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (home != "" && away != ""){
-//        window.location.href='predictionpage.html#' + away;
-        window.location.href='predictionpage.html#'+abbrevKey[home]+"#"+abbrevKey[away];
+        if(window.location.pathname.includes("/predictionpage.html")){
+            localStorage.setItem("internal_redirection", true);
+            localStorage.setItem("home_name", home);
+            localStorage.setItem("away_name", away);
+            window.location.href= 'predictionpage.html';
+        } else {
+            window.location.href='predictionpage.html#'+abbrevKey[home]+"#"+abbrevKey[away];
+        }
     }else
     {
         if (home == "")
@@ -196,30 +199,17 @@ function MultiHypoPredict(){
 
   var home = home_predict_id[i];
   var away = away_predict_id[i];
-
-  // console.log("home: ", home);
-  // console.log("away: ", away);
-
+      
   var new_home = document.getElementById(home).value;
   var new_away = document.getElementById(away).value;
-
-  // console.log("new_home: ", new_home);
-  // console.log("new_away: ", new_away);
-
+    
   if (new_home == new_away && new_home != ""){
         document.getElementById(home).style.borderColor = "red";
         document.getElementById(away).style.borderColor = "red";
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (new_home != "" && new_away != ""){
-//        localStorage.setItem("home_name", new_home);
-//        localStorage.setItem("away_name", new_away);
-        alert(new_away);
-        // alert("Multi-Hypo Predict i==" + i + "is calling open prediciton page");
-//        window.open('predictionpage.html#' + new_away, '_blank');
         window.open('predictionpage.html#'+abbrevKey[new_home]+"#"+abbrevKey[new_away], '_blank');
-//         wait(1000);
-        // alert("Multi-Hypo Predict i==" + i + "is done calling open prediciton page");
     }
     else
     {
