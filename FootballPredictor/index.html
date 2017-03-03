@@ -298,18 +298,22 @@
 
         window.onload=function(){
             console.log("function called");
+            var abbrevKey = {"AFC Bournemouth":"AFCB", "Arsenal":"ARS", "Burnley":"BUR", "Chelsea FC":"CHE", "Crystal Palace":"CRY", "Everton":"EVE", "Hull City":"HUL", "Leicester City":"LEI", "Liverpool":"LIV","Manchester City":"MANC", "Manchester United":"MANU", "Middlesbrough":"MID", "Southampton":"SOU", "Stoke City": "STO", "Sunderland AFC":"SUN", "Swansea City": "SWA", "Tottenham Hotspur":"TOT", "Watford":"WAT", "West Bromwich Albion":"WBA", "West Ham United": "WHU"}
+            
             var carousel_slides = document.getElementsByClassName("carousel-inner")[0].getElementsByClassName("item");
             for (var i = 0; i<carousel_slides.length; i++){
                 carousel_slides[i].onclick = function(evt) {
                     sl = $(this);
                     console.log("sl is:", sl);
                     var home = $(sl).find(".Prediction_Banner .Home_team h1 span")[0].innerHTML;
-                    console.log("home is:", home);
-                    localStorage.setItem("home_name", home);
+                    console.log("home is:", abbrevKey[home]);
+//                    localStorage.setItem("home_name", home);
+                    
                     var away = $(sl).find(".Prediction_Banner .Away_team h1 span")[0].innerHTML;
-                    console.log("away is:", away);
-                    localStorage.setItem("away_name", away);   
-                    window.location.href='predictionpage.html';
+                    console.log("away is:", abbrevKey[away]);
+//                    localStorage.setItem("away_name", away); 
+                    
+                    window.location.href='predictionpage.html#'+abbrevKey[home]+"#"+abbrevKey[away];
                 }
             }
         }

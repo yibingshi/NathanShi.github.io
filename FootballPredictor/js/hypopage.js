@@ -1,10 +1,13 @@
+var abbrevKey = {"AFC Bournemouth":"AFCB", "Arsenal":"ARS", "Burnley":"BUR", "Chelsea FC":"CHE", "Crystal Palace":"CRY", "Everton":"EVE", "Hull City":"HUL", "Leicester City":"LEI", "Liverpool":"LIV","Manchester City":"MANC", "Manchester United":"MANU", "Middlesbrough":"MID", "Southampton":"SOU", "Stoke City": "STO", "Sunderland AFC":"SUN", "Swansea City": "SWA", "Tottenham Hotspur":"TOT", "Watford":"WAT", "West Bromwich Albion":"WBA", "West Ham United": "WHU"}
+
+
 function HypoPredict(){
     var home = document.getElementById('home').value;
-    localStorage.setItem("home_name", home);
+//    localStorage.setItem("home_name", home);
     var away = document.getElementById('away').value;
-    localStorage.setItem("away_name", away);
+//    localStorage.setItem("away_name", away);
     
-    localStorage.setItem("state", "hypothetical");
+//    localStorage.setItem("state", "hypothetical");
     var c = 100;
     if (home == away && home != ""){
         document.getElementById('home').style.borderColor = "red";
@@ -12,7 +15,8 @@ function HypoPredict(){
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (home != "" && away != ""){
-        window.location.href='predictionpage.html#' + away;
+//        window.location.href='predictionpage.html#' + away;
+        window.location.href='predictionpage.html#'+abbrevKey[home]+"#"+abbrevKey[away];
     }else
     {
         if (home == "")
@@ -208,10 +212,12 @@ function MultiHypoPredict(){
         document.getElementById('warning').innerHTML = "We currently DO NOT support same team hypothetical prediction";
     }
     else if (new_home != "" && new_away != ""){
-        localStorage.setItem("home_name", new_home);
-        localStorage.setItem("away_name", new_away);
+//        localStorage.setItem("home_name", new_home);
+//        localStorage.setItem("away_name", new_away);
+        alert(new_away);
         // alert("Multi-Hypo Predict i==" + i + "is calling open prediciton page");
-        window.open('predictionpage.html#' + new_away, '_blank');
+//        window.open('predictionpage.html#' + new_away, '_blank');
+        window.open('predictionpage.html#'+abbrevKey[new_home]+"#"+abbrevKey[new_away], '_blank');
 //         wait(1000);
         // alert("Multi-Hypo Predict i==" + i + "is done calling open prediciton page");
     }
