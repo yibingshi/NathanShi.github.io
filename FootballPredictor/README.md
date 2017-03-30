@@ -2,11 +2,13 @@
 
 ## Getting Started:
 
+This is a Human Cpomputer Interaction class project.
+
 Soccer - known universally as football - is a multibillion dollar industry of tremendous global passion, thorough intrigue, and sharp scrutiny. Despite the huge amount of interests and funds are invested, a football match remains a thoroughly unpredictable phenomena. 
 
 Our project attempts to remedy this by tracking the performance of teams in the English Premier League, using large amounts of the data of team behaviors like Scores, Possession, Shots, Corners, Saves and other statistics collected from ESPN to create a prediction model. We will track the performances of each English Premier League team in a way compatible with the model, and then use the model to predict the outcome. In this way, we discern relationships between our variables by **tracking team behaviors** from recent and historical data, and form an interface to present predictions and explanations. We hope to provide the ability to predict hypothetical games between any two teams selected by users as well.
 
-This website is mainly about front-end design. The back-end statistics are not required by professors but we will add and make it real-time later.
+**This website is mainly about front-end design. The back-end statistics are not required by professors but we will add and make it real-time later.**
 
 
 ## Three Representative Tasks:
